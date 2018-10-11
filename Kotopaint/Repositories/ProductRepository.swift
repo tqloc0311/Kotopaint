@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class ProductRepository {
     
@@ -29,13 +31,20 @@ class ProductRepository {
         return result
     }
     
-    func loadData(completion: @escaping ([Product])->()) {
-        executeOnBackground(task: {
-            
-        }, completion: {
-            self.storage = self.loadDummy()
-            completion(self.storage)
-        }, delay: 0.2)
+    func loadData(categoryId: Int, completion: @escaping ([Product])->()) {
+        let url = Globals.HOST + "products/\(categoryId)?token=" + Globals.TOKEN
+        Alamofire.request(url).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let data = json["data"]
+                let result = data.arrayValue.compactMap({ Category(json: $0) })
+                completion(result.sorted(by: { $0.order < $1.order }))
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion([])
+            }
+        }
     }
     
     func getBy(categoryId: Int, completion: @escaping ([Product])->()) {
