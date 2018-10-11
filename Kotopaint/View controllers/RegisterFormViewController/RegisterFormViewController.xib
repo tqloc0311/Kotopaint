@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterFormViewController" customModule="Kotopaint" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSend" destination="JzN-LV-YW8" id="xtn-UV-rYg"/>
+                <outlet property="txtEmail" destination="EAI-eD-e5N" id="AFT-TT-xvv"/>
+                <outlet property="txtName" destination="xEA-t7-lXK" id="NN1-b0-Enc"/>
+                <outlet property="txtPhone" destination="vB7-Gc-B6J" id="nN3-gF-dSv"/>
+                <outlet property="view" destination="fCl-6m-Tzi" id="KK4-33-iRb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fCl-6m-Tzi">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openAgency" translatesAutoresizingMaskIntoConstraints="NO" id="Xdv-Ot-NJW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Xdv-Ot-NJW" secondAttribute="height" multiplier="3:2" id="2aK-9u-nvG"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="openAgencyPhoto"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng điền đầy đủ thông tin rồi gửi cho chúng tôi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5g-G7-yCx">
+                    <rect key="frame" x="16" y="258" width="343" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ tên" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1F-3b-fCV">
+                    <rect key="frame" x="16" y="302" width="343" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEA-t7-lXK">
+                    <rect key="frame" x="16" y="328" width="343" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dr-MP-quX">
+                    <rect key="frame" x="16" y="366" width="343" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAI-eD-e5N">
+                    <rect key="frame" x="16" y="392" width="343" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số điện thoại" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7E-lb-Ihj">
+                    <rect key="frame" x="16" y="430" width="343" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vB7-Gc-B6J">
+                    <rect key="frame" x="16" y="456" width="343" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzN-LV-YW8">
+                    <rect key="frame" x="101.66666666666667" y="494" width="171.66666666666663" height="40"/>
+                    <color key="backgroundColor" red="0.20138111710000001" green="0.1882414818" blue="0.58585923910000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="vf6-Gs-Kym"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Gửi">
+                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xdv-Ot-NJW" firstAttribute="trailing" secondItem="zTy-m4-Sjq" secondAttribute="trailing" id="1gX-vC-vMP"/>
+                <constraint firstItem="3Dr-MP-quX" firstAttribute="top" secondItem="xEA-t7-lXK" secondAttribute="bottom" constant="8" id="2cq-Na-yq9"/>
+                <constraint firstItem="Xdv-Ot-NJW" firstAttribute="leading" secondItem="zTy-m4-Sjq" secondAttribute="leading" id="2qe-iO-ens"/>
+                <constraint firstItem="U1F-3b-fCV" firstAttribute="trailing" secondItem="r5g-G7-yCx" secondAttribute="trailing" id="6JG-7z-fYg"/>
+                <constraint firstItem="vB7-Gc-B6J" firstAttribute="top" secondItem="q7E-lb-Ihj" secondAttribute="bottom" constant="8" id="8mc-IJ-GH3"/>
+                <constraint firstItem="r5g-G7-yCx" firstAttribute="top" secondItem="Xdv-Ot-NJW" secondAttribute="bottom" constant="8" id="BNS-vn-Lco"/>
+                <constraint firstItem="r5g-G7-yCx" firstAttribute="leading" secondItem="zTy-m4-Sjq" secondAttribute="leading" constant="16" id="D1f-QR-fKa"/>
+                <constraint firstItem="xEA-t7-lXK" firstAttribute="trailing" secondItem="U1F-3b-fCV" secondAttribute="trailing" id="FLw-ZF-dWz"/>
+                <constraint firstItem="3Dr-MP-quX" firstAttribute="leading" secondItem="xEA-t7-lXK" secondAttribute="leading" id="GfD-se-8Yb"/>
+                <constraint firstItem="Xdv-Ot-NJW" firstAttribute="top" secondItem="fCl-6m-Tzi" secondAttribute="top" id="KDm-Nx-8XS"/>
+                <constraint firstItem="q7E-lb-Ihj" firstAttribute="top" secondItem="EAI-eD-e5N" secondAttribute="bottom" constant="8" id="KIp-cx-U1E"/>
+                <constraint firstItem="U1F-3b-fCV" firstAttribute="top" secondItem="r5g-G7-yCx" secondAttribute="bottom" constant="8" id="La9-v9-Sur"/>
+                <constraint firstItem="q7E-lb-Ihj" firstAttribute="trailing" secondItem="EAI-eD-e5N" secondAttribute="trailing" id="WVM-bS-1HZ"/>
+                <constraint firstItem="EAI-eD-e5N" firstAttribute="trailing" secondItem="3Dr-MP-quX" secondAttribute="trailing" id="YXz-45-3mA"/>
+                <constraint firstItem="zTy-m4-Sjq" firstAttribute="trailing" secondItem="r5g-G7-yCx" secondAttribute="trailing" constant="16" id="ZWt-3A-fDE"/>
+                <constraint firstItem="EAI-eD-e5N" firstAttribute="top" secondItem="3Dr-MP-quX" secondAttribute="bottom" constant="8" id="dHX-sL-AxB"/>
+                <constraint firstItem="q7E-lb-Ihj" firstAttribute="leading" secondItem="EAI-eD-e5N" secondAttribute="leading" id="fMd-uY-S5G"/>
+                <constraint firstItem="JzN-LV-YW8" firstAttribute="centerX" secondItem="vB7-Gc-B6J" secondAttribute="centerX" id="fnd-5L-gOh"/>
+                <constraint firstItem="vB7-Gc-B6J" firstAttribute="leading" secondItem="q7E-lb-Ihj" secondAttribute="leading" id="htc-UH-p10"/>
+                <constraint firstItem="JzN-LV-YW8" firstAttribute="width" secondItem="vB7-Gc-B6J" secondAttribute="width" multiplier="1:2" id="ilR-wM-Wt1"/>
+                <constraint firstItem="xEA-t7-lXK" firstAttribute="top" secondItem="U1F-3b-fCV" secondAttribute="bottom" constant="8" id="kz6-P2-VdP"/>
+                <constraint firstItem="xEA-t7-lXK" firstAttribute="leading" secondItem="U1F-3b-fCV" secondAttribute="leading" id="nrf-Fs-FOh"/>
+                <constraint firstItem="vB7-Gc-B6J" firstAttribute="trailing" secondItem="q7E-lb-Ihj" secondAttribute="trailing" id="pju-Nv-b1H"/>
+                <constraint firstItem="U1F-3b-fCV" firstAttribute="leading" secondItem="r5g-G7-yCx" secondAttribute="leading" id="sdz-CP-Qdq"/>
+                <constraint firstItem="EAI-eD-e5N" firstAttribute="leading" secondItem="3Dr-MP-quX" secondAttribute="leading" id="uV3-qu-Nsf"/>
+                <constraint firstItem="JzN-LV-YW8" firstAttribute="top" secondItem="vB7-Gc-B6J" secondAttribute="bottom" constant="8" id="xzc-nu-akH"/>
+                <constraint firstItem="3Dr-MP-quX" firstAttribute="trailing" secondItem="xEA-t7-lXK" secondAttribute="trailing" id="zGd-SR-nPy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="zTy-m4-Sjq"/>
+            <point key="canvasLocation" x="40.799999999999997" y="46.551724137931039"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="openAgency" width="3456" height="2304"/>
+    </resources>
+</document>

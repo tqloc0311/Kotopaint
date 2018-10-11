@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuViewController" customModule="Kotopaint" customModuleProvider="target">
+            <connections>
+                <outlet property="bannerImageView" destination="gZL-rK-WzZ" id="PEq-nn-kBt"/>
+                <outlet property="tableView" destination="gAX-0x-dgE" id="meu-oO-HXb"/>
+                <outlet property="view" destination="UcB-fD-7XH" id="ekQ-LI-0NV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="UcB-fD-7XH">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gAX-0x-dgE">
+                    <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gZL-rK-WzZ">
+                    <rect key="frame" x="16" y="36" width="270" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="D4i-3P-Nhs"/>
+                        <constraint firstAttribute="width" constant="270" id="b9K-CB-FNq"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nH0-fN-aVp" firstAttribute="bottom" secondItem="gAX-0x-dgE" secondAttribute="bottom" id="0MH-bW-a6D"/>
+                <constraint firstItem="gAX-0x-dgE" firstAttribute="top" secondItem="gZL-rK-WzZ" secondAttribute="bottom" constant="32" id="7Pv-eA-KrE"/>
+                <constraint firstAttribute="trailing" secondItem="gAX-0x-dgE" secondAttribute="trailing" id="Dy6-c6-gq3"/>
+                <constraint firstItem="gAX-0x-dgE" firstAttribute="leading" secondItem="UcB-fD-7XH" secondAttribute="leading" id="WRU-rG-4go"/>
+                <constraint firstItem="gZL-rK-WzZ" firstAttribute="leading" secondItem="nH0-fN-aVp" secondAttribute="leading" constant="16" id="Wwy-2y-UqL"/>
+                <constraint firstItem="gZL-rK-WzZ" firstAttribute="top" secondItem="nH0-fN-aVp" secondAttribute="top" constant="16" id="sxv-xK-2em"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="nH0-fN-aVp"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo" width="552" height="262"/>
+    </resources>
+</document>

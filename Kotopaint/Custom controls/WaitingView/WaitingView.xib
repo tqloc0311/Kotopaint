@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13771"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WaitingView" customModule="Kotopaint" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3l-2y-tfR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.0" green="0.13333333333333333" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a94-g6-FWp" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                    <rect key="frame" x="162" y="308" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="a94-g6-FWp" secondAttribute="height" multiplier="1:1" id="igg-hY-QI3"/>
+                        <constraint firstAttribute="height" constant="50" id="nlg-nE-rde"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballRotateChase"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                            <color key="value" red="0.0" green="0.13527947664260864" blue="0.41088664531707764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="g3l-2y-tfR" secondAttribute="trailing" id="AEY-HN-ngw"/>
+                <constraint firstItem="a94-g6-FWp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dd6-Rp-CHI"/>
+                <constraint firstItem="g3l-2y-tfR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O6w-4p-ngD"/>
+                <constraint firstItem="g3l-2y-tfR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZfB-DZ-wDl"/>
+                <constraint firstItem="a94-g6-FWp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="r3s-P3-F7L"/>
+                <constraint firstAttribute="bottom" secondItem="g3l-2y-tfR" secondAttribute="bottom" id="y7N-Qb-WZS"/>
+            </constraints>
+            <connections>
+                <outlet property="indicatorView" destination="a94-g6-FWp" id="Chw-Zj-7RW"/>
+            </connections>
+        </view>
+    </objects>
+</document>

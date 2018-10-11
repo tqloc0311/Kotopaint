@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CustomRevealViewController.viewDidLoad():CustomRevealViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nav.revealViewController()">
+            </PersistentString>
+            <PersistentString
+               value = "frontViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UITabBar.sizeThatFits(_:):TabBarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.main.nativeBounds.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SideMenuTableViewController.tableView(_:cellForRowAt:):SideMenuTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "revealVC.tabBarVC.viewControllers![0].navigationController">
+            </PersistentString>
+            <PersistentString
+               value = "revealVC.tabBarVC.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TabBarViewController.viewDidLoad():TabBarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.revealViewController()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactViewController.setupView():ContactViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tabBarController">
+            </PersistentString>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
