@@ -15,10 +15,10 @@ class CategoryRepository {
     // Static
     static let shared = CategoryRepository()
     
-    // Properties
+    // MARK: - Properties
     var storage = [Category]()
     
-    // Methods
+    // MARK: - Methods
     
     func loadData(completion: @escaping ([Category])->()) {
         let url = Globals.HOST + "categories?token=" + Globals.TOKEN

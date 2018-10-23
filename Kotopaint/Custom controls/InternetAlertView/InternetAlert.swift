@@ -17,7 +17,7 @@ class InternetAlert {
     private let bannerDissapearAnimationDuration = 0.5
     private var padding: CGFloat = 4
     
-    // Properties
+    // MARK: - Properties
     private var bannerWindow : UIWindow?
     
     private var viewContainer: UIView!
@@ -36,7 +36,7 @@ class InternetAlert {
         }
     }
     
-    // Methods
+    // MARK: - Methods
     private func showOnTopOfStatusBar(_ notificationView: UIView, animated: Bool = true) {
         if bannerWindow == nil {
             bannerWindow = UIWindow()

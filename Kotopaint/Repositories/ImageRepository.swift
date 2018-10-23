@@ -22,10 +22,10 @@ class ImageRepository {
     // Static
     static let shared = ImageRepository()
     
-    // Properties
+    // MARK: - Properties
     var data = [ImageModel]()
     
-    // Methods
+    // MARK: - Methods
     func getByGroup(_ group: ImageModelGroup) -> [ImageModel] {
         switch group {
         case .ngoaithat:

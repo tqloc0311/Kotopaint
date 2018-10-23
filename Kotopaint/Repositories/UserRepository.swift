@@ -20,7 +20,7 @@ class UserRepository {
     // MARK: - Properties
     
     // MARK: - Methods
-    func login(completion: @escaping (Bool)->()) {
+    func getToken(completion: @escaping (Bool)->()) {
         let url = Globals.HOST + "auth/login"
         let body = [
             "email": "nguyenvietduckt82@gmail.com",

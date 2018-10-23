@@ -11,16 +11,16 @@ import NVActivityIndicatorView
 
 class AllCategoryCell: UITableViewCell, ReusableView {
 
-    // Properties
+    // MARK: - Properties
     var data = Category()
     var selectAction: (()->())?
     var panAction: ((Bool)->())?
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var highlightView: UIView!
     
-    // Methods
+    // MARK: - Methods
     func select() {
         if let f = selectAction {
             f()
@@ -43,7 +43,7 @@ class AllCategoryCell: UITableViewCell, ReusableView {
         self.layer.shadowRadius = 4.0
         
         let panGesture = UIPanGestureRecognizer { (gesture) in
-            if let panGesture = gesture as? UIPanGestureRecognizer, let f = self.panAction, let isRight = panGesture.isRight(self) {
+            if let panGesture = gesture as? UIPanGestureRecognizer, let f = self.panAction, let isRight = panGesture.isLeftToRight(self) {
                 f(isRight)
             }
         }

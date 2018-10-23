@@ -18,5 +18,8 @@ target 'Kotopaint' do
   pod 'AMPopTip'
   pod 'ActionKit'
   pod 'Kingfisher'
+  pod 'LUExpandableTableView'
+  pod 'TRVideoView'
+
 end
 

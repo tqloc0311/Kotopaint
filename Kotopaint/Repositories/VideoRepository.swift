@@ -13,10 +13,10 @@ class VideoRepository {
     // Static
     static let shared = VideoRepository()
     
-    // Properties
+    // MARK: - Properties
     var data = [VideoModel]()
     
-    // Methods
+    // MARK: - Methods
     func loadData() {
         data.removeAll()
         data.append(VideoModel(id: 1, url: "https://www.youtube.com/watch?v=7w_8Z-D1iNE", title: "Giới thiệu Công Ty Sơn Koto Việt Nam", image: #imageLiteral(resourceName: "video")))

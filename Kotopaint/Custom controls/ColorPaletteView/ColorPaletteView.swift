@@ -16,14 +16,14 @@ class ColorPaletteView: UIView {
     
     // Constants
 
-    // Properties
+    // MARK: - Properties
     var colorPatteCategoriesIndex = 0
     var colorData = [UIColor]()
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // Methods
+    // MARK: - Methods
     func getMinMaxColor(from index: Int) -> (Int, Int) {
         switch index {
         case 1:

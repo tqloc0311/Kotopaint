@@ -3,6 +3,30 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "UITabBar.sizeThatFits(_:):TabBarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.main.nativeBounds.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoPlayerViewController.viewDidLoad():VideoPlayerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController?.navigationBar.topItem?">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactViewController.viewDidLoad():ContactViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CustomRevealViewController.viewDidLoad():CustomRevealViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -14,21 +38,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "UITabBar.sizeThatFits(_:):TabBarViewController.swift">
+         contextName = "ContactViewController.setupView():ContactViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "UIScreen.main.nativeBounds.height">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in SideMenuTableViewController.tableView(_:cellForRowAt:):SideMenuTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "revealVC.tabBarVC.viewControllers![0].navigationController">
+               value = "self.tabBarController">
             </PersistentString>
             <PersistentString
-               value = "revealVC.tabBarVC.navigationController">
+               value = "self.navigationController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,13 +57,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ContactViewController.setupView():ContactViewController.swift">
+         contextName = "closure #1 in SideMenuTableViewController.tableView(_:cellForRowAt:):SideMenuTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.tabBarController">
+               value = "revealVC.tabBarVC.viewControllers![0].navigationController">
             </PersistentString>
             <PersistentString
-               value = "self.navigationController">
+               value = "revealVC.tabBarVC.navigationController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

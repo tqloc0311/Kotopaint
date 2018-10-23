@@ -85,6 +85,9 @@
                     <state key="normal" title="Gửi">
                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="send:" destination="-1" eventType="touchUpInside" id="GSR-hV-Zmt"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,7 +101,6 @@
                 <constraint firstItem="r5g-G7-yCx" firstAttribute="leading" secondItem="zTy-m4-Sjq" secondAttribute="leading" constant="16" id="D1f-QR-fKa"/>
                 <constraint firstItem="xEA-t7-lXK" firstAttribute="trailing" secondItem="U1F-3b-fCV" secondAttribute="trailing" id="FLw-ZF-dWz"/>
                 <constraint firstItem="3Dr-MP-quX" firstAttribute="leading" secondItem="xEA-t7-lXK" secondAttribute="leading" id="GfD-se-8Yb"/>
-                <constraint firstItem="Xdv-Ot-NJW" firstAttribute="top" secondItem="fCl-6m-Tzi" secondAttribute="top" id="KDm-Nx-8XS"/>
                 <constraint firstItem="q7E-lb-Ihj" firstAttribute="top" secondItem="EAI-eD-e5N" secondAttribute="bottom" constant="8" id="KIp-cx-U1E"/>
                 <constraint firstItem="U1F-3b-fCV" firstAttribute="top" secondItem="r5g-G7-yCx" secondAttribute="bottom" constant="8" id="La9-v9-Sur"/>
                 <constraint firstItem="q7E-lb-Ihj" firstAttribute="trailing" secondItem="EAI-eD-e5N" secondAttribute="trailing" id="WVM-bS-1HZ"/>
@@ -115,6 +117,7 @@
                 <constraint firstItem="U1F-3b-fCV" firstAttribute="leading" secondItem="r5g-G7-yCx" secondAttribute="leading" id="sdz-CP-Qdq"/>
                 <constraint firstItem="EAI-eD-e5N" firstAttribute="leading" secondItem="3Dr-MP-quX" secondAttribute="leading" id="uV3-qu-Nsf"/>
                 <constraint firstItem="JzN-LV-YW8" firstAttribute="top" secondItem="vB7-Gc-B6J" secondAttribute="bottom" constant="8" id="xzc-nu-akH"/>
+                <constraint firstItem="Xdv-Ot-NJW" firstAttribute="top" secondItem="fCl-6m-Tzi" secondAttribute="top" id="yAS-lk-Vva"/>
                 <constraint firstItem="3Dr-MP-quX" firstAttribute="trailing" secondItem="xEA-t7-lXK" secondAttribute="trailing" id="zGd-SR-nPy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zTy-m4-Sjq"/>

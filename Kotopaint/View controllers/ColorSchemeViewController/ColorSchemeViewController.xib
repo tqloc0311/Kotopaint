@@ -12,7 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorSchemeViewController" customModule="Kotopaint" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="rJJ-c2-Ede" id="R7M-ks-0rc"/>
+                <outlet property="ngoaiThatButton" destination="KT8-WB-KwU" id="RzL-JS-MpT"/>
+                <outlet property="noiThatButton" destination="kJm-bk-h5e" id="Mma-gN-2JR"/>
                 <outlet property="view" destination="4jy-n4-Oav" id="c2q-7U-0Eh"/>
             </connections>
         </placeholder>
@@ -21,54 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pak-Nq-xfN" customClass="CustomNavigationBar" customModule="Kotopaint" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phần mềm phối màu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3Q-hT-fdN">
-                            <rect key="frame" x="48" y="24" width="279" height="32"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="colorSchemeTitle"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="rJJ-c2-Ede" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
-                            <rect key="frame" x="8" y="24" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="rJJ-c2-Ede" secondAttribute="height" id="jOm-7p-SIp"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-aa-eRA" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
-                            <rect key="frame" x="335" y="24" width="32" height="32"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="MNM-aa-eRA" secondAttribute="height" id="fg3-DE-m2Z"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="f3Q-hT-fdN" firstAttribute="leading" secondItem="rJJ-c2-Ede" secondAttribute="trailing" constant="8" id="4vX-mo-phL"/>
-                        <constraint firstItem="rJJ-c2-Ede" firstAttribute="leading" secondItem="pak-Nq-xfN" secondAttribute="leading" constant="8" id="CO4-vh-2Eh"/>
-                        <constraint firstItem="MNM-aa-eRA" firstAttribute="bottom" secondItem="f3Q-hT-fdN" secondAttribute="bottom" id="Etf-Oi-eQk"/>
-                        <constraint firstItem="MNM-aa-eRA" firstAttribute="leading" secondItem="f3Q-hT-fdN" secondAttribute="trailing" constant="8" id="Ge2-Ag-5xY"/>
-                        <constraint firstAttribute="trailing" secondItem="MNM-aa-eRA" secondAttribute="trailing" constant="8" id="HjH-6r-Boq"/>
-                        <constraint firstAttribute="bottom" secondItem="f3Q-hT-fdN" secondAttribute="bottom" constant="8" id="QK4-rc-B0i"/>
-                        <constraint firstItem="f3Q-hT-fdN" firstAttribute="centerX" secondItem="pak-Nq-xfN" secondAttribute="centerX" id="dPw-3q-F3e"/>
-                        <constraint firstItem="MNM-aa-eRA" firstAttribute="top" secondItem="f3Q-hT-fdN" secondAttribute="top" id="ddy-Yi-X2m"/>
-                        <constraint firstItem="f3Q-hT-fdN" firstAttribute="top" secondItem="pak-Nq-xfN" secondAttribute="top" constant="24" id="hdF-fp-L2y"/>
-                        <constraint firstAttribute="height" constant="64" id="ibO-9l-ysa"/>
-                        <constraint firstItem="rJJ-c2-Ede" firstAttribute="top" secondItem="f3Q-hT-fdN" secondAttribute="top" id="kQf-z7-5XB"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-bk-h5e" customClass="ViewButton" customModule="Kotopaint" customModuleProvider="target">
-                    <rect key="frame" x="16" y="96" width="343" height="100"/>
+                    <rect key="frame" x="16" y="52" width="343" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nội thất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-Xl-QED">
                             <rect key="frame" x="133" y="38" width="77.5" height="24"/>
@@ -88,7 +43,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT8-WB-KwU" customClass="ViewButton" customModule="Kotopaint" customModuleProvider="target">
-                    <rect key="frame" x="16" y="228" width="343" height="100"/>
+                    <rect key="frame" x="16" y="184" width="343" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngoại thất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIW-9D-Ysk">
                             <rect key="frame" x="120.5" y="38" width="102" height="24"/>
@@ -113,18 +68,12 @@
                 <constraint firstItem="kJm-bk-h5e" firstAttribute="leading" secondItem="QAB-yG-u9O" secondAttribute="leading" constant="16" id="3Rk-kD-83f"/>
                 <constraint firstItem="KT8-WB-KwU" firstAttribute="height" secondItem="kJm-bk-h5e" secondAttribute="height" id="7Ee-XM-J5b"/>
                 <constraint firstItem="KT8-WB-KwU" firstAttribute="leading" secondItem="kJm-bk-h5e" secondAttribute="leading" id="7o7-26-8Kv"/>
-                <constraint firstItem="QAB-yG-u9O" firstAttribute="trailing" secondItem="pak-Nq-xfN" secondAttribute="trailing" id="A52-fn-wm3"/>
+                <constraint firstItem="kJm-bk-h5e" firstAttribute="top" secondItem="QAB-yG-u9O" secondAttribute="top" constant="32" id="B6J-XT-mmD"/>
                 <constraint firstItem="KT8-WB-KwU" firstAttribute="trailing" secondItem="kJm-bk-h5e" secondAttribute="trailing" id="RLJ-o6-9i7"/>
                 <constraint firstItem="QAB-yG-u9O" firstAttribute="trailing" secondItem="kJm-bk-h5e" secondAttribute="trailing" constant="16" id="WkG-Yq-Cr7"/>
-                <constraint firstItem="pak-Nq-xfN" firstAttribute="top" secondItem="QAB-yG-u9O" secondAttribute="top" constant="-20" id="d6N-Ds-Ts9"/>
-                <constraint firstItem="kJm-bk-h5e" firstAttribute="top" secondItem="pak-Nq-xfN" secondAttribute="bottom" constant="32" id="fTV-xj-igH"/>
-                <constraint firstItem="pak-Nq-xfN" firstAttribute="leading" secondItem="4jy-n4-Oav" secondAttribute="leading" id="inG-pV-oQ6"/>
                 <constraint firstItem="KT8-WB-KwU" firstAttribute="top" secondItem="kJm-bk-h5e" secondAttribute="bottom" constant="32" id="oBr-3m-H7e"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="QAB-yG-u9O"/>
         </view>
     </objects>
-    <resources>
-        <image name="back" width="25" height="25"/>
-    </resources>
 </document>

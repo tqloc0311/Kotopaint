@@ -11,7 +11,7 @@ import Foundation
 
 class SideMenuItem {
     
-    // Properties
+    // MARK: - Properties
     var id = 0
     var title = ""
     var icon = UIImage()

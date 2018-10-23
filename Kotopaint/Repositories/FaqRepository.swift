@@ -14,10 +14,10 @@ class FaqRepository {
     // Static
     static let shared = FaqRepository()
     
-    // Properties
+    // MARK: - Properties
     var storage = [FaqItem]()
     
-    // Methods
+    // MARK: - Methods
     func loadData(completion: @escaping ([FaqItem])->()) {
         completion(loadDummy())
     }
@@ -29,14 +29,8 @@ class FaqRepository {
             let id = item["id"].intValue
             let name = item["name"].stringValue
             let content = item["content"].stringValue
-            result.append(FaqItem(id: id, title: name, content: content))
+            result.append(FaqItem(id: id, question: name, answer: content))
         }
-//        for i in 1...20 {
-//            let id = i
-//            let name = "Question \(i)"
-//            let content = "Answer \(i)"
-//            result.append(FaqItem(id: id, title: name, content: content))
-//        }
         
         return result
     }

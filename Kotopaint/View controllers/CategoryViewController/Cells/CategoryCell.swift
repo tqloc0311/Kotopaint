@@ -13,19 +13,19 @@ import ActionKit
 
 class CategoryCell: UITableViewCell, ReusableView {
 
-    // Properties
+    // MARK: - Properties
     var data = Category()
     var selectAction: (()->())?
     var panAction: ((Bool)->())?
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var highlightView: UIView!
     
-    // Methods
+    // MARK: - Methods
     
     func configure(data: Category) {
         self.data = data
@@ -49,7 +49,7 @@ class CategoryCell: UITableViewCell, ReusableView {
     }
     
     @objc func panHandle(_ recognizer:UIPanGestureRecognizer) {
-        if let f = panAction, let isRight = recognizer.isRight(self) {
+        if let f = panAction, let isRight = recognizer.isLeftToRight(self) {
             f(isRight)
         }
     }
@@ -66,7 +66,7 @@ class CategoryCell: UITableViewCell, ReusableView {
         self.layer.shadowRadius = 4.0
         
         let panGesture = UIPanGestureRecognizer { (gesture) in
-            if let panGesture = gesture as? UIPanGestureRecognizer, let f = self.panAction, let isRight = panGesture.isRight(self) {
+            if let panGesture = gesture as? UIPanGestureRecognizer, let f = self.panAction, let isRight = panGesture.isLeftToRight(self) {
                 f(isRight)
             }
         }

@@ -130,7 +130,7 @@ open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator {
   open func changeTarget(state: HeroTargetState, isDestination: Bool, to view: UIView) {}
 }
 
-// methods for enable/disable the current plugin
+// MARK: - Methods for enable/disable the current plugin
 extension HeroPlugin {
   public static var isEnabled: Bool {
     get {

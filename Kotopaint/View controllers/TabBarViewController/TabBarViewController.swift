@@ -28,16 +28,16 @@ class TabBarViewController: UITabBarController {
         let homeVC = UIViewController.viewControllerFromNib(HomeViewController.self)
         homeVC.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "tab_icon_home").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_home").withRenderingMode(.alwaysOriginal))
         
-        let colorGalleryVC = UIViewController.viewControllerFromNib(ColorGalleryViewController.self)
+        let colorGalleryVC = UIViewController.viewControllerFromNibWithNav(ColorGalleryViewController.self)
         colorGalleryVC.tabBarItem = UITabBarItem(title: "Bảng màu", image: #imageLiteral(resourceName: "tab_icon_colors").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_colors").withRenderingMode(.alwaysOriginal))
 
-        let categoryVC = UIViewController.viewControllerFromNib(CategoryViewController.self)
+        let categoryVC = UIViewController.viewControllerFromNibWithNav(CategoryViewController.self)
         categoryVC.tabBarItem = UITabBarItem(title: "Sản phẩm", image: #imageLiteral(resourceName: "tab_icon_product").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_product").withRenderingMode(.alwaysOriginal))
 
-        let colorSchemeVC = UIViewController.viewControllerFromNib(ColorSchemeViewController.self)
+        let colorSchemeVC = UIViewController.viewControllerFromNibWithNav(ColorSchemeViewController.self)
         colorSchemeVC.tabBarItem = UITabBarItem(title: "Phối màu", image: #imageLiteral(resourceName: "tab_icon_color_mix").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_color_mix").withRenderingMode(.alwaysOriginal))
 
-        let paintCalculatorVC = UIViewController.viewControllerFromNib(PaintCalculatorViewController.self)
+        let paintCalculatorVC = UIViewController.viewControllerFromNibWithNav(PaintCalculatorViewController.self)
         paintCalculatorVC.tabBarItem = UITabBarItem(title: "Tính sơn", image: #imageLiteral(resourceName: "tab_icon_calculator").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_calculator").withRenderingMode(.alwaysOriginal))
         
         viewControllers = [

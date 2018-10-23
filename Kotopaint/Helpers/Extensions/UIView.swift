@@ -23,4 +23,12 @@ extension UIView {
         self.layer.cornerRadius = corner
         self.clipsToBounds = true
     }
+    
+    func dropShadow(cornerRadius: CGFloat = 8) {
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowRadius = cornerRadius
+        self.layer.cornerRadius = cornerRadius
+    }
 }

@@ -12,18 +12,18 @@ import Fakery
 
 class MenuCollectionCell: ScalingCarouselCell, ReusableView {
     
-    // Properties
+    // MARK: - Properties
     var data = HomeMenuItem()
     var shadow = true
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var bottomTitleLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
-    // Methods
+    // MARK: - Methods
     func configure(_ data: HomeMenuItem) {
         self.data = data
         titleLabel.text = data.title

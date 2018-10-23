@@ -8,9 +8,7 @@
 
 import UIKit
 
-class RegisterFormViewController: SideMenuViewController {
-    
-    // MARK: - Constants
+class RegisterFormViewController: BackButtonViewController {
     
     // MARK: - Properties
     
@@ -21,20 +19,15 @@ class RegisterFormViewController: SideMenuViewController {
     @IBOutlet weak var btnSend: UIButton!
     
     // MARK: - Actions
+    @IBAction func send(_ sender: Any) {
+    }
     
     // MARK: - Methods
-    func setupView() {
-        self.navigationItem.title = "Liên hệ mở đại lý"
-        hero.isEnabled = true
-        btnSend.layer.cornerRadius = 8
-//        let panGesture = UIPanGestureRecognizer { (recognizer) in
-//            if let isRight = recognizer.isRight(view), isRight {
-//                back()
-//            }
-//        }//UIPanGestureRecognizer(target: self, action: #selector(panHandle(_:)))
-//        panGesture.delegate = self
-//        self.view.isUserInteractionEnabled = true
-//        self.view.addGestureRecognizer(panGesture)
+    
+    @objc func panHandle(_ recognizer:UIPanGestureRecognizer) {
+        if let isRight = recognizer.isLeftToRight(view), isRight {
+            didBack()
+        }
     }
     
     // MARK: - Navigation
@@ -42,15 +35,34 @@ class RegisterFormViewController: SideMenuViewController {
         
     }
     
-    //  MARK: - View Lifecycle
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        self.navigationItem.title = "Liên hệ mở đại lý"
+        
+        btnSend.layer.cornerRadius = 8
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panHandle(_:)))
+        panGesture.delegate = self
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(panGesture)
+    }
+    
+    // MARK: - Override BackButtonViewController methods
+    override func didBack() {
+        if let tabBarVC = self.tabBarController {
+            tabBarVC.selectedIndex = 0
+        }
+        else if let revealVC = self.revealViewController() as? CustomRevealViewController {
+            revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
+            revealVC.tabBarVC.selectedIndex = 0
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
-// MARK: - UIGestureRecognizerDelegate
 extension RegisterFormViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true

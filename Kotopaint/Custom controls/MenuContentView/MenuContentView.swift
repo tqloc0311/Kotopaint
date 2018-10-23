@@ -10,15 +10,15 @@ import UIKit
 
 class MenuContentView: UIView {
     
-    // Properties
+    // MARK: - Properties
     var data = MenuContent()
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
 //    @IBOutlet weak var lblTitleHeight: NSLayoutConstraint!
     
-    // Methods
+    // MARK: - Methods
     func configure(_ data: MenuContent) {
         self.data = data
         imageView.image = data.image

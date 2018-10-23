@@ -26,9 +26,27 @@ extension UITableView {
         register(UINib(nibName: nibName, bundle: bundle), forCellReuseIdentifier: identifier)
     }
     
-    // DequeueReusableCell with identifier
     func dequeueReusableCell<T: UITableViewCell>(_ type: T.Type) -> T where T: ReusableView {
         guard let cell =  self.dequeueReusableCell(withIdentifier: T.identifier) as? T else {
+            fatalError("Could not dequeue cell with identifier: \(T.identifier)")
+        }
+        return cell
+    }
+    
+    func registerForHeaderFooter<T: UITableViewHeaderFooterView>(nibName name: T.Type, atBundle bundleClass: AnyClass? = nil) where T: ReusableView {
+        let identifier = T.identifier
+        let nibName = T.nibName
+        
+        var bundle: Bundle? = nil
+        if let bundleName = bundleClass {
+            bundle = Bundle(for: bundleName)
+        }
+        register(UINib(nibName: nibName, bundle: bundle), forHeaderFooterViewReuseIdentifier: identifier)
+    }
+    
+    func dequeueHeaderFooterReusableCell<T: UITableViewHeaderFooterView>(_ type: T.Type) -> T where T: ReusableView {
+        
+        guard let cell =  self.dequeueReusableHeaderFooterView(withIdentifier: T.identifier) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.identifier)")
         }
         return cell

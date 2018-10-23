@@ -8,35 +8,27 @@
 
 import UIKit
 
-class PaintCalculatorViewController: SideMenuViewController {
+class PaintCalculatorViewController: BackButtonViewController {
     
     //  MARK: - Constants
     
     //  MARK: - Properties
     
     //  MARK: - Outlets
-    @IBOutlet weak var backButton: ImageButton!
     
     //  MARK: - Actions
     
     //  MARK: - Methods
     func setupView() {
-        backButton.touchUpInsideAction = {
-            self.back()
-        }
         
         let panGesture = UIPanGestureRecognizer { (recognizer) in
-            if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isRight(self.view), isRight {
-                self.back()
+            if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
+                self.didBack()
             }
         }
         panGesture.delegate = self
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(panGesture)
-    }
-    
-    func back() {
-        self.tabBarController?.selectedIndex = 0
     }
     
     //  MARK: - Navigation
@@ -48,7 +40,22 @@ class PaintCalculatorViewController: SideMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Phần mềm tính sơn"
         setupView()
+    }
+    
+    // MARK: - Override BackButtonViewController methods
+    override func didBack() {
+        if let tabBarVC = self.tabBarController {
+            tabBarVC.selectedIndex = 0
+        }
+        else if let revealVC = self.revealViewController() as? CustomRevealViewController {
+            revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
+            revealVC.tabBarVC.selectedIndex = 0
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

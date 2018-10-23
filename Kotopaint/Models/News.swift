@@ -11,7 +11,7 @@ import Foundation
 
 class News {
     
-    // Properties
+    // MARK: - Properties
     var id = 0
     var name = ""
     var shortContent = ""

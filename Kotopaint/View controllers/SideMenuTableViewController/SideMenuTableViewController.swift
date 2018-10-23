@@ -38,8 +38,10 @@ class SideMenuTableViewController: UIViewController {
         }
         
         revealVC.tabBarVC.selectedIndex = 0
-        (revealVC.tabBarVC.viewControllers![0] as! UINavigationController).pushViewController(vc, animated: true)
-        revealVC.revealToggle(animated: false)
+        (revealVC.tabBarVC.viewControllers![0] as! HomeViewController).presentModalViewController(destination: vc) {
+            revealVC.revealToggle(animated: false)
+        }
+        
     }
     
     //  MARK: - Navigation
@@ -77,8 +79,9 @@ extension SideMenuTableViewController: UITableViewDataSource {
                 revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
                 break
             case 1:
+                let vc = UIViewController.viewControllerFromNibWithNav(RegisterFormViewController.self)
                 revealVC.tabBarVC.selectedIndex = 0
-                revealVC.pushFrontViewController(UIViewController.viewControllerFromNibWithNav(RegisterFormViewController.self), animated: true)
+                revealVC.pushFrontViewController(vc, animated: true)
                 break
             case 2:
                 revealVC.tabBarVC.selectedIndex = 2
@@ -97,11 +100,17 @@ extension SideMenuTableViewController: UITableViewDataSource {
                 revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
                 break
             case 6:
-                break
+                let vc = UIViewController.viewControllerFromNibWithNav(PhongThuyViewController.self)
+                revealVC.tabBarVC.selectedIndex = 0
+                revealVC.pushFrontViewController(vc, animated: true)
             case 7:
-                break
+                let vc = UIViewController.viewControllerFromNibWithNav(FAQViewController.self)
+                revealVC.tabBarVC.selectedIndex = 0
+                revealVC.pushFrontViewController(vc, animated: true)
             case 8:
-                self.goToViewController(UIViewController.viewControllerFromNib(ContactViewController.self))
+                let vc = UIViewController.viewControllerFromNibWithNav(ContactViewController.self)
+                revealVC.tabBarVC.selectedIndex = 0
+                revealVC.pushFrontViewController(vc, animated: true)
                 break
             default:
                 break

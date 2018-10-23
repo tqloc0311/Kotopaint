@@ -9,7 +9,7 @@ import Foundation
 
 class MenuContent {
     
-    // Properties
+    // MARK: - Properties
     var id = 0
     var title = ""
     var image = UIImage()
@@ -17,7 +17,7 @@ class MenuContent {
     var imageHeroID = ""
     var selfHeroID = ""
     
-    // Methods
+    // MARK: - Methods
     func getView(width: CGFloat, height: CGFloat) -> MenuContentView {
         return getView(x: 0, y: 0, width: width, height: height)
     }

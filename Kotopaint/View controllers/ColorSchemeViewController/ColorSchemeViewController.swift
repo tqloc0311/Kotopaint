@@ -7,38 +7,63 @@
 //
 
 import UIKit
+import ActionKit
 
-class ColorSchemeViewController: SideMenuViewController {
+class ColorSchemeViewController: BackButtonViewController {
     
     //  MARK: - Constants
     
     //  MARK: - Properties
     
     //  MARK: - Outlets
-    @IBOutlet weak var backButton: ImageButton!
-    @IBOutlet weak var btnNoiThat: ViewButton!
-    @IBOutlet weak var btnNgoaiThat: ViewButton!
+    @IBOutlet weak var noiThatButton: ViewButton!
+    @IBOutlet weak var ngoaiThatButton: ViewButton!
     
     //  MARK: - Actions
     
     //  MARK: - Methods
-    func setupView() {
-        backButton.touchUpInsideAction = {
-            self.back()
-        }
-        
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
-            if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isRight(self.view), isRight {
-                self.back()
+    func addPanGesture(to view: UIView, rightToLeftAction: (()->())? = nil) {
+        let panGesture = UIPanGestureRecognizer { [unowned self] (recognizer) in
+            if recognizer.state == .ended {
+                if let panGesture = recognizer as? UIPanGestureRecognizer, let isLeftToRight = panGesture.isLeftToRight(view) {
+                    if isLeftToRight {
+                        self.didBack()
+                    }
+                    else {
+                        rightToLeftAction?()
+                    }
+                    
+                }
             }
+            
         }
         panGesture.delegate = self
-        self.view.isUserInteractionEnabled = true
-        self.view.addGestureRecognizer(panGesture)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(panGesture)
     }
     
-    func back() {
-        self.tabBarController?.selectedIndex = 0
+    func goToNgoaiThat() {
+        self.navigationController?.pushViewControllerFromNib(NgoaiThatViewController.self)
+    }
+    
+    func goToNoiThat() {
+        self.navigationController?.pushViewControllerFromNib(NoiThatViewController.self)
+    }
+    
+    func setupView() {
+        addPanGesture(to: self.view)
+        
+        addPanGesture(to: ngoaiThatButton) { [unowned self] in
+            self.goToNgoaiThat()
+        }
+        ngoaiThatButton.dropShadow()
+        ngoaiThatButton.touchUpInsideAction = goToNgoaiThat
+        
+        addPanGesture(to: noiThatButton) { [unowned self] in
+            self.goToNoiThat()
+        }
+        noiThatButton.dropShadow()
+        noiThatButton.touchUpInsideAction = goToNoiThat
     }
     
     //  MARK: - Navigation
@@ -50,7 +75,22 @@ class ColorSchemeViewController: SideMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Phần mềm phối màu"
         setupView()
+    }
+    
+    // MARK: - Override BackButtonViewController methods
+    override func didBack() {
+        if let tabBarVC = self.tabBarController {
+            tabBarVC.selectedIndex = 0
+        }
+        else if let revealVC = self.revealViewController() as? CustomRevealViewController {
+            revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
+            revealVC.tabBarVC.selectedIndex = 0
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

@@ -14,10 +14,10 @@ class NewsRepository {
     // Static
     static let shared = NewsRepository()
     
-    // Properties
+    // MARK: - Properties
     var storage = [News]()
     
-    // Methods
+    // MARK: - Methods
     func loadData(completion: @escaping ([News])->()) {
         storage = loadDummy()
         completion(storage)

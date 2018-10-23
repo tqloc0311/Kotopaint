@@ -35,7 +35,7 @@ class StarterViewController: UIViewController {
         
         let group = DispatchGroup()
         group.enter()
-        UserRepository.shared.login { (_) in
+        UserRepository.shared.getToken { (_) in
             group.leave()
         }
 //        group.enter()
@@ -43,23 +43,19 @@ class StarterViewController: UIViewController {
 //            group.leave()
 //        }
         
-//        group.enter()
-//        NewsRepository.shared.loadData { (_) in
-//            group.leave()
-//        }
 //
-//        group.enter()
-//        executeOnBackground(task: {
-//            ImageRepository.shared.loadData()
-//        }, completion: {
-//            group.leave()
-//        }, delay: 0)
-//        group.enter()
-//        executeOnBackground(task: {
-//            VideoRepository.shared.loadData()
-//        }, completion: {
-//            group.leave()
-//        }, delay: 0)
+        group.enter()
+        executeOnBackground(task: {
+            ImageRepository.shared.loadData()
+        }, completion: {
+            group.leave()
+        }, delay: 0)
+        group.enter()
+        executeOnBackground(task: {
+            VideoRepository.shared.loadData()
+        }, completion: {
+            group.leave()
+        }, delay: 0)
         
         group.notify(queue: .main) {
             self.presentModalViewControllerFromStoryBoard(destinationClass: CustomRevealViewController.self)

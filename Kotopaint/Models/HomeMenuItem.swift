@@ -9,7 +9,7 @@
 import Foundation
 
 class HomeMenuItem {
-    // Properties
+    // MARK: - Properties
     var id = 0
     var title = ""
     var subTitle = ""

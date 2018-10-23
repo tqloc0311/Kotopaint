@@ -9,7 +9,7 @@
 import UIKit
 import ScalingCarousel
 
-class HomeViewController: SideMenuViewController {
+class HomeViewController: UIViewController {
     
     //  MARK: - Constants
     
@@ -104,10 +104,12 @@ extension HomeViewController: UICollectionViewDataSource {
                 self.tabBarController?.selectedIndex = 2
                 break
             case 2:
-//                self.performSegue(withIdentifier: "idea", sender: nil)
+                let vc = UIViewController.viewControllerFromNibWithNav(IdeaViewController.self)
+                self.presentModalViewController(destination: vc)
                 break
             case 3:
-//                self.performSegue(withIdentifier: "video", sender: nil)
+                let vc = UIViewController.viewControllerFromNibWithNav(VideoListViewController.self)
+                self.presentModalViewController(destination: vc)
                 break
             case 4:
                 self.tabBarController?.selectedIndex = 3
@@ -116,10 +118,12 @@ extension HomeViewController: UICollectionViewDataSource {
                 self.tabBarController?.selectedIndex = 4
                 break
             case 6:
-//                self.performSegue(withIdentifier: "phongthuy", sender: nil)
+                let vc = UIViewController.viewControllerFromNibWithNav(PhongThuyViewController.self)
+                self.presentModalViewController(destination: vc)
                 break
             case 7:
-                self.navigationController?.pushViewController(UIViewController.viewControllerFromNib(ContactViewController.self), animated: true)
+                let vc = UIViewController.viewControllerFromNibWithNav(ContactViewController.self)
+                self.presentModalViewController(destination: vc)
                 break
             default:
                 break

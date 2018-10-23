@@ -10,19 +10,19 @@ import Foundation
 
 class FaqItem {
     
-    // Properties
+    // MARK: - Properties
     var id = 0
-    var title = ""
-    var content = ""
+    var question = ""
+    var answer = ""
     
     // Constructors
     init() {
         
     }
     
-    init(id: Int, title: String, content: String) {
+    init(id: Int, question: String, answer: String) {
         self.id = id
-        self.title = title
-        self.content = content
+        self.question = question
+        self.answer = answer
     }
 }

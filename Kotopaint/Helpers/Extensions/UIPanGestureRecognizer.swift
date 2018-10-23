@@ -10,9 +10,10 @@ import Foundation
 
 extension UIPanGestureRecognizer {
     
-    func isRight(_ theViewYouArePassing: UIView) -> Bool? {
+    func isLeftToRight(_ theViewYouArePassing: UIView) -> Bool? {
         let detectionLimit: CGFloat = 1000
         let _velocity : CGPoint = velocity(in: theViewYouArePassing)
+        
         //        print("velocity: \(_velocity)")
         if _velocity.x > detectionLimit {
             //            print("Gesture went right")

@@ -10,15 +10,15 @@ import UIKit
 
 class MenuCell: UITableViewCell, ReusableView {
     
-    // Properties
+    // MARK: - Properties
     var menuItem = SideMenuItem()
     var selectAction: (()->())?
 
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var lblMenuName: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
     
-    // Methods
+    // MARK: - Methods
     func configure(data: SideMenuItem) {
         self.menuItem = data
         lblMenuName.text = data.title

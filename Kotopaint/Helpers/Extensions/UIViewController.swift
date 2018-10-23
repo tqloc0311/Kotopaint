@@ -48,10 +48,10 @@ extension UIViewController {
         self.presentModalViewController(destination: vc)
     }
     
-    func presentModalViewController(destination : UIViewController) {
+    func presentModalViewController(destination : UIViewController, completion: (() -> Void)? = nil) {
         
         destination.modalTransitionStyle = .crossDissolve
-        self.present(destination, animated: true, completion: nil)
+        self.present(destination, animated: true, completion: completion)
     }
     
     static func viewControllerFromNib<T: UIViewController>(_ : T.Type) -> T {

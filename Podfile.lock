@@ -15,12 +15,13 @@ PODS:
   - ImageSlideshow/Core (1.7.0)
   - IQKeyboardManagerSwift (6.2.0)
   - Kingfisher (4.10.0)
+  - LUExpandableTableView (4.0.0)
   - NVActivityIndicatorView (4.4.0):
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
-  - Pastel (0.5.1)
   - ScalingCarousel (2.4.1)
   - SwiftyJSON (4.2.0)
+  - TRVideoView (0.1.4)
 
 DEPENDENCIES:
   - ActionKit
@@ -32,10 +33,11 @@ DEPENDENCIES:
   - ImageSlideshow
   - IQKeyboardManagerSwift
   - Kingfisher
+  - LUExpandableTableView
   - NVActivityIndicatorView
-  - Pastel
   - ScalingCarousel
   - SwiftyJSON
+  - TRVideoView
 
 SPEC CHECKSUMS:
   ActionKit: 1e1b696b6e1a54e7999d8c0f1d7176b2fee2fa4d
@@ -47,11 +49,12 @@ SPEC CHECKSUMS:
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  LUExpandableTableView: 1227ffc82a40ce199176b51e3e34472efce53acc
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
-  Pastel: b3dd5b8d612dac06ae7c63c97c45c900829bc139
   ScalingCarousel: 2f8d7d7dc02a4aff33ad0ca4148f9b27b2c8f91c
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TRVideoView: 00e2eaed3f19196956bb1ec61c875df6c0ea84dc
 
-PODFILE CHECKSUM: 5e449b5356ef2cdfe28a6a900817e1aee9d80a4e
+PODFILE CHECKSUM: a2e7e17300d0071808b6f7aeb48009a044e5c647
 
 COCOAPODS: 1.4.0

@@ -10,7 +10,7 @@ import Foundation
 
 class VideoModel {
     
-    // Properties
+    // MARK: - Properties
     var id = 0
     var url = ""
     var title = ""

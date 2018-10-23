@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryViewController: SideMenuViewController {
+class CategoryViewController: BackButtonViewController {
     
     //  MARK: - Constants
     
@@ -23,29 +23,21 @@ class CategoryViewController: SideMenuViewController {
     }()
     
     //  MARK: - Outlets
-    @IBOutlet weak var backButton: ImageButton!
     @IBOutlet weak var tableView: SDStateTableView!
     
     //  MARK: - Actions
     
     //  MARK: - Methods
     func setupView() {
-        backButton.touchUpInsideAction = {
-            self.back()
-        }
         
         let panGesture = UIPanGestureRecognizer { (recognizer) in
-            if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isRight(self.view), isRight {
-                self.back()
+            if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
+                self.didBack()
             }
         }
         panGesture.delegate = self
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(panGesture)
-    }
-    
-    func back() {
-        self.tabBarController?.selectedIndex = 0
     }
     
     func configTableView() {
@@ -105,9 +97,25 @@ class CategoryViewController: SideMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Tất cả sản phẩm"
+        
         setupView()
         configTableView()
         loadData()
+    }
+    
+    // MARK: - Override BackButtonViewController methods
+    override func didBack() {
+        if let tabBarVC = self.tabBarController {
+            tabBarVC.selectedIndex = 0
+        }
+        else if let revealVC = self.revealViewController() as? CustomRevealViewController {
+            revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
+            revealVC.tabBarVC.selectedIndex = 0
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -127,27 +135,6 @@ extension CategoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
-//            let cell = tableView.dequeueReusableCell(AllCategoryCell.self)
-//            return cell
-//        }
-//        else {
-//            let cell = tableView.dequeueReusableCell(CategoryCell.self)
-//            let item = dataSource[indexPath.row - 1]
-//            cell.configure(data: item)
-//            cell.selectAction = {
-//                self.selectCell(cell, at: indexPath)
-//            }
-//            cell.panAction = { isRight in
-//                if isRight {
-//                    self.back()
-//                }
-//                else {
-//                    self.selectCell(cell, at: indexPath)
-//                }
-//            }
-//            return cell
-//        }
         
         let cell = tableView.dequeueReusableCell(CategoryCell.self)
         let item = dataSource[indexPath.row]
@@ -157,7 +144,7 @@ extension CategoryViewController: UITableViewDataSource {
         }
         cell.panAction = { isRight in
             if isRight {
-                self.back()
+                self.didBack()
             }
             else {
                 self.selectCell(cell, at: indexPath)

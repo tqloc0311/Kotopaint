@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewController" customModule="Kotopaint" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="INt-K2-VNK" id="c4Z-O3-ms4"/>
                 <outlet property="tableView" destination="NMY-ua-9vq" id="1bd-5T-5hD"/>
                 <outlet property="view" destination="0dw-Bi-Ui7" id="pkG-H1-1Sa"/>
             </connections>
@@ -22,71 +21,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-8c-ztS" customClass="CustomNavigationBar" customModule="Kotopaint" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tất cả sản phẩm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6W9-No-HIg">
-                            <rect key="frame" x="48" y="24" width="279" height="32"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="productTitle"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="INt-K2-VNK" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
-                            <rect key="frame" x="8" y="24" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="INt-K2-VNK" secondAttribute="height" id="vER-fq-u7n"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jlH-Lk-fkl" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
-                            <rect key="frame" x="335" y="24" width="32" height="32"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="jlH-Lk-fkl" secondAttribute="height" id="gky-Vw-dtC"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="INt-K2-VNK" firstAttribute="leading" secondItem="cVA-8c-ztS" secondAttribute="leading" constant="8" id="2EY-tL-RzA"/>
-                        <constraint firstAttribute="bottom" secondItem="6W9-No-HIg" secondAttribute="bottom" constant="8" id="LNl-Uo-rnk"/>
-                        <constraint firstAttribute="trailing" secondItem="jlH-Lk-fkl" secondAttribute="trailing" constant="8" id="MS4-gg-Pd1"/>
-                        <constraint firstItem="6W9-No-HIg" firstAttribute="leading" secondItem="INt-K2-VNK" secondAttribute="trailing" constant="8" id="MdF-AB-YcN"/>
-                        <constraint firstItem="6W9-No-HIg" firstAttribute="top" secondItem="cVA-8c-ztS" secondAttribute="top" constant="24" id="QLJ-IL-QOV"/>
-                        <constraint firstItem="INt-K2-VNK" firstAttribute="top" secondItem="6W9-No-HIg" secondAttribute="top" id="UBL-oa-19b"/>
-                        <constraint firstItem="jlH-Lk-fkl" firstAttribute="top" secondItem="6W9-No-HIg" secondAttribute="top" id="Uhc-h8-5Q7"/>
-                        <constraint firstAttribute="height" constant="64" id="gID-Au-J1c"/>
-                        <constraint firstItem="jlH-Lk-fkl" firstAttribute="leading" secondItem="6W9-No-HIg" secondAttribute="trailing" constant="8" id="llj-S8-QEP"/>
-                        <constraint firstItem="6W9-No-HIg" firstAttribute="centerX" secondItem="cVA-8c-ztS" secondAttribute="centerX" id="lut-ed-cN9"/>
-                        <constraint firstItem="jlH-Lk-fkl" firstAttribute="bottom" secondItem="6W9-No-HIg" secondAttribute="bottom" id="y4X-pM-xLk"/>
-                    </constraints>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NMY-ua-9vq" customClass="SDStateTableView" customModule="Kotopaint" customModuleProvider="target">
-                    <rect key="frame" x="8" y="72" width="359" height="587"/>
+                    <rect key="frame" x="8" y="28" width="359" height="631"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="cVA-8c-ztS" firstAttribute="leading" secondItem="yiK-DV-u7w" secondAttribute="leading" id="HMi-Md-uUx"/>
-                <constraint firstItem="NMY-ua-9vq" firstAttribute="leading" secondItem="yiK-DV-u7w" secondAttribute="leading" constant="8" id="LsE-bG-Rvu"/>
-                <constraint firstItem="NMY-ua-9vq" firstAttribute="top" secondItem="cVA-8c-ztS" secondAttribute="bottom" constant="8" id="RcE-3h-74f"/>
-                <constraint firstItem="yiK-DV-u7w" firstAttribute="trailing" secondItem="NMY-ua-9vq" secondAttribute="trailing" constant="8" id="a8h-bd-CKA"/>
-                <constraint firstItem="yiK-DV-u7w" firstAttribute="trailing" secondItem="cVA-8c-ztS" secondAttribute="trailing" id="fyR-mT-PYY"/>
-                <constraint firstItem="cVA-8c-ztS" firstAttribute="top" secondItem="yiK-DV-u7w" secondAttribute="top" constant="-20" id="hE4-W9-cK1"/>
-                <constraint firstItem="yiK-DV-u7w" firstAttribute="bottom" secondItem="NMY-ua-9vq" secondAttribute="bottom" constant="8" id="tHs-7I-Wyg"/>
+                <constraint firstItem="NMY-ua-9vq" firstAttribute="leading" secondItem="yiK-DV-u7w" secondAttribute="leading" constant="8" id="8VJ-RZ-Nuh"/>
+                <constraint firstItem="yiK-DV-u7w" firstAttribute="trailing" secondItem="NMY-ua-9vq" secondAttribute="trailing" constant="8" id="aM3-ZL-cOl"/>
+                <constraint firstItem="yiK-DV-u7w" firstAttribute="bottom" secondItem="NMY-ua-9vq" secondAttribute="bottom" constant="8" id="sun-ff-ZiE"/>
+                <constraint firstItem="NMY-ua-9vq" firstAttribute="top" secondItem="yiK-DV-u7w" secondAttribute="top" constant="8" id="vUD-nB-9R7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="yiK-DV-u7w"/>
         </view>
     </objects>
-    <resources>
-        <image name="back" width="25" height="25"/>
-    </resources>
 </document>

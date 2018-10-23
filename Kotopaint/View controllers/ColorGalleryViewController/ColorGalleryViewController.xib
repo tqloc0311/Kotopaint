@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorGalleryViewController" customModule="Kotopaint" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="VNo-jt-Cya" id="ltY-E8-eTI"/>
                 <outlet property="view" destination="3cx-41-MVf" id="znv-fi-MJq"/>
             </connections>
         </placeholder>
@@ -21,71 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewP-AQ-xZG" customClass="CustomNavigationBar" customModule="Kotopaint" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ sưu tập màu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mI-sg-ALT">
-                            <rect key="frame" x="48" y="24" width="279" height="32"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="colorTitle"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="VNo-jt-Cya" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
-                            <rect key="frame" x="8" y="24" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="VNo-jt-Cya" secondAttribute="height" id="Qau-HD-xM9"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UrA-UO-CUU" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
-                            <rect key="frame" x="335" y="24" width="32" height="32"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="UrA-UO-CUU" secondAttribute="height" id="t1V-T4-uMm"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="7mI-sg-ALT" firstAttribute="centerX" secondItem="ewP-AQ-xZG" secondAttribute="centerX" id="0RC-7l-5ld"/>
-                        <constraint firstAttribute="trailing" secondItem="UrA-UO-CUU" secondAttribute="trailing" constant="8" id="0tq-IO-opy"/>
-                        <constraint firstAttribute="height" constant="64" id="ExN-Op-i0c"/>
-                        <constraint firstItem="UrA-UO-CUU" firstAttribute="top" secondItem="7mI-sg-ALT" secondAttribute="top" id="PYE-xc-sNS"/>
-                        <constraint firstItem="UrA-UO-CUU" firstAttribute="bottom" secondItem="7mI-sg-ALT" secondAttribute="bottom" id="QQq-WQ-5u5"/>
-                        <constraint firstAttribute="bottom" secondItem="7mI-sg-ALT" secondAttribute="bottom" constant="8" id="RE3-7I-ZDf"/>
-                        <constraint firstItem="VNo-jt-Cya" firstAttribute="leading" secondItem="ewP-AQ-xZG" secondAttribute="leading" constant="8" id="RRs-Nh-PD1"/>
-                        <constraint firstItem="7mI-sg-ALT" firstAttribute="top" secondItem="ewP-AQ-xZG" secondAttribute="top" constant="24" id="f19-ic-SMe"/>
-                        <constraint firstItem="VNo-jt-Cya" firstAttribute="top" secondItem="7mI-sg-ALT" secondAttribute="top" id="f1H-Ca-bV1"/>
-                        <constraint firstItem="7mI-sg-ALT" firstAttribute="leading" secondItem="VNo-jt-Cya" secondAttribute="trailing" constant="8" id="iAa-1k-VWU"/>
-                        <constraint firstItem="UrA-UO-CUU" firstAttribute="leading" secondItem="7mI-sg-ALT" secondAttribute="trailing" constant="8" id="s5h-QP-eSn"/>
-                    </constraints>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-t1-4Bg">
-                    <rect key="frame" x="8" y="72" width="359" height="587"/>
+                    <rect key="frame" x="8" y="28" width="359" height="631"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="hAK-Bi-lwJ" firstAttribute="bottom" secondItem="ixb-t1-4Bg" secondAttribute="bottom" constant="8" id="IKp-zz-cOY"/>
-                <constraint firstItem="hAK-Bi-lwJ" firstAttribute="trailing" secondItem="ewP-AQ-xZG" secondAttribute="trailing" id="Q6x-Yt-edp"/>
-                <constraint firstItem="ewP-AQ-xZG" firstAttribute="top" secondItem="hAK-Bi-lwJ" secondAttribute="top" constant="-20" id="RS0-kW-pL1"/>
-                <constraint firstItem="ewP-AQ-xZG" firstAttribute="leading" secondItem="hAK-Bi-lwJ" secondAttribute="leading" id="S5O-Ad-4vB"/>
                 <constraint firstItem="ixb-t1-4Bg" firstAttribute="leading" secondItem="hAK-Bi-lwJ" secondAttribute="leading" constant="8" id="Zqj-zm-HdS"/>
-                <constraint firstItem="ixb-t1-4Bg" firstAttribute="top" secondItem="ewP-AQ-xZG" secondAttribute="bottom" constant="8" id="nQ8-pf-G7n"/>
                 <constraint firstItem="hAK-Bi-lwJ" firstAttribute="trailing" secondItem="ixb-t1-4Bg" secondAttribute="trailing" constant="8" id="uPK-pO-8tf"/>
+                <constraint firstItem="ixb-t1-4Bg" firstAttribute="top" secondItem="hAK-Bi-lwJ" secondAttribute="top" constant="8" id="wdo-Ap-c6h"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="hAK-Bi-lwJ"/>
         </view>
     </objects>
-    <resources>
-        <image name="back" width="25" height="25"/>
-    </resources>
 </document>
