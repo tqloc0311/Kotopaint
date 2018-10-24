@@ -27,7 +27,8 @@ class NoiThatViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { [unowned self] (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -46,7 +47,8 @@ class NoiThatViewController: BackButtonViewController {
     
     func setupSegment() {
         for tab in viewTabs {
-            tab.touchUpInsideAction = { [unowned self] in
+            tab.touchUpInsideAction = { [weak self] in
+                guard let self = self else { return }
                 let index = tab.tag - 1001
                 if self.selectedTab == index {return}
                 self.selectedTab = index
@@ -143,10 +145,12 @@ extension NoiThatViewController: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(ImageCollectionCell.self, indexPath: indexPath)
         
         cell.data = dataSource[indexPath.item]
-        cell.imgvPhoto.touchUpInsideAction = { [unowned self] in
+        cell.imgvPhoto.touchUpInsideAction = { [weak self] in
+            guard let self = self else { return }
             self.goNext(model: cell.data)
         }
-        cell.panAction = { [unowned self] isRight in
+        cell.panAction = { [weak self] isRight in
+            guard let self = self else { return }
             if isRight {
                 self.didBack()
             }

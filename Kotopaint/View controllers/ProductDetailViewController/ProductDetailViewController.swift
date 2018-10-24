@@ -71,7 +71,8 @@ class ProductDetailViewController: BackButtonViewController {
     }
     
     func setupSlideshow(urls: [URL]) {
-        DispatchQueue.global().async { [unowned self] in
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
             self.source.removeAll()
             if urls.count == 0 {
                 self.source.append(ImageSource(image: #imageLiteral(resourceName: "no-image")))
@@ -89,7 +90,8 @@ class ProductDetailViewController: BackButtonViewController {
                 }
             }
             
-            DispatchQueue.main.async { [unowned self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.previousButton.isHidden = false
                 self.nextButton.isHidden = false
                 if self.source.count == 1 {

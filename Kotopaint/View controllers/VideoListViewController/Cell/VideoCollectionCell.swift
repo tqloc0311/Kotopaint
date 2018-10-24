@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoCollectionCell: UICollectionViewCell {
+class VideoCollectionCell: UICollectionViewCell, ReusableView {
     
     var data = VideoModel()
     var panAction: ((Bool)->())?
@@ -48,7 +48,8 @@ class VideoCollectionCell: UICollectionViewCell {
             })
         }
         
-        imgvPhoto.touchUpInsideAction = {
+        imgvPhoto.touchUpInsideAction = { [weak self] in
+            guard let self = self else { return }
             if let f = self.selectAction {
                 f()
             }

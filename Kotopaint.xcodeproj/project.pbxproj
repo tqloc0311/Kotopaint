@@ -138,7 +138,6 @@
 		38CBA705216DD3CF007C5824 /* PaintCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA703216DD3CF007C5824 /* PaintCalculatorViewController.swift */; };
 		38CBA706216DD3CF007C5824 /* PaintCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA704216DD3CF007C5824 /* PaintCalculatorViewController.xib */; };
 		38CBA756216DEED6007C5824 /* MenuContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA74C216DEED6007C5824 /* MenuContent.swift */; };
-		38CBA757216DEED6007C5824 /* ProductFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA74D216DEED6007C5824 /* ProductFunction.swift */; };
 		38CBA758216DEED6007C5824 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA74E216DEED6007C5824 /* VideoModel.swift */; };
 		38CBA759216DEED6007C5824 /* FaqItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA74F216DEED6007C5824 /* FaqItem.swift */; };
 		38CBA75A216DEED6007C5824 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA750216DEED6007C5824 /* ImageModel.swift */; };
@@ -163,6 +162,15 @@
 		38FB4049216F2700008238F5 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB4048216F2700008238F5 /* Globals.swift */; };
 		38FB404C216F28D6008238F5 /* SideMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB404A216F28D5008238F5 /* SideMenuRepository.swift */; };
 		38FB404D216F28D6008238F5 /* HomeMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB404B216F28D6008238F5 /* HomeMenuRepository.swift */; };
+		4A09197A21809C1C006AAB9A /* ColorGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197921809C1C006AAB9A /* ColorGallery.swift */; };
+		4A09197C21809CA9006AAB9A /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197B21809CA9006AAB9A /* ColorItem.swift */; };
+		4A09197E21809FEF006AAB9A /* ColorGalleryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */; };
+		4A0919812180A3D9006AAB9A /* ColorGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197F2180A3D8006AAB9A /* ColorGalleryCollectionViewCell.swift */; };
+		4A0919822180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919802180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib */; };
+		4A0919852180A3E8006AAB9A /* ColorItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0919832180A3E8006AAB9A /* ColorItemCollectionViewCell.swift */; };
+		4A0919862180A3E8006AAB9A /* ColorItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */; };
+		4A09198A2180B6EB006AAB9A /* ColorItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */; };
+		4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */; };
 		76418DEB8632DA5C27D4F0EA /* Pods_Kotopaint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6C1E8AC381FF926F5BC386 /* Pods_Kotopaint.framework */; };
 /* End PBXBuildFile section */
 
@@ -303,7 +311,6 @@
 		38CBA703216DD3CF007C5824 /* PaintCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorViewController.swift; sourceTree = "<group>"; };
 		38CBA704216DD3CF007C5824 /* PaintCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorViewController.xib; sourceTree = "<group>"; };
 		38CBA74C216DEED6007C5824 /* MenuContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContent.swift; sourceTree = "<group>"; };
-		38CBA74D216DEED6007C5824 /* ProductFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductFunction.swift; sourceTree = "<group>"; };
 		38CBA74E216DEED6007C5824 /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		38CBA74F216DEED6007C5824 /* FaqItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqItem.swift; sourceTree = "<group>"; };
 		38CBA750216DEED6007C5824 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
@@ -328,6 +335,15 @@
 		38FB4048216F2700008238F5 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		38FB404A216F28D5008238F5 /* SideMenuRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuRepository.swift; sourceTree = "<group>"; };
 		38FB404B216F28D6008238F5 /* HomeMenuRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuRepository.swift; sourceTree = "<group>"; };
+		4A09197921809C1C006AAB9A /* ColorGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorGallery.swift; path = "/Users/LocTQ/Desktop/Loc/My freelance/Kotopaint/new_proj/Kotopaint/Kotopaint/Models/ColorGallery.swift"; sourceTree = "<absolute>"; };
+		4A09197B21809CA9006AAB9A /* ColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
+		4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryRepository.swift; sourceTree = "<group>"; };
+		4A09197F2180A3D8006AAB9A /* ColorGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4A0919802180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorGalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		4A0919832180A3E8006AAB9A /* ColorItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItemViewController.swift; sourceTree = "<group>"; };
+		4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemViewController.xib; sourceTree = "<group>"; };
 		A88E45142A40C66FC6ED4B42 /* Pods-Kotopaint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kotopaint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kotopaint/Pods-Kotopaint.release.xcconfig"; sourceTree = "<group>"; };
 		CB6C1E8AC381FF926F5BC386 /* Pods_Kotopaint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kotopaint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF14B99B7F5C4D7B29FB22FE /* Pods-Kotopaint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kotopaint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kotopaint/Pods-Kotopaint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -718,6 +734,7 @@
 				38CBA6EE216DD045007C5824 /* TabBarViewController */,
 				38CBA6F8216DD369007C5824 /* HomeViewController */,
 				38CBA6FD216DD38B007C5824 /* ColorGalleryViewController */,
+				4A09198C2180B6EF006AAB9A /* ColorItemViewController */,
 				38CBA6F3216DD342007C5824 /* CategoryViewController */,
 				389428C421802E0A007DDDF3 /* ProductViewController */,
 				389428C921802E23007DDDF3 /* ProductDetailViewController */,
@@ -832,6 +849,7 @@
 		38CBA6FD216DD38B007C5824 /* ColorGalleryViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4A0919872180A401006AAB9A /* Cells */,
 				38CBA6F9216DD388007C5824 /* ColorGalleryViewController.swift */,
 				38CBA6FA216DD388007C5824 /* ColorGalleryViewController.xib */,
 			);
@@ -859,8 +877,9 @@
 		38CBA74B216DEED6007C5824 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4A09197921809C1C006AAB9A /* ColorGallery.swift */,
+				4A09197B21809CA9006AAB9A /* ColorItem.swift */,
 				38CBA74C216DEED6007C5824 /* MenuContent.swift */,
-				38CBA74D216DEED6007C5824 /* ProductFunction.swift */,
 				38CBA74E216DEED6007C5824 /* VideoModel.swift */,
 				38CBA74F216DEED6007C5824 /* FaqItem.swift */,
 				38CBA750216DEED6007C5824 /* ImageModel.swift */,
@@ -919,8 +938,37 @@
 				38FB403D216F26CC008238F5 /* CategoryRepository.swift */,
 				38FB403E216F26CC008238F5 /* ImageRepository.swift */,
 				38FB4046216F26D7008238F5 /* UserRepository.swift */,
+				4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4A0919872180A401006AAB9A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A09197F2180A3D8006AAB9A /* ColorGalleryCollectionViewCell.swift */,
+				4A0919802180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4A09198C2180B6EF006AAB9A /* ColorItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A09198D2180B70A006AAB9A /* Cells */,
+				4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */,
+				4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */,
+			);
+			path = ColorItemViewController;
+			sourceTree = "<group>";
+		};
+		4A09198D2180B70A006AAB9A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A0919832180A3E8006AAB9A /* ColorItemCollectionViewCell.swift */,
+				4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7102C582EA9B43EF39DBDB97 /* Frameworks */ = {
@@ -1005,6 +1053,7 @@
 				38CBA76A216DFA84007C5824 /* RegisterFormViewController.xib in Resources */,
 				38AE3FA1216DA33C005F5ED3 /* LaunchScreen.storyboard in Resources */,
 				38C053B5217F1F3700946DB6 /* NgoaiThatViewController.xib in Resources */,
+				4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */,
 				38CBA706216DD3CF007C5824 /* PaintCalculatorViewController.xib in Resources */,
 				38CBA6AB216DAF00007C5824 /* WaitingView.xib in Resources */,
 				38CBA6D0216DB835007C5824 /* StarterViewController.xib in Resources */,
@@ -1023,8 +1072,10 @@
 				38AE3F9E216DA33C005F5ED3 /* Assets.xcassets in Resources */,
 				38CBA764216DF177007C5824 /* MenuCollectionCell.xib in Resources */,
 				38CBA69E216DAF00007C5824 /* ColorPalleteCell.xib in Resources */,
+				4A0919862180A3E8006AAB9A /* ColorItemCollectionViewCell.xib in Resources */,
 				389428C321802E07007DDDF3 /* ProductViewController.xib in Resources */,
 				38CBA6F7216DD367007C5824 /* HomeViewController.xib in Resources */,
+				4A0919822180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib in Resources */,
 				38CBA701216DD3B2007C5824 /* ColorSchemeViewController.xib in Resources */,
 				385A4E7C217F0517009F907C /* faqs.json in Resources */,
 			);
@@ -1134,6 +1185,7 @@
 				38CBA67B216DAE9C007C5824 /* MenuContentView.swift in Sources */,
 				38AE40C6216DABA1005F5ED3 /* HeroPlugin.swift in Sources */,
 				38CBA6BA216DB136007C5824 /* UIViewController.swift in Sources */,
+				4A09197A21809C1C006AAB9A /* ColorGallery.swift in Sources */,
 				38FB4043216F26CC008238F5 /* CategoryRepository.swift in Sources */,
 				38CBA6C0216DB3E6007C5824 /* Array.swift in Sources */,
 				38FB4042216F26CC008238F5 /* FaqRepository.swift in Sources */,
@@ -1151,6 +1203,7 @@
 				38AE40A9216DABA1005F5ED3 /* HeroTransition+CustomTransition.swift in Sources */,
 				38AE40C9216DABA1005F5ED3 /* HeroDebugPlugin.swift in Sources */,
 				38CBA6C4216DB404007C5824 /* UICollectionView.swift in Sources */,
+				4A09197C21809CA9006AAB9A /* ColorItem.swift in Sources */,
 				38FB404C216F28D6008238F5 /* SideMenuRepository.swift in Sources */,
 				38AE40A2216DABA1005F5ED3 /* ConditionalPreprocessor.swift in Sources */,
 				38CBA758216DEED6007C5824 /* VideoModel.swift in Sources */,
@@ -1159,9 +1212,12 @@
 				38AE40C2216DABA1005F5ED3 /* UIViewController+Hero.swift in Sources */,
 				38CBA6CA216DB4A7007C5824 /* String.swift in Sources */,
 				385A4E6E217ED7E6009F907C /* VideoListViewController.swift in Sources */,
+				4A09198A2180B6EB006AAB9A /* ColorItemViewController.swift in Sources */,
+				4A09197E21809FEF006AAB9A /* ColorGalleryRepository.swift in Sources */,
 				38AE40B7216DABA1005F5ED3 /* Lexer.swift in Sources */,
 				38AE40BF216DABA1005F5ED3 /* DispatchQueue+Hero.swift in Sources */,
 				38CBA6F1216DD33D007C5824 /* CategoryViewController.swift in Sources */,
+				4A0919852180A3E8006AAB9A /* ColorItemCollectionViewCell.swift in Sources */,
 				38CBA6AC216DAF00007C5824 /* WaitingView.swift in Sources */,
 				38FB4049216F2700008238F5 /* Globals.swift in Sources */,
 				38AE40B4216DABA1005F5ED3 /* HeroViewPropertyViewContext.swift in Sources */,
@@ -1171,7 +1227,6 @@
 				38AE40C4216DABA1005F5ED3 /* HeroTargetState.swift in Sources */,
 				389428CC21802E3E007DDDF3 /* ProductCell.swift in Sources */,
 				389428C721802E20007DDDF3 /* ProductDetailViewController.swift in Sources */,
-				38CBA757216DEED6007C5824 /* ProductFunction.swift in Sources */,
 				38CBA69C216DAF00007C5824 /* InternetAlert.swift in Sources */,
 				38CBA6A1216DAF00007C5824 /* ColorPaletteView.swift in Sources */,
 				38AE401D216DAA66005F5ED3 /* UIViewAutolayout.swift in Sources */,
@@ -1209,6 +1264,7 @@
 				38AE40BA216DABA1005F5ED3 /* Nodes.swift in Sources */,
 				38AE40A5216DABA1005F5ED3 /* HeroTransition+Interactive.swift in Sources */,
 				38FB4040216F26CC008238F5 /* ProductRepository.swift in Sources */,
+				4A0919812180A3D9006AAB9A /* ColorGalleryCollectionViewCell.swift in Sources */,
 				38CBA769216DFA84007C5824 /* RegisterFormViewController.swift in Sources */,
 				38CBA6B6216DB0C4007C5824 /* Int.swift in Sources */,
 				38AE409D216DABA1005F5ED3 /* HeroTypes.swift in Sources */,

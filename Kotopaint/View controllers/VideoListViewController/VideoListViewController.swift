@@ -13,7 +13,6 @@ import AVKit
 class VideoListViewController: BackButtonViewController {
 
     //  MARK: - Constants
-    let cellIdentifier = "VideoCollectionCell"
     
     //  MARK: - Properties
     var data = VideoRepository.shared.data
@@ -40,24 +39,7 @@ class VideoListViewController: BackButtonViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.delaysContentTouches = false
-        for view in collectionView.subviews {
-            if view is UIScrollView {
-                (view as! UIScrollView).delaysContentTouches = false
-                break
-            }
-        }
-    }
-    
-    func openUrl(_ urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
+        collectionView.register(nibName: VideoCollectionCell.self)
     }
     
     func openVideo(_ video: VideoModel) {
@@ -91,7 +73,7 @@ class VideoListViewController: BackButtonViewController {
             revealVC.tabBarVC.selectedIndex = 0
         }
         else {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
@@ -109,16 +91,16 @@ extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? VideoCollectionCell else {
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueReusableCell(VideoCollectionCell.self, indexPath: indexPath)
         
         cell.configure(data[indexPath.item])
-        cell.selectAction = { [unowned self] in
+        cell.selectAction = { [weak self] in
+            guard let self = self else { return }
             self.openVideo(cell.data)
         }
         
-        cell.panAction = { [unowned self] (isRight) in
+        cell.panAction = { [weak self] (isRight) in
+            guard let self = self else { return }
             if isRight {
                 self.didBack()
             }

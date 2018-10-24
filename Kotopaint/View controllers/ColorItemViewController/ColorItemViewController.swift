@@ -1,22 +1,23 @@
 //
-//  NgoaiThatViewController.swift
+//  ColorItemViewController.swift
 //  Kotopaint
 //
-//  Created by ProStageVN on 10/23/18.
+//  Created by Tran Quoc Loc on 10/24/18.
 //  Copyright © 2018 Stage Group. All rights reserved.
 //
 
 import UIKit
+import ActionKit
 
-class NgoaiThatViewController: BackButtonViewController {
-
+class ColorItemViewController: BackButtonViewController {
+    
     //  MARK: - Constants
     
     //  MARK: - Properties
-    var dataSource = ImageRepository.shared.getByGroup(.ngoaithat)
+    private var data = [ColorItem]()
     
     //  MARK: - Outlets
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var colorCollectionView: UICollectionView!
     
     //  MARK: - Actions
     
@@ -34,14 +35,10 @@ class NgoaiThatViewController: BackButtonViewController {
     }
     
     func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        colorCollectionView.delegate = self
+        colorCollectionView.dataSource = self
         
-        collectionView.register(nibName: ImageCollectionCell.self)
-    }
-    
-    func goNext(model: ImageModel) {
-        
+        colorCollectionView.register(nibName: ColorItemCollectionViewCell.self)
     }
     
     //  MARK: - Navigation
@@ -50,10 +47,20 @@ class NgoaiThatViewController: BackButtonViewController {
     }
     
     //  MARK: - View Lifecycle
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, items: [ColorItem]) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.data = items
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Ngoại thất"
+        self.navigationItem.title = "Bộ sưu tập màu"
         setupView()
         setupCollectionView()
     }
@@ -65,43 +72,35 @@ class NgoaiThatViewController: BackButtonViewController {
 }
 
 // MARK: - UIGestureRecognizerDelegate
-extension NgoaiThatViewController: UIGestureRecognizerDelegate {
+extension ColorItemViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
-// MARK: - UICollectionView
-extension NgoaiThatViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ColorItemViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(ImageCollectionCell.self, indexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(ColorItemCollectionViewCell.self, indexPath: indexPath)
         
-        cell.data = dataSource[indexPath.item]
-        cell.imgvPhoto.touchUpInsideAction = { [weak self] in
-            guard let self = self else { return }
-            self.goNext(model: cell.data)
-        }
-        cell.panAction = { [weak self] isRight in
-            guard let self = self else { return }
-            if isRight {
-                self.didBack()
-            }
-            else {
-                self.goNext(model: cell.data)
-            }
-        }
+        let item = data[indexPath.item]
+        cell.configure(item)
+        cell.layoutIfNeeded()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat =  0
         let collectionViewSize = collectionView.frame.size.width - padding
-        let width = collectionViewSize/2
-        let imageRatio: CGFloat = 3/4
-        return CGSize(width: width, height: width * imageRatio)
+        let width = collectionViewSize / 3
+        let imageRatio: CGFloat = 4/5
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.layoutIfNeeded()
     }
 }

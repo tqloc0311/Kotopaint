@@ -23,7 +23,8 @@ class BackButtonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let barButton = UIBarButtonItem(image: #imageLiteral(resourceName: "back")) { [unowned self] in
+        let barButton = UIBarButtonItem(image: #imageLiteral(resourceName: "back")) { [weak self] in
+            guard let self = self else { return }
             self.didBack()
         }
         barButton.tintColor = .black

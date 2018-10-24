@@ -23,7 +23,8 @@ class ColorSchemeViewController: BackButtonViewController {
     
     //  MARK: - Methods
     func addPanGesture(to view: UIView, rightToLeftAction: (()->())? = nil) {
-        let panGesture = UIPanGestureRecognizer { [unowned self] (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if recognizer.state == .ended {
                 if let panGesture = recognizer as? UIPanGestureRecognizer, let isLeftToRight = panGesture.isLeftToRight(view) {
                     if isLeftToRight {
@@ -53,13 +54,15 @@ class ColorSchemeViewController: BackButtonViewController {
     func setupView() {
         addPanGesture(to: self.view)
         
-        addPanGesture(to: ngoaiThatButton) { [unowned self] in
+        addPanGesture(to: ngoaiThatButton) { [weak self] in
+            guard let self = self else { return }
             self.goToNgoaiThat()
         }
         ngoaiThatButton.dropShadow()
         ngoaiThatButton.touchUpInsideAction = goToNgoaiThat
         
-        addPanGesture(to: noiThatButton) { [unowned self] in
+        addPanGesture(to: noiThatButton) { [weak self] in
+            guard let self = self else { return }
             self.goToNoiThat()
         }
         noiThatButton.dropShadow()

@@ -31,7 +31,8 @@ class ProductViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { [unowned self]  (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self]  (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -53,8 +54,9 @@ class ProductViewController: BackButtonViewController {
     
     func loadData(completion: (()->())? = nil) {
         showWaiting()
-        ProductRepository.shared.loadData(categoryId: category.id) { [unowned self]  (result) in
+        ProductRepository.shared.loadData(categoryId: category.id) { [weak self]  (result) in
             hideWaiting()
+            guard let self = self else { return }
             if result.count == 0 {
                 self.tableView.setState(.withImage(image: nil, title: "Không có dữ liệu", message: ""))
             }
@@ -141,7 +143,8 @@ extension ProductViewController: UITableViewDataSource {
         cell.selectAction = {
             self.selectCell(cell, at: indexPath)
         }
-        cell.panAction = { [unowned self] isRight in
+        cell.panAction = { [weak self] isRight in
+            guard let self = self else { return }
             if isRight {
                 self.didBack()
             }

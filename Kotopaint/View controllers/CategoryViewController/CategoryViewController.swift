@@ -53,8 +53,9 @@ class CategoryViewController: BackButtonViewController {
     
     func loadData(completion: (()->())? = nil) {
         showWaiting()
-        CategoryRepository.shared.loadData { [unowned self] (result) in
+        CategoryRepository.shared.loadData { [weak self] (result) in
             hideWaiting()
+            guard let self = self else { return }
             var filter = result
             if let parentCategory = self.parentCategory {
                 filter.removeAll()
@@ -172,10 +173,12 @@ extension CategoryViewController: UITableViewDataSource {
         let item = dataSource[indexPath.row]
         let style: CategoryCell.CategoryImageStyle = parentCategory == nil ? .thumbnail : .background
         cell.configure(data: item, style: style)
-        cell.selectAction = { [unowned self] in
+        cell.selectAction = { [weak self] in
+            guard let self = self else { return }
             self.selectCell(cell, at: indexPath)
         }
-        cell.panAction = { [unowned self] isRight in
+        cell.panAction = { [weak self] isRight in
+            guard let self = self else { return }
             if isRight {
                 self.didBack()
             }
