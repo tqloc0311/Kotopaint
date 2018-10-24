@@ -1,20 +1,20 @@
 //
-//  CategoryViewController.swift
+//  ProductViewController.swift
 //  Kotopaint
 //
-//  Created by ProStageVN on 10/10/18.
+//  Created by ProStageVN on 10/24/18.
 //  Copyright © 2018 Stage Group. All rights reserved.
 //
 
 import UIKit
 
-class CategoryViewController: BackButtonViewController {
-    
+class ProductViewController: BackButtonViewController {
+
     //  MARK: - Constants
     
     //  MARK: - Properties
-    var parentCategory: Category?
-    var dataSource = [Category]()
+    var dataSource = [Product]()
+    private var category: Category!
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControl.Event.valueChanged)
@@ -31,7 +31,7 @@ class CategoryViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [unowned self]  (recognizer) in
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -45,7 +45,7 @@ class CategoryViewController: BackButtonViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(nibName: CategoryCell.self)
+        tableView.register(nibName: ProductCell.self)
         tableView.tableFooterView = UIView()
         tableView.addSubview(refreshControl)
         tableView.rowHeight = 120
@@ -53,24 +53,14 @@ class CategoryViewController: BackButtonViewController {
     
     func loadData(completion: (()->())? = nil) {
         showWaiting()
-        CategoryRepository.shared.loadData { [unowned self] (result) in
+        ProductRepository.shared.loadData(categoryId: category.id) { [unowned self]  (result) in
             hideWaiting()
-            var filter = result
-            if let parentCategory = self.parentCategory {
-                filter.removeAll()
-                for item in result {
-                    if item.id == parentCategory.id {
-                        filter = item.child
-                    }
-                }
-            }
-            
-            if filter.count == 0 {
+            if result.count == 0 {
                 self.tableView.setState(.withImage(image: nil, title: "Không có dữ liệu", message: ""))
             }
             else {
                 self.tableView.setState(.dataAvailable)
-                self.dataSource = filter
+                self.dataSource = result
                 self.tableView.reloadData()
             }
             
@@ -86,16 +76,16 @@ class CategoryViewController: BackButtonViewController {
         
     }
     
-    func selectCell(_ cell: CategoryCell, at indexPath: IndexPath) {
+    func selectCell(_ cell: ProductCell, at indexPath: IndexPath) {
         let selected = dataSource[indexPath.row]
-        if selected.child.count > 0 {
-            let vc = CategoryViewController(nibName: nil, bundle: nil, parentCategory: selected)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else {
-            let vc = ProductViewController(nibName: nil, bundle: nil, category: selected)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = ProductDetailViewController(nibName: nil, bundle: nil, product: selected)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func configure(category: Category) {
+        self.navigationItem.title = category.title
+        
+        loadData()
     }
     
     //  MARK: - Navigation
@@ -104,20 +94,10 @@ class CategoryViewController: BackButtonViewController {
     }
     
     //  MARK: - View Lifecycle
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, parentCategory: Category?) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, category: Category) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.parentCategory = parentCategory
-        if let cate = parentCategory {
-            self.navigationItem.title = cate.title
-        }
-        
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        self.parentCategory = nil
+        self.category = category
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -127,52 +107,38 @@ class CategoryViewController: BackButtonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Tất cả sản phẩm"
-        
         setupView()
         configTableView()
-        loadData()
+        configure(category: category)
     }
     
     // MARK: - Override BackButtonViewController methods
     override func didBack() {
-        if let _ = parentCategory {
-            self.navigationController?.popViewController(animated: true)
-        }
-        else if let tabBarVC = self.tabBarController {
-            tabBarVC.selectedIndex = 0
-        }
-        else if let revealVC = self.revealViewController() as? CustomRevealViewController {
-            revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
-            revealVC.tabBarVC.selectedIndex = 0
-        }
-        else {
-            self.navigationController?.popViewController(animated: true)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
 // MARK: - UIGestureRecognizerDelegate
-extension CategoryViewController: UIGestureRecognizerDelegate {
+extension ProductViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
 // MARK: - UITableViewDataSource
-extension CategoryViewController: UITableViewDataSource {
+extension ProductViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //        return dataSource.count == 0 ? 0 : dataSource.count + 1
         return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(CategoryCell.self)
+        let cell = tableView.dequeueReusableCell(ProductCell.self)
         let item = dataSource[indexPath.row]
-        let style: CategoryCell.CategoryImageStyle = parentCategory == nil ? .thumbnail : .background
-        cell.configure(data: item, style: style)
-        cell.selectAction = { [unowned self] in
+        cell.configure(data: item)
+        cell.selectAction = {
             self.selectCell(cell, at: indexPath)
         }
         cell.panAction = { [unowned self] isRight in
@@ -190,6 +156,6 @@ extension CategoryViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension CategoryViewController: UITableViewDelegate {
+extension ProductViewController: UITableViewDelegate {
     
 }

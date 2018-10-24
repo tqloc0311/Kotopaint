@@ -21,16 +21,22 @@ extension String {
         return emailTest.evaluate(with: self)
     }
     
-    var htmlToAttributedString: NSAttributedString? {
-        guard let data = data(using: .utf8) else { return NSAttributedString() }
+    func html(size: CGFloat = 17) -> NSAttributedString {
+        guard
+            let data = data(using: .utf8)
+        else { return NSAttributedString() }
+        
         do {
-            return try NSAttributedString(data: data, options: [NSAttributedString.DocumentReadingOptionKey.documentType:  NSAttributedString.DocumentType.html], documentAttributes: nil)
+            let attributedString = try NSMutableAttributedString(data: data, options: [
+                NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
+                ], documentAttributes: nil)
+            let range = NSRange(location: 0, length: attributedString.string.count)
+            attributedString.addAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: size)], range: range)
+            
+            return attributedString
         } catch {
             return NSAttributedString()
         }
-    }
-    
-    var htmlToString: String {
-        return htmlToAttributedString?.string ?? ""
     }
 }

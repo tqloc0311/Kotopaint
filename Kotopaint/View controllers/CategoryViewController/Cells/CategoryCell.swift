@@ -12,6 +12,11 @@ import Kingfisher
 import ActionKit
 
 class CategoryCell: UITableViewCell, ReusableView {
+    
+    enum CategoryImageStyle {
+        case thumbnail
+        case background
+    }
 
     // MARK: - Properties
     var data = Category()
@@ -21,19 +26,25 @@ class CategoryCell: UITableViewCell, ReusableView {
     // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
-    @IBOutlet weak var highlightView: UIView!
     
     // MARK: - Methods
     
-    func configure(data: Category) {
+    func configure(data: Category, style: CategoryImageStyle = .thumbnail) {
         self.data = data
         titleLabel.text = data.title
-        titleLabel.hero.id = "categoryTitle_\(data.id)"
-        thumbnailImageView.hero.id = "categoryPhoto_\(data.id)"
         
-        thumbnailImageView.kf.setImage(with: data.imageUrl as? Resource, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
+        switch style {
+        case .thumbnail:
+            thumbnailImageView.kf.setImage(with: data.imageUrl, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
+            backgroundImageView.image = nil
+        case .background:
+            backgroundImageView.kf.setImage(with: data.imageUrl, placeholder: UIImage(), options: [.transition(.fade(0.2))])
+            thumbnailImageView.image = nil
+        }
+        
         titleLabel.text = data.title
         subTitleLabel.text = data.subTitle
     }
@@ -45,7 +56,7 @@ class CategoryCell: UITableViewCell, ReusableView {
     }
     
     func highlight(_ bool: Bool) {
-        highlightView.isHidden = !bool
+        containerView.alpha = bool ? 0.5 : 1
     }
     
     @objc func panHandle(_ recognizer:UIPanGestureRecognizer) {

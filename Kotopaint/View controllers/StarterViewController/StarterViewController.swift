@@ -38,12 +38,7 @@ class StarterViewController: UIViewController {
         UserRepository.shared.getToken { (_) in
             group.leave()
         }
-//        group.enter()
-//        CategoryRepository.shared.loadData { (_) in
-//            group.leave()
-//        }
         
-//
         group.enter()
         executeOnBackground(task: {
             ImageRepository.shared.loadData()

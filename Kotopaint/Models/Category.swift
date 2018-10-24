@@ -16,8 +16,9 @@ class Category {
     var title = ""
     var subTitle = ""
     var order = 0
-    var imageUrl = ""
+    var imageUrl: URL?
     var parentId = 0
+    var child = [Category]()
     
     // MARK: Constructors
     init() {
@@ -30,7 +31,7 @@ class Category {
             let title = json["name"].string,
             let subTitle = json["sub_title"].string,
             let order = json["order"].int,
-            let imageUrl = json["image"].string,
+            let imageUrlString = json["image"].string,
             let parentId = json["parent_id"].int,
             let publicValue = json["public"].int
         else {
@@ -46,9 +47,6 @@ class Category {
         self.subTitle = subTitle
         self.order = order
         self.parentId = parentId
-        
-        if imageUrl != "" {
-            self.imageUrl = "https://kotopaint.vn/uploads/source/san_pham/dai_dien/" + imageUrl
-        }
+        self.imageUrl = URL(string: imageUrlString)
     }
 }

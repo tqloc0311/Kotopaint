@@ -27,17 +27,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CustomRevealViewController.viewDidLoad():CustomRevealViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "nav.revealViewController()">
-            </PersistentString>
-            <PersistentString
-               value = "frontViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ContactViewController.setupView():ContactViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -45,6 +34,17 @@
             </PersistentString>
             <PersistentString
                value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CustomRevealViewController.viewDidLoad():CustomRevealViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nav.revealViewController()">
+            </PersistentString>
+            <PersistentString
+               value = "frontViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -64,6 +64,14 @@
             </PersistentString>
             <PersistentString
                value = "revealVC.tabBarVC.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UITableView.dequeueReusableCell&lt;A&gt;(_:):Reusable.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "T.identifier">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

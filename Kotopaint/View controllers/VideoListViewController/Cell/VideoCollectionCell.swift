@@ -25,7 +25,7 @@ class VideoCollectionCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     
     @objc func panHandle(_ recognizer:UIPanGestureRecognizer) {
-        if let f = panAction, let isRight = recognizer.isLeftToRight(self) {
+        if recognizer.state == .ended, let f = panAction, let isRight = recognizer.isLeftToRight(self) {
             f(isRight)
         }
     }

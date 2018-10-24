@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
     
     //  MARK: - Methods
     func setupView() {
-        hero.isEnabled = true
+//        hero.isEnabled = true
     }
     
     func setupCollectionView() {

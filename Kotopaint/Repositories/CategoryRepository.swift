@@ -28,7 +28,16 @@ class CategoryRepository {
                 let json = JSON(value)
                 let data = json["data"]
                 let result = data.arrayValue.compactMap({ Category(json: $0) })
-                completion(result.sorted(by: { $0.order < $1.order }))
+                let topCategories = result.filter({ $0.parentId == 0 })
+                let subCategories = result.filter({ $0.parentId > 0 })
+                for top in topCategories {
+                    for sub in subCategories {
+                        if sub.parentId == top.id {
+                            top.child.append(sub)
+                        }
+                    }
+                }
+                completion(topCategories.sorted(by: { $0.order < $1.order }))
             case .failure(let error):
                 print(error.localizedDescription)
                 completion([])

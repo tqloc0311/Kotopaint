@@ -28,7 +28,7 @@ class MenuCollectionCell: ScalingCarouselCell, ReusableView {
         self.data = data
         titleLabel.text = data.title
         subTitleLabel.text = data.subTitle
-        titleLabel.hero.id = data.titleHeroID
+//        titleLabel.hero.id = data.titleHeroID
         imageView.image = data.photo
         bottomTitleLabel.text = data.bottomTitle
         self.shadow = data.shadow
