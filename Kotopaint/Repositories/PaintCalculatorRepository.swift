@@ -34,27 +34,22 @@ class PaintCalculatorRepository {
         }
         
         result.arrayObject = array
-        print(result.description)
         return result
     }
     
-    func calculate(_ item: PaintCalculator, completion: @escaping (String, NSAttributedString)->()) {
+    func calculate(_ item: PaintCalculator, completion: @escaping (String, PaintCalculatorResult?)->()) {
         let url = Globals.HOST + "calculatepaint?token=" + Globals.TOKEN
-        var parameters: Parameters = [
+        let parameters: Parameters = [
             "construct": item.construct.rawValue,
             "layout": item.layout,
             "product": productsToJSON(item.products).description,
+            "acreage": item.area,
+            "rad_acreage": item.step2Mode.rawValue,
+            "long": item.long,
+            "height": item.height,
+            "width": item.layout,
+            "floor": item.floor,
             ]
-        if item.step2Mode == .total {
-            parameters["acreage"] = item.area
-            parameters["rad_acreage"] = item.area
-        }
-        else {
-            parameters["long"] = item.long
-            parameters["height"] = item.height
-            parameters["width"] = item.width
-            parameters["floor"] = item.floor
-        }
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil
             ).responseJSON { (response) in
@@ -64,16 +59,14 @@ class PaintCalculatorRepository {
                     let errorCode = json["error_code"].stringValue
                     let errorMessage = json["error_msg"].stringValue
                     if errorCode != "0" {
-                        completion(errorMessage, NSAttributedString())
+                        completion(errorMessage, nil)
                     }
                     else {
-                        let data = json["data"]
-                        
-                        
+                        completion("", PaintCalculatorResult(json: json))
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    completion(error.localizedDescription, NSAttributedString())
+                    completion(error.localizedDescription, nil)
                 }
         }
     }

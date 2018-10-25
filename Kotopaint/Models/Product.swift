@@ -24,7 +24,7 @@ class Product: Hashable {
     var excerpt = ""
     var price = 0
     var salePrice = 0
-    var imageUrls = [URL]()
+    var imageURLs = [URL]()
     var capacity1 = 0
     var capacity2 = 0
     var donvi = ""
@@ -59,10 +59,10 @@ class Product: Hashable {
             let excerpt = json["excerpt"].string,
             let price = json["price"].int,
             let salePrice = json["price_sale"].int,
-            let imageUrl1 = json["image"].string,
-            let imageUrl2 = json["image2"].string,
-            let imageUrl3 = json["image3"].string,
-            let imageUrl4 = json["image4"].string,
+            let imageURL1 = json["image"].string,
+            let imageURL2 = json["image2"].string,
+            let imageURL3 = json["image3"].string,
+            let imageURL4 = json["image4"].string,
             let isPublicValue = json["public"].int,
             let dungtich1 = json["dungtich1"].int,
             let dungtich2 = json["dungtich2"].int,
@@ -81,7 +81,7 @@ class Product: Hashable {
         self.excerpt = excerpt
         self.price = price
         self.salePrice = salePrice
-        self.imageUrls = [imageUrl1, imageUrl2, imageUrl3, imageUrl4].compactMap({ URL(string: $0) })
+        self.imageURLs = [imageURL1, imageURL2, imageURL3, imageURL4].compactMap({ URL(string: $0) })
         self.isPublic = isPublicValue == 1
         self.dungtich1 = dungtich1
         self.dungtich2 = dungtich2

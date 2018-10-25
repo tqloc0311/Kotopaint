@@ -113,7 +113,7 @@ class ProductDetailViewController: BackButtonViewController {
     
     func configure(product: Product) {
         self.navigationItem.title = product.title
-        setupSlideshow(urls: product.imageUrls)
+        setupSlideshow(urls: product.imageURLs)
         excerptLabel.attributedText = product.excerpt.html()
         notePriceLabel.attributedText = product.notePrice.html()
         contentLabel.attributedText = product.content.html()

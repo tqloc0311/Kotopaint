@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CheckProductTableViewCellDelegate {
-    func checkProduct(product: Product, checked: Bool)
+    func selectProduct(product: Product)
 }
 
 class CheckProductTableViewCell: UITableViewCell, ReusableView {
@@ -17,31 +17,34 @@ class CheckProductTableViewCell: UITableViewCell, ReusableView {
     // Properties
     var data = Product()
     var delegate: CheckProductTableViewCellDelegate?
+    var checked = false {
+        didSet {
+            checkBox.image = checked ? #imageLiteral(resourceName: "checked_radio") : #imageLiteral(resourceName: "unchecked_radio")
+        }
+    }
     
     // Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var checkBox: CheckBoxButton!
+    @IBOutlet weak var checkBox: ImageButton!
     
     // Methods
     func configure(data: Product) {
         self.data = data
         titleLabel.text = data.title
         subTitleLabel.text = data.subTitle
-        if let firstUrl = data.imageUrls.first {
-            thumbnailImageView.kf.setImage(with: firstUrl, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
+        if let firstURL = data.imageURLs.first {
+            thumbnailImageView.kf.setImage(with: firstURL, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
         }
         else {
             thumbnailImageView.image = #imageLiteral(resourceName: "no-image")
         }
         
-        checkBox.object = data
-        checkBox.checkedImage = #imageLiteral(resourceName: "checked_radio")
-        checkBox.uncheckedImage = #imageLiteral(resourceName: "unchecked_radio")
-        checkBox.image = #imageLiteral(resourceName: "unchecked_radio")
-        checkBox.delegate = self
+        checkBox.touchUpInsideAction = { [unowned self] in
+            self.delegate?.selectProduct(product: data)
+        }
     }
     
     func setupView() {
@@ -54,6 +57,7 @@ class CheckProductTableViewCell: UITableViewCell, ReusableView {
         super.awakeFromNib()
         
         setupView()
+        checked = false
     }
     
     override func layoutSubviews() {
@@ -63,13 +67,5 @@ class CheckProductTableViewCell: UITableViewCell, ReusableView {
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
         self.layer.shadowOpacity = 0.7
         self.layer.shadowRadius = 4.0
-    }
-}
-
-extension CheckProductTableViewCell: CheckBoxButtonDelegate {
-    func checkBoxDidChange(checkBox: CheckBoxButton, value: Bool, object: Any?) {
-        if let product = object as? Product {
-            delegate?.checkProduct(product: product, checked: value)
-        }
     }
 }

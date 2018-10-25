@@ -10,10 +10,10 @@ import Foundation
 
 extension UINavigationController {
     
-    func pushViewControllerFromNib<T: UIViewController>(_ : T.Type) {
-        
-        let vc = T(nibName: String(describing: T.self), bundle: nil)
-        pushViewController(vc, animated: true)
-    }
+//    func pushViewControllerFromNib<T: UIViewController>(_ : T.Type) {
+//        
+//        let vc = T(nibName: String(describing: T.self), bundle: nil)
+//        pushViewController(vc, animated: true)
+//    }
     
 }

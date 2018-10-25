@@ -38,10 +38,10 @@ class CategoryCell: UITableViewCell, ReusableView {
         
         switch style {
         case .thumbnail:
-            thumbnailImageView.kf.setImage(with: data.imageUrl, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
+            thumbnailImageView.kf.setImage(with: data.imageURL, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
             backgroundImageView.image = nil
         case .background:
-            backgroundImageView.kf.setImage(with: data.imageUrl, placeholder: UIImage(), options: [.transition(.fade(0.2))])
+            backgroundImageView.kf.setImage(with: data.imageURL, placeholder: UIImage(), options: [.transition(.fade(0.2))])
             thumbnailImageView.image = nil
         }
         

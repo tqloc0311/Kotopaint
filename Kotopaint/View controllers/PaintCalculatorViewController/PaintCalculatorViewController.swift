@@ -45,7 +45,7 @@ class PaintCalculatorViewController: BackButtonViewController {
         }
     }
     
-    var selectedProducts = [Product]()
+    var selectedProducts: [Category: Product?] = [:]
     
     //  MARK: - Outlets
     @IBOutlet weak var boxStep1View: UIView!
@@ -129,6 +129,7 @@ class PaintCalculatorViewController: BackButtonViewController {
     }
     
     private func validate() -> Bool {
+        self.view.endEditing(true)
         if selectedProducts.count == 0 {
             showErrorAlert(title: "Lỗi", subtitle: "Vui lòng chọn ít nhất một sản phẩm ở Bước 3", buttonTitle: "Thử lại")
             return false
@@ -178,7 +179,7 @@ class PaintCalculatorViewController: BackButtonViewController {
                 item.floor = Int(numOfFloorTextField.text ?? "1") ?? 1
             }
             
-            item.products = selectedProducts
+            item.products = selectedProducts.compactMap({ $0.value })
             
             showWaiting()
             PaintCalculatorRepository.shared.calculate(item) { [unowned self] (errorMsg, result) in
@@ -187,8 +188,12 @@ class PaintCalculatorViewController: BackButtonViewController {
                 if errorMsg != "" {
                     self.showErrorAlert(title: "Lỗi", subtitle: errorMsg, buttonTitle: "Thử lại")
                 }
+                else if let result = result {
+                    let vc = PaintCalculatorDetailViewController(nibName: nil, bundle: nil, result: result)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 else {
-                    
+                    self.showErrorAlert(title: "Lỗi", subtitle: "Unknown error", buttonTitle: "Thử lại")
                 }
             }
         }
@@ -207,6 +212,10 @@ class PaintCalculatorViewController: BackButtonViewController {
                 
                 self.dataSource.removeAll()
                 self.selectedProducts.removeAll()
+                for item in categories {
+                    self.selectedProducts[item] = nil
+                }
+                
                 for cate in categories {
                     var products = [Product]()
                     
@@ -314,7 +323,9 @@ extension PaintCalculatorViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(CheckProductTableViewCell.self)
             
             guard let item = dataSource[categories[indexPath.section]]?[indexPath.row] else { return UITableViewCell() }
+            let selected = selectedProducts.compactMap({ $0.value })
             cell.configure(data: item)
+            cell.checked = selected.contains(item)
             cell.delegate = self
             return cell
         }
@@ -336,14 +347,10 @@ extension PaintCalculatorViewController: UITableViewDelegate {
 
 // MARK: - CheckProductTableViewCellDelegate
 extension PaintCalculatorViewController: CheckProductTableViewCellDelegate {
-    func checkProduct(product: Product, checked: Bool) {
-        if checked {
-            if !selectedProducts.contains(product) {
-                selectedProducts.append(product)
-            }
-        }
-        else {
-            selectedProducts.removeIf({ $0.id == product.id })
+    func selectProduct(product: Product) {
+        if let cate = categories.first(where: { $0.id == product.categoryId }) {
+            selectedProducts[cate] = product
+            tableView.reloadData()
         }
     }
 }

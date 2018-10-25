@@ -26,8 +26,8 @@ class ProductCell: UITableViewCell, ReusableView {
         self.data = data
         titleLabel.text = data.title
         subTitleLabel.text = data.subTitle
-        if let firstUrl = data.imageUrls.first {
-            thumbnailImageView.kf.setImage(with: firstUrl, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
+        if let firstURL = data.imageURLs.first {
+            thumbnailImageView.kf.setImage(with: firstURL, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
         }
         else {
             thumbnailImageView.image = #imageLiteral(resourceName: "no-image")

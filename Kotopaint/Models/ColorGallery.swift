@@ -13,7 +13,7 @@ class ColorGallery {
     // Properties
     var id = 0
     var title = ""
-    var imageUrl: URL?
+    var imageURL: URL?
     var colorItems = [ColorItem]()
     
     // Constructors
@@ -36,7 +36,7 @@ class ColorGallery {
         
         self.id = id
         self.title = title
-        self.imageUrl = url
+        self.imageURL = url
         self.colorItems = colorJSON.dictionaryValue.compactMap({ ColorItem(id: $0.key, json: $0.value) })
     }
 }

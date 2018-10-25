@@ -17,7 +17,7 @@ class Category: Hashable {
     var title = ""
     var subTitle = ""
     var order = 0
-    var imageUrl: URL?
+    var imageURL: URL?
     var parentId = 0
     var child = [Category]()
     
@@ -41,7 +41,7 @@ class Category: Hashable {
             let title = json["name"].string,
             let subTitle = json["sub_title"].string,
             let order = json["order"].int,
-            let imageUrlString = json["image"].string,
+            let imageURLString = json["image"].string,
             let parentId = json["parent_id"].int,
             let publicValue = json["public"].int
         else {
@@ -57,6 +57,6 @@ class Category: Hashable {
         self.subTitle = subTitle
         self.order = order
         self.parentId = parentId
-        self.imageUrl = URL(string: imageUrlString)
+        self.imageURL = URL(string: imageURLString)
     }
 }

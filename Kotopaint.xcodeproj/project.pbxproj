@@ -99,7 +99,6 @@
 		38C42EB021818EE000EDB3BC /* CheckProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EAE21818EE000EDB3BC /* CheckProductTableViewCell.swift */; };
 		38C42EB121818EE000EDB3BC /* CheckProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C42EAF21818EE000EDB3BC /* CheckProductTableViewCell.xib */; };
 		38C42EB42181903C00EDB3BC /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EB32181903C00EDB3BC /* CheckBoxButton.swift */; };
-		38C42EB62181AA1400EDB3BC /* CheckProductHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EB52181AA1400EDB3BC /* CheckProductHeaderFooterView.swift */; };
 		38C42EB92181B0DB00EDB3BC /* PaintCalculatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EB82181B0DB00EDB3BC /* PaintCalculatorRepository.swift */; };
 		38C42EBB2181B11000EDB3BC /* PaintCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */; };
 		38CBA67B216DAE9C007C5824 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA679216DAE9C007C5824 /* MenuContentView.swift */; };
@@ -173,7 +172,6 @@
 		38FB4049216F2700008238F5 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB4048216F2700008238F5 /* Globals.swift */; };
 		38FB404C216F28D6008238F5 /* SideMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB404A216F28D5008238F5 /* SideMenuRepository.swift */; };
 		38FB404D216F28D6008238F5 /* HomeMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB404B216F28D6008238F5 /* HomeMenuRepository.swift */; };
-		4A09197A21809C1C006AAB9A /* ColorGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197921809C1C006AAB9A /* ColorGallery.swift */; };
 		4A09197C21809CA9006AAB9A /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197B21809CA9006AAB9A /* ColorItem.swift */; };
 		4A09197E21809FEF006AAB9A /* ColorGalleryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */; };
 		4A0919812180A3D9006AAB9A /* ColorGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09197F2180A3D8006AAB9A /* ColorGalleryCollectionViewCell.swift */; };
@@ -182,6 +180,13 @@
 		4A0919862180A3E8006AAB9A /* ColorItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */; };
 		4A09198A2180B6EB006AAB9A /* ColorItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */; };
 		4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */; };
+		4AE3DA572181FF0700418B37 /* PaintCalculatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA552181FF0700418B37 /* PaintCalculatorDetailViewController.swift */; };
+		4AE3DA582181FF0700418B37 /* PaintCalculatorDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE3DA562181FF0700418B37 /* PaintCalculatorDetailViewController.xib */; };
+		4AE3DA5B2181FF8200418B37 /* ColorGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA5A2181FF8200418B37 /* ColorGallery.swift */; };
+		4AE3DA5D218205D400418B37 /* PaintCalculatorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA5C218205D400418B37 /* PaintCalculatorResult.swift */; };
+		4AE3DA5F218205E400418B37 /* PaintCalculatorResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA5E218205E400418B37 /* PaintCalculatorResultItem.swift */; };
+		4AE3DA632182186E00418B37 /* PaintCalculatorResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA61218211B400418B37 /* PaintCalculatorResultTableViewCell.swift */; };
+		4AE3DA6421821A5300418B37 /* PaintCalculatorResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE3DA62218211B400418B37 /* PaintCalculatorResultTableViewCell.xib */; };
 		76418DEB8632DA5C27D4F0EA /* Pods_Kotopaint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6C1E8AC381FF926F5BC386 /* Pods_Kotopaint.framework */; };
 /* End PBXBuildFile section */
 
@@ -283,8 +288,6 @@
 		38C42EAE21818EE000EDB3BC /* CheckProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckProductTableViewCell.swift; sourceTree = "<group>"; };
 		38C42EAF21818EE000EDB3BC /* CheckProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckProductTableViewCell.xib; sourceTree = "<group>"; };
 		38C42EB32181903C00EDB3BC /* CheckBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
-		38C42EB52181AA1400EDB3BC /* CheckProductHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckProductHeaderFooterView.swift; sourceTree = "<group>"; };
-		38C42EB72181AA1F00EDB3BC /* CheckProductHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckProductHeaderFooterView.xib; sourceTree = "<group>"; };
 		38C42EB82181B0DB00EDB3BC /* PaintCalculatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorRepository.swift; sourceTree = "<group>"; };
 		38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculator.swift; sourceTree = "<group>"; };
 		38CBA679216DAE9C007C5824 /* MenuContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
@@ -358,7 +361,6 @@
 		38FB4048216F2700008238F5 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		38FB404A216F28D5008238F5 /* SideMenuRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuRepository.swift; sourceTree = "<group>"; };
 		38FB404B216F28D6008238F5 /* HomeMenuRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuRepository.swift; sourceTree = "<group>"; };
-		4A09197921809C1C006AAB9A /* ColorGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorGallery.swift; path = /Users/prostagevn/Desktop/ProStage/freelance/Kotopaint/renew_proj/Kotopaint/Kotopaint/Models/ColorGallery.swift; sourceTree = "<absolute>"; };
 		4A09197B21809CA9006AAB9A /* ColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
 		4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryRepository.swift; sourceTree = "<group>"; };
 		4A09197F2180A3D8006AAB9A /* ColorGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -367,6 +369,13 @@
 		4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItemViewController.swift; sourceTree = "<group>"; };
 		4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemViewController.xib; sourceTree = "<group>"; };
+		4AE3DA552181FF0700418B37 /* PaintCalculatorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorDetailViewController.swift; sourceTree = "<group>"; };
+		4AE3DA562181FF0700418B37 /* PaintCalculatorDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorDetailViewController.xib; sourceTree = "<group>"; };
+		4AE3DA5A2181FF8200418B37 /* ColorGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGallery.swift; sourceTree = "<group>"; };
+		4AE3DA5C218205D400418B37 /* PaintCalculatorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorResult.swift; sourceTree = "<group>"; };
+		4AE3DA5E218205E400418B37 /* PaintCalculatorResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorResultItem.swift; sourceTree = "<group>"; };
+		4AE3DA61218211B400418B37 /* PaintCalculatorResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorResultTableViewCell.swift; sourceTree = "<group>"; };
+		4AE3DA62218211B400418B37 /* PaintCalculatorResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorResultTableViewCell.xib; sourceTree = "<group>"; };
 		A88E45142A40C66FC6ED4B42 /* Pods-Kotopaint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kotopaint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kotopaint/Pods-Kotopaint.release.xcconfig"; sourceTree = "<group>"; };
 		CB6C1E8AC381FF926F5BC386 /* Pods_Kotopaint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kotopaint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF14B99B7F5C4D7B29FB22FE /* Pods-Kotopaint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kotopaint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kotopaint/Pods-Kotopaint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -713,8 +722,6 @@
 			children = (
 				38C42EAE21818EE000EDB3BC /* CheckProductTableViewCell.swift */,
 				38C42EAF21818EE000EDB3BC /* CheckProductTableViewCell.xib */,
-				38C42EB52181AA1400EDB3BC /* CheckProductHeaderFooterView.swift */,
-				38C42EB72181AA1F00EDB3BC /* CheckProductHeaderFooterView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -787,6 +794,7 @@
 				38C053B1217F1F2400946DB6 /* NoiThatViewController */,
 				38C053B6217F1F3A00946DB6 /* NgoaiThatViewController */,
 				38CBA707216DD3D3007C5824 /* PaintCalculatorViewController */,
+				4AE3DA592181FF1200418B37 /* PaintCalculatorDetailViewController */,
 				38CBA76B216DFA88007C5824 /* RegisterFormViewController */,
 				38CBA770216DFF2C007C5824 /* ContactViewController */,
 				385A4E61217ED501009F907C /* PhongThuyViewController */,
@@ -924,7 +932,7 @@
 		38CBA74B216DEED6007C5824 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4A09197921809C1C006AAB9A /* ColorGallery.swift */,
+				4AE3DA5A2181FF8200418B37 /* ColorGallery.swift */,
 				4A09197B21809CA9006AAB9A /* ColorItem.swift */,
 				38CBA74C216DEED6007C5824 /* MenuContent.swift */,
 				38CBA74E216DEED6007C5824 /* VideoModel.swift */,
@@ -936,6 +944,8 @@
 				38CBA754216DEED6007C5824 /* HomeMenuItem.swift */,
 				38C42EA52181550900EDB3BC /* PhongThuy.swift */,
 				38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */,
+				4AE3DA5C218205D400418B37 /* PaintCalculatorResult.swift */,
+				4AE3DA5E218205E400418B37 /* PaintCalculatorResultItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1020,6 +1030,25 @@
 				4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4AE3DA592181FF1200418B37 /* PaintCalculatorDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4AE3DA60218211B400418B37 /* Cell */,
+				4AE3DA552181FF0700418B37 /* PaintCalculatorDetailViewController.swift */,
+				4AE3DA562181FF0700418B37 /* PaintCalculatorDetailViewController.xib */,
+			);
+			path = PaintCalculatorDetailViewController;
+			sourceTree = "<group>";
+		};
+		4AE3DA60218211B400418B37 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4AE3DA61218211B400418B37 /* PaintCalculatorResultTableViewCell.swift */,
+				4AE3DA62218211B400418B37 /* PaintCalculatorResultTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7102C582EA9B43EF39DBDB97 /* Frameworks */ = {
@@ -1112,6 +1141,7 @@
 				38CBA6F2216DD33D007C5824 /* CategoryViewController.xib in Resources */,
 				385A4E65217ED535009F907C /* FAQViewController.xib in Resources */,
 				385A4E6F217ED7E6009F907C /* VideoListViewController.xib in Resources */,
+				4AE3DA582181FF0700418B37 /* PaintCalculatorDetailViewController.xib in Resources */,
 				38C053A7217F11A900946DB6 /* QuestionTableViewCell.xib in Resources */,
 				38C053AF217F1F1700946DB6 /* NoiThatViewController.xib in Resources */,
 				38CBA6FC216DD388007C5824 /* ColorGalleryViewController.xib in Resources */,
@@ -1129,6 +1159,7 @@
 				389428C321802E07007DDDF3 /* ProductViewController.xib in Resources */,
 				38CBA6F7216DD367007C5824 /* HomeViewController.xib in Resources */,
 				4A0919822180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib in Resources */,
+				4AE3DA6421821A5300418B37 /* PaintCalculatorResultTableViewCell.xib in Resources */,
 				38CBA701216DD3B2007C5824 /* ColorSchemeViewController.xib in Resources */,
 				385A4E7C217F0517009F907C /* faqs.json in Resources */,
 			);
@@ -1242,8 +1273,7 @@
 				38AE40C6216DABA1005F5ED3 /* HeroPlugin.swift in Sources */,
 				38CBA6BA216DB136007C5824 /* UIViewController.swift in Sources */,
 				38C42EA62181550900EDB3BC /* PhongThuy.swift in Sources */,
-				4A09197A21809C1C006AAB9A /* ColorGallery.swift in Sources */,
-				38C42EB62181AA1400EDB3BC /* CheckProductHeaderFooterView.swift in Sources */,
+				4AE3DA572181FF0700418B37 /* PaintCalculatorDetailViewController.swift in Sources */,
 				38FB4043216F26CC008238F5 /* CategoryRepository.swift in Sources */,
 				38CBA6C0216DB3E6007C5824 /* Array.swift in Sources */,
 				38FB4042216F26CC008238F5 /* FaqRepository.swift in Sources */,
@@ -1276,8 +1306,11 @@
 				38AE40BF216DABA1005F5ED3 /* DispatchQueue+Hero.swift in Sources */,
 				38CBA6F1216DD33D007C5824 /* CategoryViewController.swift in Sources */,
 				4A0919852180A3E8006AAB9A /* ColorItemCollectionViewCell.swift in Sources */,
+				4AE3DA5B2181FF8200418B37 /* ColorGallery.swift in Sources */,
+				4AE3DA5F218205E400418B37 /* PaintCalculatorResultItem.swift in Sources */,
 				38CBA6AC216DAF00007C5824 /* WaitingView.swift in Sources */,
 				38FB4049216F2700008238F5 /* Globals.swift in Sources */,
+				4AE3DA632182186E00418B37 /* PaintCalculatorResultTableViewCell.swift in Sources */,
 				38AE40B4216DABA1005F5ED3 /* HeroViewPropertyViewContext.swift in Sources */,
 				38AE40AA216DABA1005F5ED3 /* HeroTransition+Complete.swift in Sources */,
 				385A4E74217EDB88009F907C /* VideoCollectionCell.swift in Sources */,
@@ -1347,6 +1380,7 @@
 				38CBA756216DEED6007C5824 /* MenuContent.swift in Sources */,
 				38AE40B9216DABA1005F5ED3 /* Parser.swift in Sources */,
 				38CBA6E0216DBB5D007C5824 /* SideMenuTableViewController.swift in Sources */,
+				4AE3DA5D218205D400418B37 /* PaintCalculatorResult.swift in Sources */,
 				38C053B4217F1F3700946DB6 /* NgoaiThatViewController.swift in Sources */,
 				38CBA6C2216DB3F7007C5824 /* UINavigationController.swift in Sources */,
 				38AE40AE216DABA1005F5ED3 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */,

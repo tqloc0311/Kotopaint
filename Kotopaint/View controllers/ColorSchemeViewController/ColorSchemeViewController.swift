@@ -44,11 +44,11 @@ class ColorSchemeViewController: BackButtonViewController {
     }
     
     func goToNgoaiThat() {
-        self.navigationController?.pushViewControllerFromNib(NgoaiThatViewController.self)
+//        self.navigationController?.pushViewControllerFromNib(NgoaiThatViewController.self)
     }
     
     func goToNoiThat() {
-        self.navigationController?.pushViewControllerFromNib(NoiThatViewController.self)
+//        self.navigationController?.pushViewControllerFromNib(NoiThatViewController.self)
     }
     
     func setupView() {

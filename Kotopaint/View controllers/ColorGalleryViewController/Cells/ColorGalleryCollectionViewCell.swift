@@ -21,7 +21,7 @@ class ColorGalleryCollectionViewCell: UICollectionViewCell, ReusableView {
     // Methods
     func configure(_ data: ColorGallery) {
         self.data = data
-        self.colorImageView.kf.setImage(with: data.imageUrl)
+        self.colorImageView.kf.setImage(with: data.imageURL)
         self.titleLabel.text = data.title
         
         colorImageView.touchUpInsideAction = { [weak self] in
