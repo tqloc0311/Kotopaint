@@ -34,4 +34,26 @@ class ProductRepository {
             }
         }
     }
+    
+    func loadData(categoryArray: [Int], completion: @escaping ([Product])->()) {
+        let group = DispatchGroup()
+        var result = [Product]()
+        
+        for id in categoryArray {
+            group.enter()
+            loadData(categoryId: id) { (list) in
+                for item in list {
+                    item.categoryId = id
+                }
+                
+                result.append(contentsOf: list)
+                
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            completion(result)
+        }
+    }
 }

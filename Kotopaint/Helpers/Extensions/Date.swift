@@ -62,4 +62,64 @@ extension Date
     static func ==(lhs: inout Date, rhs: Date) -> Bool {
         return lhs.compare(rhs) == ComparisonResult.orderedSame
     }
+    
+    public var year: Int {
+        get {
+            return Calendar.current.component(.year, from: self)
+        }
+        set {
+            guard newValue > 0 else { return }
+            let currentYear = Calendar.current.component(.year, from: self)
+            let yearsToAdd = newValue - currentYear
+            if let date = Calendar.current.date(byAdding: .year, value: yearsToAdd, to: self) {
+                self = date
+            }
+        }
+    }
+    
+    /// SwifterSwift: Month.
+    ///
+    ///     Date().month -> 1
+    ///
+    ///     var someDate = Date()
+    ///     someDate.month = 10 // sets someDate's month to 10.
+    ///
+    public var month: Int {
+        get {
+            return Calendar.current.component(.month, from: self)
+        }
+        set {
+            let allowedRange = Calendar.current.range(of: .month, in: .year, for: self)!
+            guard allowedRange.contains(newValue) else { return }
+            
+            let currentMonth = Calendar.current.component(.month, from: self)
+            let monthsToAdd = newValue - currentMonth
+            if let date = Calendar.current.date(byAdding: .month, value: monthsToAdd, to: self) {
+                self = date
+            }
+        }
+    }
+    
+    /// SwifterSwift: Day.
+    ///
+    ///     Date().day -> 12
+    ///
+    ///     var someDate = Date()
+    ///     someDate.day = 1 // sets someDate's day of month to 1.
+    ///
+    public var day: Int {
+        get {
+            return Calendar.current.component(.day, from: self)
+        }
+        set {
+            let allowedRange = Calendar.current.range(of: .day, in: .month, for: self)!
+            guard allowedRange.contains(newValue) else { return }
+            
+            let currentDay = Calendar.current.component(.day, from: self)
+            let daysToAdd = newValue - currentDay
+            if let date = Calendar.current.date(byAdding: .day, value: daysToAdd, to: self) {
+                self = date
+            }
+        }
+    }
 }

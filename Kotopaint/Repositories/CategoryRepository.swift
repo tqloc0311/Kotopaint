@@ -37,9 +37,20 @@ class CategoryRepository {
                         }
                     }
                 }
-                completion(topCategories.sorted(by: { $0.order < $1.order }))
+                completion(topCategories)
             case .failure(let error):
                 print(error.localizedDescription)
+                completion([])
+            }
+        }
+    }
+    
+    func getChildCategoryOf(categoryId: Int, completion: @escaping ([Category])->()) {
+        loadData { (all) in
+            if let found = all.first(where: { $0.id == categoryId }) {
+                completion(found.child)
+            }
+            else {
                 completion([])
             }
         }

@@ -9,7 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-class Category {
+class Category: Hashable {
+    
     
     // MARK: Properties
     var id = 0
@@ -19,6 +20,15 @@ class Category {
     var imageUrl: URL?
     var parentId = 0
     var child = [Category]()
+    
+    // MARK: Hashable
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    var hashValue: Int {
+        return id
+    }
     
     // MARK: Constructors
     init() {

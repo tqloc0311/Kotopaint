@@ -4,6 +4,7 @@ PODS:
   - AlamofireImage (3.4.1):
     - Alamofire (~> 4.7)
   - AMPopTip (3.5.0)
+  - DropDown (2.3.9)
   - Fakery (3.4.0)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AMPopTip
+  - DropDown
   - Fakery
   - GoogleMaps
   - ImageSlideshow
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   AMPopTip: 871ae0570b68fe396e714922b3f7d8ed6a36bb71
+  DropDown: d187d4abdfa708a2990aff0f4fcfab77c6b161df
   Fakery: 885e894a3e7c392e1da96c6e46a1abe5a0b28686
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
@@ -55,6 +58,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TRVideoView: 00e2eaed3f19196956bb1ec61c875df6c0ea84dc
 
-PODFILE CHECKSUM: a2e7e17300d0071808b6f7aeb48009a044e5c647
+PODFILE CHECKSUM: c2aba6415c7234efe83815f173a5ab3df226b376
 
 COCOAPODS: 1.4.0

@@ -20,6 +20,6 @@ target 'Kotopaint' do
   pod 'Kingfisher'
   pod 'LUExpandableTableView'
   pod 'TRVideoView'
-
+  pod 'DropDown'
 end
 

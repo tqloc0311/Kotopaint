@@ -47,10 +47,11 @@ class ColorItemViewController: BackButtonViewController {
     }
     
     //  MARK: - View Lifecycle
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, items: [ColorItem]) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, gallery: ColorGallery) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.data = items
+        self.data = gallery.colorItems
+        self.navigationItem.title = gallery.title
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,7 +61,6 @@ class ColorItemViewController: BackButtonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Bộ sưu tập màu"
         setupView()
         setupCollectionView()
     }

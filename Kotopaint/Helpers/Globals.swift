@@ -12,4 +12,7 @@ class Globals {
     
     static let HOST = "http://api.kotopaint.vn/"
     static var TOKEN = ""
+    
+    static var NOITHAT_CATEGORY_ID = 29
+    static var NGOAITHAT_CATEGORY_ID = 30
 }

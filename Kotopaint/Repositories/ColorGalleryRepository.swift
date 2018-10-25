@@ -22,9 +22,9 @@ class ColorGalleryRepository {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-//                let errorCode = json["error_code"].stringValue
+                let errorCode = json["error_code"].stringValue
                 let errorMessage = json["error_msg"].stringValue
-                if errorMessage != "" {
+                if errorCode != "0" {
                     completion(errorMessage, [])
                 }
                 else {

@@ -42,7 +42,7 @@ class ColorGalleryViewController: BackButtonViewController {
     }
     
     func selectGallery(_ gallery: ColorGallery) {
-        let vc = ColorItemViewController(nibName: nil, bundle: nil, items: gallery.colorItems)
+        let vc = ColorItemViewController(nibName: nil, bundle: nil, gallery: gallery)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

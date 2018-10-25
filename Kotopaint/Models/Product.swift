@@ -11,7 +11,7 @@ import Foundation
 import Fakery
 import SwiftyJSON
 
-class Product {
+class Product: Hashable {
     
     // MARK: Properties
     var id = 0
@@ -31,6 +31,16 @@ class Product {
     var isPublic = true
     var dungtich1 = 0
     var dungtich2 = 0
+    var categoryId = 0
+    
+    // MARK: Hashable
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    var hashValue: Int {
+        return id
+    }
     
     // MARK: Constructors
     init() {
@@ -62,6 +72,7 @@ class Product {
         }
         
         self.id = id
+        self.categoryId = json["category_id"].intValue
         self.title = title
         self.subTitle = subTitle
         self.content = content

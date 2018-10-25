@@ -91,6 +91,17 @@
 		38C053B5217F1F3700946DB6 /* NgoaiThatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C053B3217F1F3700946DB6 /* NgoaiThatViewController.xib */; };
 		38C053B9217F209600946DB6 /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C053B7217F209600946DB6 /* ImageCollectionCell.swift */; };
 		38C053BA217F209600946DB6 /* ImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C053B8217F209600946DB6 /* ImageCollectionCell.xib */; };
+		38C42EA4218154D300EDB3BC /* PhongThuyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EA3218154D300EDB3BC /* PhongThuyRepository.swift */; };
+		38C42EA62181550900EDB3BC /* PhongThuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EA52181550900EDB3BC /* PhongThuy.swift */; };
+		38C42EA8218157D400EDB3BC /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EA7218157D400EDB3BC /* DatePickerDialog.swift */; };
+		38C42EAB2181677100EDB3BC /* PhongThuyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EA92181677100EDB3BC /* PhongThuyDetailViewController.swift */; };
+		38C42EAC2181677100EDB3BC /* PhongThuyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C42EAA2181677100EDB3BC /* PhongThuyDetailViewController.xib */; };
+		38C42EB021818EE000EDB3BC /* CheckProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EAE21818EE000EDB3BC /* CheckProductTableViewCell.swift */; };
+		38C42EB121818EE000EDB3BC /* CheckProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C42EAF21818EE000EDB3BC /* CheckProductTableViewCell.xib */; };
+		38C42EB42181903C00EDB3BC /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EB32181903C00EDB3BC /* CheckBoxButton.swift */; };
+		38C42EB62181AA1400EDB3BC /* CheckProductHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EB52181AA1400EDB3BC /* CheckProductHeaderFooterView.swift */; };
+		38C42EB92181B0DB00EDB3BC /* PaintCalculatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EB82181B0DB00EDB3BC /* PaintCalculatorRepository.swift */; };
+		38C42EBB2181B11000EDB3BC /* PaintCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */; };
 		38CBA67B216DAE9C007C5824 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA679216DAE9C007C5824 /* MenuContentView.swift */; };
 		38CBA67C216DAE9C007C5824 /* MenuContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA67A216DAE9C007C5824 /* MenuContentView.xib */; };
 		38CBA681216DAEB8007C5824 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA67E216DAEB8007C5824 /* Common.swift */; };
@@ -264,6 +275,18 @@
 		38C053B3217F1F3700946DB6 /* NgoaiThatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NgoaiThatViewController.xib; sourceTree = "<group>"; };
 		38C053B7217F209600946DB6 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		38C053B8217F209600946DB6 /* ImageCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionCell.xib; sourceTree = "<group>"; };
+		38C42EA3218154D300EDB3BC /* PhongThuyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhongThuyRepository.swift; sourceTree = "<group>"; };
+		38C42EA52181550900EDB3BC /* PhongThuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhongThuy.swift; sourceTree = "<group>"; };
+		38C42EA7218157D400EDB3BC /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		38C42EA92181677100EDB3BC /* PhongThuyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhongThuyDetailViewController.swift; sourceTree = "<group>"; };
+		38C42EAA2181677100EDB3BC /* PhongThuyDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhongThuyDetailViewController.xib; sourceTree = "<group>"; };
+		38C42EAE21818EE000EDB3BC /* CheckProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckProductTableViewCell.swift; sourceTree = "<group>"; };
+		38C42EAF21818EE000EDB3BC /* CheckProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckProductTableViewCell.xib; sourceTree = "<group>"; };
+		38C42EB32181903C00EDB3BC /* CheckBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		38C42EB52181AA1400EDB3BC /* CheckProductHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckProductHeaderFooterView.swift; sourceTree = "<group>"; };
+		38C42EB72181AA1F00EDB3BC /* CheckProductHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckProductHeaderFooterView.xib; sourceTree = "<group>"; };
+		38C42EB82181B0DB00EDB3BC /* PaintCalculatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorRepository.swift; sourceTree = "<group>"; };
+		38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculator.swift; sourceTree = "<group>"; };
 		38CBA679216DAE9C007C5824 /* MenuContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
 		38CBA67A216DAE9C007C5824 /* MenuContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuContentView.xib; sourceTree = "<group>"; };
 		38CBA67E216DAEB8007C5824 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -335,7 +358,7 @@
 		38FB4048216F2700008238F5 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		38FB404A216F28D5008238F5 /* SideMenuRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuRepository.swift; sourceTree = "<group>"; };
 		38FB404B216F28D6008238F5 /* HomeMenuRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuRepository.swift; sourceTree = "<group>"; };
-		4A09197921809C1C006AAB9A /* ColorGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorGallery.swift; path = "/Users/LocTQ/Desktop/Loc/My freelance/Kotopaint/new_proj/Kotopaint/Kotopaint/Models/ColorGallery.swift"; sourceTree = "<absolute>"; };
+		4A09197921809C1C006AAB9A /* ColorGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorGallery.swift; path = /Users/prostagevn/Desktop/ProStage/freelance/Kotopaint/renew_proj/Kotopaint/Kotopaint/Models/ColorGallery.swift; sourceTree = "<absolute>"; };
 		4A09197B21809CA9006AAB9A /* ColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
 		4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryRepository.swift; sourceTree = "<group>"; };
 		4A09197F2180A3D8006AAB9A /* ColorGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -493,6 +516,8 @@
 		38AE3FB4216DAA65005F5ED3 /* Custom controls */ = {
 			isa = PBXGroup;
 			children = (
+				38C42EB32181903C00EDB3BC /* CheckBoxButton.swift */,
+				38C42EA7218157D400EDB3BC /* DatePickerDialog.swift */,
 				38CBA688216DAF00007C5824 /* ColorPaletteView */,
 				38CBA684216DAF00007C5824 /* InternetAlertView */,
 				38CBA698216DAF00007C5824 /* WaitingView */,
@@ -674,6 +699,26 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		38C42EAD2181677400EDB3BC /* PhongThuyDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38C42EA92181677100EDB3BC /* PhongThuyDetailViewController.swift */,
+				38C42EAA2181677100EDB3BC /* PhongThuyDetailViewController.xib */,
+			);
+			path = PhongThuyDetailViewController;
+			sourceTree = "<group>";
+		};
+		38C42EB221818EE300EDB3BC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				38C42EAE21818EE000EDB3BC /* CheckProductTableViewCell.swift */,
+				38C42EAF21818EE000EDB3BC /* CheckProductTableViewCell.xib */,
+				38C42EB52181AA1400EDB3BC /* CheckProductHeaderFooterView.swift */,
+				38C42EB72181AA1F00EDB3BC /* CheckProductHeaderFooterView.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		38CBA678216DAE9C007C5824 /* MenuContentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +790,7 @@
 				38CBA76B216DFA88007C5824 /* RegisterFormViewController */,
 				38CBA770216DFF2C007C5824 /* ContactViewController */,
 				385A4E61217ED501009F907C /* PhongThuyViewController */,
+				38C42EAD2181677400EDB3BC /* PhongThuyDetailViewController */,
 				385A4E66217ED53A009F907C /* FAQViewController */,
 				385A4E6B217ED7C5009F907C /* IdeaViewController */,
 				385A4E70217ED7E9009F907C /* VideoListViewController */,
@@ -868,6 +914,7 @@
 		38CBA707216DD3D3007C5824 /* PaintCalculatorViewController */ = {
 			isa = PBXGroup;
 			children = (
+				38C42EB221818EE300EDB3BC /* Cell */,
 				38CBA703216DD3CF007C5824 /* PaintCalculatorViewController.swift */,
 				38CBA704216DD3CF007C5824 /* PaintCalculatorViewController.xib */,
 			);
@@ -887,6 +934,8 @@
 				38CBA752216DEED6007C5824 /* Category.swift */,
 				38CBA753216DEED6007C5824 /* Product.swift */,
 				38CBA754216DEED6007C5824 /* HomeMenuItem.swift */,
+				38C42EA52181550900EDB3BC /* PhongThuy.swift */,
+				38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -939,6 +988,8 @@
 				38FB403E216F26CC008238F5 /* ImageRepository.swift */,
 				38FB4046216F26D7008238F5 /* UserRepository.swift */,
 				4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */,
+				38C42EA3218154D300EDB3BC /* PhongThuyRepository.swift */,
+				38C42EB82181B0DB00EDB3BC /* PaintCalculatorRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1046,6 +1097,7 @@
 				38C053AB217F11B600946DB6 /* AnswerTableViewCell.xib in Resources */,
 				385A4E60217ED4FE009F907C /* PhongThuyViewController.xib in Resources */,
 				38CBA67C216DAE9C007C5824 /* MenuContentView.xib in Resources */,
+				38C42EAC2181677100EDB3BC /* PhongThuyDetailViewController.xib in Resources */,
 				385A4E73217EDB88009F907C /* VideoCollectionCell.xib in Resources */,
 				385A4E79217EDF67009F907C /* VideoPlayerViewController.xib in Resources */,
 				389428CD21802E3E007DDDF3 /* ProductCell.xib in Resources */,
@@ -1071,6 +1123,7 @@
 				38CBA6DD216DBAB6007C5824 /* CustomRevealViewController.storyboard in Resources */,
 				38AE3F9E216DA33C005F5ED3 /* Assets.xcassets in Resources */,
 				38CBA764216DF177007C5824 /* MenuCollectionCell.xib in Resources */,
+				38C42EB121818EE000EDB3BC /* CheckProductTableViewCell.xib in Resources */,
 				38CBA69E216DAF00007C5824 /* ColorPalleteCell.xib in Resources */,
 				4A0919862180A3E8006AAB9A /* ColorItemCollectionViewCell.xib in Resources */,
 				389428C321802E07007DDDF3 /* ProductViewController.xib in Resources */,
@@ -1095,6 +1148,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActionKit/ActionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
@@ -1111,6 +1165,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
@@ -1183,9 +1238,12 @@
 				385A4E69217ED7C0009F907C /* IdeaViewController.swift in Sources */,
 				38C053B9217F209600946DB6 /* ImageCollectionCell.swift in Sources */,
 				38CBA67B216DAE9C007C5824 /* MenuContentView.swift in Sources */,
+				38C42EA8218157D400EDB3BC /* DatePickerDialog.swift in Sources */,
 				38AE40C6216DABA1005F5ED3 /* HeroPlugin.swift in Sources */,
 				38CBA6BA216DB136007C5824 /* UIViewController.swift in Sources */,
+				38C42EA62181550900EDB3BC /* PhongThuy.swift in Sources */,
 				4A09197A21809C1C006AAB9A /* ColorGallery.swift in Sources */,
+				38C42EB62181AA1400EDB3BC /* CheckProductHeaderFooterView.swift in Sources */,
 				38FB4043216F26CC008238F5 /* CategoryRepository.swift in Sources */,
 				38CBA6C0216DB3E6007C5824 /* Array.swift in Sources */,
 				38FB4042216F26CC008238F5 /* FaqRepository.swift in Sources */,
@@ -1227,6 +1285,7 @@
 				38AE40C4216DABA1005F5ED3 /* HeroTargetState.swift in Sources */,
 				389428CC21802E3E007DDDF3 /* ProductCell.swift in Sources */,
 				389428C721802E20007DDDF3 /* ProductDetailViewController.swift in Sources */,
+				38C42EAB2181677100EDB3BC /* PhongThuyDetailViewController.swift in Sources */,
 				38CBA69C216DAF00007C5824 /* InternetAlert.swift in Sources */,
 				38CBA6A1216DAF00007C5824 /* ColorPaletteView.swift in Sources */,
 				38AE401D216DAA66005F5ED3 /* UIViewAutolayout.swift in Sources */,
@@ -1240,6 +1299,8 @@
 				38CBA6C8216DB489007C5824 /* UIPanGestureRecognizer.swift in Sources */,
 				38AE40BB216DABA1005F5ED3 /* HeroStringConvertible.swift in Sources */,
 				38AE409E216DABA1005F5ED3 /* MatchPreprocessor.swift in Sources */,
+				38C42EB021818EE000EDB3BC /* CheckProductTableViewCell.swift in Sources */,
+				38C42EBB2181B11000EDB3BC /* PaintCalculator.swift in Sources */,
 				38CBA6BE216DB1B1007C5824 /* UIView.swift in Sources */,
 				38AE40C3216DABA1005F5ED3 /* CAMediaTimingFunction+Hero.swift in Sources */,
 				38CBA6D6216DB925007C5824 /* SideMenuViewController.swift in Sources */,
@@ -1271,6 +1332,7 @@
 				38CBA6E5216DC979007C5824 /* MenuCell.swift in Sources */,
 				38AE405F216DAA66005F5ED3 /* ImageButton.swift in Sources */,
 				38AE40A4216DABA1005F5ED3 /* SourcePreprocessor.swift in Sources */,
+				38C42EB42181903C00EDB3BC /* CheckBoxButton.swift in Sources */,
 				38CBA75B216DEED6007C5824 /* SideMenuItem.swift in Sources */,
 				38C053AA217F11B600946DB6 /* AnswerTableViewCell.swift in Sources */,
 				38AE40A8216DABA1005F5ED3 /* HeroTransition+Start.swift in Sources */,
@@ -1289,6 +1351,8 @@
 				38CBA6C2216DB3F7007C5824 /* UINavigationController.swift in Sources */,
 				38AE40AE216DABA1005F5ED3 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */,
 				38AE40AF216DABA1005F5ED3 /* HeroTransition+UIViewControllerTransitioningDelegate.swift in Sources */,
+				38C42EB92181B0DB00EDB3BC /* PaintCalculatorRepository.swift in Sources */,
+				38C42EA4218154D300EDB3BC /* PhongThuyRepository.swift in Sources */,
 				38FB4044216F26CC008238F5 /* ImageRepository.swift in Sources */,
 				38AE40C5216DABA1005F5ED3 /* HeroCompatible.swift in Sources */,
 				38AE40BE216DABA1005F5ED3 /* CG+Hero.swift in Sources */,
