@@ -48,8 +48,9 @@ class PaintCalculatorResultTableViewCell: UITableViewCell, ReusableView {
     }
     
     func setupView() {
-        containerView.layer.cornerRadius = 10
-        containerView.layer.masksToBounds = true
+        containerView.setBorder(color: .clear, width: 0, corner: 10)
+        dungtich1Label.setBorder(color: .clear, width: 0, corner: 4)
+        dungtich2Label.setBorder(color: .clear, width: 0, corner: 4)
     }
     
     // Overrides

@@ -124,8 +124,6 @@ class PaintCalculatorViewController: BackButtonViewController {
         tableView.register(nibName: CheckProductTableViewCell.self)
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 120
-        
-        tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     private func validate() -> Bool {
@@ -200,13 +198,13 @@ class PaintCalculatorViewController: BackButtonViewController {
     }
     
     func loadData() {
-        var categoryId = Globals.NOITHAT_CATEGORY_ID
+        var categoryID = Globals.NOITHAT_CATEGORY_ID
         if step1Segment.selectedSegmentIndex == 1 {
-            categoryId = Globals.NGOAITHAT_CATEGORY_ID
+            categoryID = Globals.NGOAITHAT_CATEGORY_ID
         }
         
         isLoading = true
-        CategoryRepository.shared.getChildCategoryOf(categoryId: categoryId) { [unowned self] (categories) in
+        CategoryRepository.shared.getChildCategoryOf(categoryID: categoryID) { [unowned self] (categories) in
             self.categories = categories
             ProductRepository.shared.loadData(categoryArray: categories.map({ $0.id }), completion: { [unowned self] (result) in
                 
@@ -220,7 +218,7 @@ class PaintCalculatorViewController: BackButtonViewController {
                     var products = [Product]()
                     
                     for p in result {
-                        if p.categoryId == cate.id {
+                        if p.categoryID == cate.id {
                             products.append(p)
                         }
                     }
@@ -253,9 +251,14 @@ class PaintCalculatorViewController: BackButtonViewController {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         tableView.removeObserver(self, forKeyPath: "contentSize")
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -338,17 +341,22 @@ extension PaintCalculatorViewController: UITableViewDataSource {
         }
         return categories[section].title
     }
+    
 }
 
 // MARK: - UITableViewDelegate
 extension PaintCalculatorViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = dataSource[categories[indexPath.section]]?[indexPath.row] else { return  }
+        let vc = ProductDetailViewController(nibName: nil, bundle: nil, product: item)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - CheckProductTableViewCellDelegate
 extension PaintCalculatorViewController: CheckProductTableViewCellDelegate {
     func selectProduct(product: Product) {
-        if let cate = categories.first(where: { $0.id == product.categoryId }) {
+        if let cate = categories.first(where: { $0.id == product.categoryID }) {
             selectedProducts[cate] = product
             tableView.reloadData()
         }

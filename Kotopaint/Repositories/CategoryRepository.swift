@@ -28,11 +28,11 @@ class CategoryRepository {
                 let json = JSON(value)
                 let data = json["data"]
                 let result = data.arrayValue.compactMap({ Category(json: $0) })
-                let topCategories = result.filter({ $0.parentId == 0 })
-                let subCategories = result.filter({ $0.parentId > 0 })
+                let topCategories = result.filter({ $0.parentID == 0 })
+                let subCategories = result.filter({ $0.parentID > 0 })
                 for top in topCategories {
                     for sub in subCategories {
-                        if sub.parentId == top.id {
+                        if sub.parentID == top.id {
                             top.child.append(sub)
                         }
                     }
@@ -45,9 +45,9 @@ class CategoryRepository {
         }
     }
     
-    func getChildCategoryOf(categoryId: Int, completion: @escaping ([Category])->()) {
+    func getChildCategoryOf(categoryID: Int, completion: @escaping ([Category])->()) {
         loadData { (all) in
-            if let found = all.first(where: { $0.id == categoryId }) {
+            if let found = all.first(where: { $0.id == categoryID }) {
                 completion(found.child)
             }
             else {

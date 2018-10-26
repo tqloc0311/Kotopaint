@@ -34,7 +34,7 @@ class TabBarViewController: UITabBarController {
         let categoryVC = UIViewController.viewControllerFromNibWithNav(CategoryViewController.self)
         categoryVC.tabBarItem = UITabBarItem(title: "Sản phẩm", image: #imageLiteral(resourceName: "tab_icon_product").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_product").withRenderingMode(.alwaysOriginal))
 
-        let colorSchemeVC = UIViewController.viewControllerFromNibWithNav(ColorSchemeViewController.self)
+        let colorSchemeVC = UIViewController.viewControllerFromNibWithNav(PhoiMauCategoryViewController.self)
         colorSchemeVC.tabBarItem = UITabBarItem(title: "Phối màu", image: #imageLiteral(resourceName: "tab_icon_color_mix").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "tab_icon_selected_color_mix").withRenderingMode(.alwaysOriginal))
 
         let paintCalculatorVC = UIViewController.viewControllerFromNibWithNav(PaintCalculatorViewController.self)

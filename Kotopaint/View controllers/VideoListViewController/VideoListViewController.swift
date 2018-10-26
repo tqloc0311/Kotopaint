@@ -72,8 +72,11 @@ class VideoListViewController: BackButtonViewController {
             revealVC.pushFrontViewController(revealVC.tabBarVC, animated: true)
             revealVC.tabBarVC.selectedIndex = 0
         }
+        else if let nav = navigationController {
+            nav.dismiss(animated: true, completion: nil)
+        }
         else {
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }

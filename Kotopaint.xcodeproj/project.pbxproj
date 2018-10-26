@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38450F682182BB20002FF712 /* PhoiMauCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38450F662182BB20002FF712 /* PhoiMauCategoryTableViewCell.swift */; };
+		38450F692182BB20002FF712 /* PhoiMauCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38450F672182BB20002FF712 /* PhoiMauCategoryTableViewCell.xib */; };
+		38450F6D2182C876002FF712 /* PhoiMauItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38450F6B2182C876002FF712 /* PhoiMauItemViewController.swift */; };
+		38450F6E2182C876002FF712 /* PhoiMauItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38450F6C2182C876002FF712 /* PhoiMauItemViewController.xib */; };
+		38450F712182CA00002FF712 /* PhoiMauItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38450F702182CA00002FF712 /* PhoiMauItem.swift */; };
+		38450F732182CE8F002FF712 /* PhoiMauItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38450F722182CE8F002FF712 /* PhoiMauItemRepository.swift */; };
+		38450F7B2182D228002FF712 /* PhoiMauItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38450F792182D228002FF712 /* PhoiMauItemCollectionViewCell.swift */; };
+		38450F7C2182D228002FF712 /* PhoiMauItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38450F7A2182D228002FF712 /* PhoiMauItemCollectionViewCell.xib */; };
 		385A4E5F217ED4FE009F907C /* PhongThuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A4E5D217ED4FE009F907C /* PhongThuyViewController.swift */; };
 		385A4E60217ED4FE009F907C /* PhongThuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385A4E5E217ED4FE009F907C /* PhongThuyViewController.xib */; };
 		385A4E64217ED535009F907C /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A4E62217ED535009F907C /* FAQViewController.swift */; };
@@ -81,6 +89,8 @@
 		38AE40C9216DABA1005F5ED3 /* HeroDebugPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AE409A216DABA1005F5ED3 /* HeroDebugPlugin.swift */; };
 		38AE40CA216DABA1005F5ED3 /* HeroDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AE409B216DABA1005F5ED3 /* HeroDebugView.swift */; };
 		38AE40CB216DABA1005F5ED3 /* HeroModifier+Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AE409C216DABA1005F5ED3 /* HeroModifier+Advanced.swift */; };
+		38B6439E2182B4A200A53D07 /* PhoiMauCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6439D2182B4A200A53D07 /* PhoiMauCategory.swift */; };
+		38B643A02182B55C00A53D07 /* PhoiMauCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6439F2182B55C00A53D07 /* PhoiMauCategoryRepository.swift */; };
 		38C053A6217F11A900946DB6 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C053A4217F11A900946DB6 /* QuestionTableViewCell.swift */; };
 		38C053A7217F11A900946DB6 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C053A5217F11A900946DB6 /* QuestionTableViewCell.xib */; };
 		38C053AA217F11B600946DB6 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C053A8217F11B600946DB6 /* AnswerTableViewCell.swift */; };
@@ -143,8 +153,8 @@
 		38CBA6F7216DD367007C5824 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA6F5216DD367007C5824 /* HomeViewController.xib */; };
 		38CBA6FB216DD388007C5824 /* ColorGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA6F9216DD388007C5824 /* ColorGalleryViewController.swift */; };
 		38CBA6FC216DD388007C5824 /* ColorGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA6FA216DD388007C5824 /* ColorGalleryViewController.xib */; };
-		38CBA700216DD3B2007C5824 /* ColorSchemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA6FE216DD3B2007C5824 /* ColorSchemeViewController.swift */; };
-		38CBA701216DD3B2007C5824 /* ColorSchemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA6FF216DD3B2007C5824 /* ColorSchemeViewController.xib */; };
+		38CBA700216DD3B2007C5824 /* PhoiMauCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA6FE216DD3B2007C5824 /* PhoiMauCategoryViewController.swift */; };
+		38CBA701216DD3B2007C5824 /* PhoiMauCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA6FF216DD3B2007C5824 /* PhoiMauCategoryViewController.xib */; };
 		38CBA705216DD3CF007C5824 /* PaintCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA703216DD3CF007C5824 /* PaintCalculatorViewController.swift */; };
 		38CBA706216DD3CF007C5824 /* PaintCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CBA704216DD3CF007C5824 /* PaintCalculatorViewController.xib */; };
 		38CBA756216DEED6007C5824 /* MenuContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CBA74C216DEED6007C5824 /* MenuContent.swift */; };
@@ -191,6 +201,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38450F662182BB20002FF712 /* PhoiMauCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		38450F672182BB20002FF712 /* PhoiMauCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoiMauCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		38450F6B2182C876002FF712 /* PhoiMauItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauItemViewController.swift; sourceTree = "<group>"; };
+		38450F6C2182C876002FF712 /* PhoiMauItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoiMauItemViewController.xib; sourceTree = "<group>"; };
+		38450F702182CA00002FF712 /* PhoiMauItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauItem.swift; sourceTree = "<group>"; };
+		38450F722182CE8F002FF712 /* PhoiMauItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauItemRepository.swift; sourceTree = "<group>"; };
+		38450F792182D228002FF712 /* PhoiMauItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		38450F7A2182D228002FF712 /* PhoiMauItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoiMauItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		385A4E5D217ED4FE009F907C /* PhongThuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhongThuyViewController.swift; sourceTree = "<group>"; };
 		385A4E5E217ED4FE009F907C /* PhongThuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhongThuyViewController.xib; sourceTree = "<group>"; };
 		385A4E62217ED535009F907C /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +288,8 @@
 		38AE409A216DABA1005F5ED3 /* HeroDebugPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDebugPlugin.swift; sourceTree = "<group>"; };
 		38AE409B216DABA1005F5ED3 /* HeroDebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDebugView.swift; sourceTree = "<group>"; };
 		38AE409C216DABA1005F5ED3 /* HeroModifier+Advanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HeroModifier+Advanced.swift"; sourceTree = "<group>"; };
+		38B6439D2182B4A200A53D07 /* PhoiMauCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauCategory.swift; sourceTree = "<group>"; };
+		38B6439F2182B55C00A53D07 /* PhoiMauCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauCategoryRepository.swift; sourceTree = "<group>"; };
 		38C053A4217F11A900946DB6 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		38C053A5217F11A900946DB6 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
 		38C053A8217F11B600946DB6 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
@@ -332,8 +352,8 @@
 		38CBA6F5216DD367007C5824 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		38CBA6F9216DD388007C5824 /* ColorGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGalleryViewController.swift; sourceTree = "<group>"; };
 		38CBA6FA216DD388007C5824 /* ColorGalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorGalleryViewController.xib; sourceTree = "<group>"; };
-		38CBA6FE216DD3B2007C5824 /* ColorSchemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeViewController.swift; sourceTree = "<group>"; };
-		38CBA6FF216DD3B2007C5824 /* ColorSchemeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorSchemeViewController.xib; sourceTree = "<group>"; };
+		38CBA6FE216DD3B2007C5824 /* PhoiMauCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauCategoryViewController.swift; sourceTree = "<group>"; };
+		38CBA6FF216DD3B2007C5824 /* PhoiMauCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoiMauCategoryViewController.xib; sourceTree = "<group>"; };
 		38CBA703216DD3CF007C5824 /* PaintCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorViewController.swift; sourceTree = "<group>"; };
 		38CBA704216DD3CF007C5824 /* PaintCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorViewController.xib; sourceTree = "<group>"; };
 		38CBA74C216DEED6007C5824 /* MenuContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContent.swift; sourceTree = "<group>"; };
@@ -400,6 +420,34 @@
 				A88E45142A40C66FC6ED4B42 /* Pods-Kotopaint.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		38450F6A2182BB24002FF712 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				38450F662182BB20002FF712 /* PhoiMauCategoryTableViewCell.swift */,
+				38450F672182BB20002FF712 /* PhoiMauCategoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		38450F6F2182C879002FF712 /* PhoiMauItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38450F6B2182C876002FF712 /* PhoiMauItemViewController.swift */,
+				38450F6C2182C876002FF712 /* PhoiMauItemViewController.xib */,
+				38450F7D2182D22C002FF712 /* Cell */,
+			);
+			path = PhoiMauItemViewController;
+			sourceTree = "<group>";
+		};
+		38450F7D2182D22C002FF712 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				38450F792182D228002FF712 /* PhoiMauItemCollectionViewCell.swift */,
+				38450F7A2182D228002FF712 /* PhoiMauItemCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		385A4E61217ED501009F907C /* PhongThuyViewController */ = {
@@ -790,7 +838,8 @@
 				38CBA6F3216DD342007C5824 /* CategoryViewController */,
 				389428C421802E0A007DDDF3 /* ProductViewController */,
 				389428C921802E23007DDDF3 /* ProductDetailViewController */,
-				38CBA702216DD3B5007C5824 /* ColorSchemeViewController */,
+				38CBA702216DD3B5007C5824 /* PhoiMauCategoryViewController */,
+				38450F6F2182C879002FF712 /* PhoiMauItemViewController */,
 				38C053B1217F1F2400946DB6 /* NoiThatViewController */,
 				38C053B6217F1F3A00946DB6 /* NgoaiThatViewController */,
 				38CBA707216DD3D3007C5824 /* PaintCalculatorViewController */,
@@ -910,13 +959,14 @@
 			path = ColorGalleryViewController;
 			sourceTree = "<group>";
 		};
-		38CBA702216DD3B5007C5824 /* ColorSchemeViewController */ = {
+		38CBA702216DD3B5007C5824 /* PhoiMauCategoryViewController */ = {
 			isa = PBXGroup;
 			children = (
-				38CBA6FE216DD3B2007C5824 /* ColorSchemeViewController.swift */,
-				38CBA6FF216DD3B2007C5824 /* ColorSchemeViewController.xib */,
+				38450F6A2182BB24002FF712 /* Cell */,
+				38CBA6FE216DD3B2007C5824 /* PhoiMauCategoryViewController.swift */,
+				38CBA6FF216DD3B2007C5824 /* PhoiMauCategoryViewController.xib */,
 			);
-			path = ColorSchemeViewController;
+			path = PhoiMauCategoryViewController;
 			sourceTree = "<group>";
 		};
 		38CBA707216DD3D3007C5824 /* PaintCalculatorViewController */ = {
@@ -946,6 +996,8 @@
 				38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */,
 				4AE3DA5C218205D400418B37 /* PaintCalculatorResult.swift */,
 				4AE3DA5E218205E400418B37 /* PaintCalculatorResultItem.swift */,
+				38B6439D2182B4A200A53D07 /* PhoiMauCategory.swift */,
+				38450F702182CA00002FF712 /* PhoiMauItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1000,6 +1052,8 @@
 				4A09197D21809FEF006AAB9A /* ColorGalleryRepository.swift */,
 				38C42EA3218154D300EDB3BC /* PhongThuyRepository.swift */,
 				38C42EB82181B0DB00EDB3BC /* PaintCalculatorRepository.swift */,
+				38B6439F2182B55C00A53D07 /* PhoiMauCategoryRepository.swift */,
+				38450F722182CE8F002FF712 /* PhoiMauItemRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1135,9 +1189,11 @@
 				38AE3FA1216DA33C005F5ED3 /* LaunchScreen.storyboard in Resources */,
 				38C053B5217F1F3700946DB6 /* NgoaiThatViewController.xib in Resources */,
 				4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */,
+				38450F692182BB20002FF712 /* PhoiMauCategoryTableViewCell.xib in Resources */,
 				38CBA706216DD3CF007C5824 /* PaintCalculatorViewController.xib in Resources */,
 				38CBA6AB216DAF00007C5824 /* WaitingView.xib in Resources */,
 				38CBA6D0216DB835007C5824 /* StarterViewController.xib in Resources */,
+				38450F6E2182C876002FF712 /* PhoiMauItemViewController.xib in Resources */,
 				38CBA6F2216DD33D007C5824 /* CategoryViewController.xib in Resources */,
 				385A4E65217ED535009F907C /* FAQViewController.xib in Resources */,
 				385A4E6F217ED7E6009F907C /* VideoListViewController.xib in Resources */,
@@ -1152,6 +1208,7 @@
 				38CBA6E6216DC979007C5824 /* MenuCell.xib in Resources */,
 				38CBA6DD216DBAB6007C5824 /* CustomRevealViewController.storyboard in Resources */,
 				38AE3F9E216DA33C005F5ED3 /* Assets.xcassets in Resources */,
+				38450F7C2182D228002FF712 /* PhoiMauItemCollectionViewCell.xib in Resources */,
 				38CBA764216DF177007C5824 /* MenuCollectionCell.xib in Resources */,
 				38C42EB121818EE000EDB3BC /* CheckProductTableViewCell.xib in Resources */,
 				38CBA69E216DAF00007C5824 /* ColorPalleteCell.xib in Resources */,
@@ -1160,7 +1217,7 @@
 				38CBA6F7216DD367007C5824 /* HomeViewController.xib in Resources */,
 				4A0919822180A3D9006AAB9A /* ColorGalleryCollectionViewCell.xib in Resources */,
 				4AE3DA6421821A5300418B37 /* PaintCalculatorResultTableViewCell.xib in Resources */,
-				38CBA701216DD3B2007C5824 /* ColorSchemeViewController.xib in Resources */,
+				38CBA701216DD3B2007C5824 /* PhoiMauCategoryViewController.xib in Resources */,
 				385A4E7C217F0517009F907C /* faqs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1296,6 +1353,7 @@
 				38AE40A2216DABA1005F5ED3 /* ConditionalPreprocessor.swift in Sources */,
 				38CBA758216DEED6007C5824 /* VideoModel.swift in Sources */,
 				38CBA6D7216DB925007C5824 /* BackButtonViewController.swift in Sources */,
+				38450F6D2182C876002FF712 /* PhoiMauItemViewController.swift in Sources */,
 				38AE40A1216DABA1005F5ED3 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */,
 				38AE40C2216DABA1005F5ED3 /* UIViewController+Hero.swift in Sources */,
 				38CBA6CA216DB4A7007C5824 /* String.swift in Sources */,
@@ -1304,8 +1362,10 @@
 				4A09197E21809FEF006AAB9A /* ColorGalleryRepository.swift in Sources */,
 				38AE40B7216DABA1005F5ED3 /* Lexer.swift in Sources */,
 				38AE40BF216DABA1005F5ED3 /* DispatchQueue+Hero.swift in Sources */,
+				38450F712182CA00002FF712 /* PhoiMauItem.swift in Sources */,
 				38CBA6F1216DD33D007C5824 /* CategoryViewController.swift in Sources */,
 				4A0919852180A3E8006AAB9A /* ColorItemCollectionViewCell.swift in Sources */,
+				38B643A02182B55C00A53D07 /* PhoiMauCategoryRepository.swift in Sources */,
 				4AE3DA5B2181FF8200418B37 /* ColorGallery.swift in Sources */,
 				4AE3DA5F218205E400418B37 /* PaintCalculatorResultItem.swift in Sources */,
 				38CBA6AC216DAF00007C5824 /* WaitingView.swift in Sources */,
@@ -1320,6 +1380,7 @@
 				389428C721802E20007DDDF3 /* ProductDetailViewController.swift in Sources */,
 				38C42EAB2181677100EDB3BC /* PhongThuyDetailViewController.swift in Sources */,
 				38CBA69C216DAF00007C5824 /* InternetAlert.swift in Sources */,
+				38450F682182BB20002FF712 /* PhoiMauCategoryTableViewCell.swift in Sources */,
 				38CBA6A1216DAF00007C5824 /* ColorPaletteView.swift in Sources */,
 				38AE401D216DAA66005F5ED3 /* UIViewAutolayout.swift in Sources */,
 				38AE4060216DAA66005F5ED3 /* ViewButton.swift in Sources */,
@@ -1338,13 +1399,14 @@
 				38AE40C3216DABA1005F5ED3 /* CAMediaTimingFunction+Hero.swift in Sources */,
 				38CBA6D6216DB925007C5824 /* SideMenuViewController.swift in Sources */,
 				38AE40A3216DABA1005F5ED3 /* DefaultAnimationPreprocessor.swift in Sources */,
-				38CBA700216DD3B2007C5824 /* ColorSchemeViewController.swift in Sources */,
+				38CBA700216DD3B2007C5824 /* PhoiMauCategoryViewController.swift in Sources */,
 				38CBA75A216DEED6007C5824 /* ImageModel.swift in Sources */,
 				38CBA6CF216DB835007C5824 /* StarterViewController.swift in Sources */,
 				38C053AE217F1F1700946DB6 /* NoiThatViewController.swift in Sources */,
 				38AE40C7216DABA1005F5ED3 /* HeroModifier.swift in Sources */,
 				38AE40C0216DABA1005F5ED3 /* UIView+Hero.swift in Sources */,
 				38C053A6217F11A900946DB6 /* QuestionTableViewCell.swift in Sources */,
+				38B6439E2182B4A200A53D07 /* PhoiMauCategory.swift in Sources */,
 				38AE40B1216DABA1005F5ED3 /* HeroViewControllerDelegate.swift in Sources */,
 				389428C221802E07007DDDF3 /* ProductViewController.swift in Sources */,
 				38AE401E216DAA66005F5ED3 /* SWRevealViewController.m in Sources */,
@@ -1367,9 +1429,11 @@
 				38AE40A4216DABA1005F5ED3 /* SourcePreprocessor.swift in Sources */,
 				38C42EB42181903C00EDB3BC /* CheckBoxButton.swift in Sources */,
 				38CBA75B216DEED6007C5824 /* SideMenuItem.swift in Sources */,
+				38450F7B2182D228002FF712 /* PhoiMauItemCollectionViewCell.swift in Sources */,
 				38C053AA217F11B600946DB6 /* AnswerTableViewCell.swift in Sources */,
 				38AE40A8216DABA1005F5ED3 /* HeroTransition+Start.swift in Sources */,
 				38AE3F97216DA33A005F5ED3 /* AppDelegate.swift in Sources */,
+				38450F732182CE8F002FF712 /* PhoiMauItemRepository.swift in Sources */,
 				38AE40A7216DABA1005F5ED3 /* HeroTransitionState.swift in Sources */,
 				38AE40AB216DABA1005F5ED3 /* HeroTransition+Animate.swift in Sources */,
 				38CBA6EC216DD03D007C5824 /* TabBarViewController.swift in Sources */,

@@ -54,7 +54,7 @@ class ProductViewController: BackButtonViewController {
     
     func loadData(completion: (()->())? = nil) {
         showWaiting()
-        ProductRepository.shared.loadData(categoryId: category.id) { [weak self]  (result) in
+        ProductRepository.shared.loadData(categoryID: category.id) { [weak self]  (result) in
             hideWaiting()
             guard let self = self else { return }
             if result.count == 0 {

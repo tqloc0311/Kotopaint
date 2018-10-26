@@ -31,7 +31,7 @@ class Product: Hashable {
     var isPublic = true
     var dungtich1 = 0
     var dungtich2 = 0
-    var categoryId = 0
+    var categoryID = 0
     
     // MARK: Hashable
     static func == (lhs: Product, rhs: Product) -> Bool {
@@ -72,7 +72,7 @@ class Product: Hashable {
         }
         
         self.id = id
-        self.categoryId = json["category_id"].intValue
+        self.categoryID = json["category_id"].intValue
         self.title = title
         self.subTitle = subTitle
         self.content = content

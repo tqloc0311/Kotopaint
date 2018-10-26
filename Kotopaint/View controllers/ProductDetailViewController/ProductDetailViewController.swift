@@ -138,6 +138,18 @@ class ProductDetailViewController: BackButtonViewController {
         configure(product: product)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: - Override BackButtonViewController methods
     override func didBack() {
         self.navigationController?.popViewController(animated: true)

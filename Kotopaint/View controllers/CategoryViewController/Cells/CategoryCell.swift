@@ -34,7 +34,6 @@ class CategoryCell: UITableViewCell, ReusableView {
     
     func configure(data: Category, style: CategoryImageStyle = .thumbnail) {
         self.data = data
-        titleLabel.text = data.title
         
         switch style {
         case .thumbnail:

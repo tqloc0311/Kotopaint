@@ -40,7 +40,7 @@ class PaintCalculatorDetailViewController: BackButtonViewController {
     
     func configTableView() {
         tableView.dataSource = self
-        
+        tableView.delegate = self
         tableView.register(nibName: PaintCalculatorResultTableViewCell.self)
         tableView.tableFooterView = UIView()
     }
@@ -73,6 +73,18 @@ class PaintCalculatorDetailViewController: BackButtonViewController {
         setupView()
         configTableView()
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Override BackButtonViewController methods
@@ -127,4 +139,24 @@ extension PaintCalculatorDetailViewController: UITableViewDataSource {
     }
 }
 
-xem chi tiết sản phẩm
+// MARK: - UITableViewDelegate
+extension PaintCalculatorDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.section]
+        showWaiting()
+        ProductRepository.shared.getBy(productID: item.id) { [unowned self] (errorMsg, product) in
+            hideWaiting()
+            if errorMsg != "" {
+                self.showErrorAlert(title: "Lỗi", subtitle: errorMsg, buttonTitle: "Thử lại")
+            }
+            else if let product = product {
+                let vc = ProductDetailViewController(nibName: nil, bundle: nil, product: product)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                self.showErrorAlert(title: "Lỗi", subtitle: "Unknown error", buttonTitle: "Thử lại")
+            }
+        }
+        
+    }
+}

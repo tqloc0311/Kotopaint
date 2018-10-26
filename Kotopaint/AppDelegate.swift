@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: TAB_BAR_TEXT_COLOR], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: TAB_BAR_SELECTED_TEXT_COLOR], for: .selected)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: "0E73AE") ?? .black]
         
         let starterVC = UIViewController.viewControllerFromNib(StarterViewController.self)
         self.window = UIWindow(frame: UIScreen.main.bounds)

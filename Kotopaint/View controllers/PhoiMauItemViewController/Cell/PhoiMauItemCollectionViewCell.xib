@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qYy-Mg-A9u" customClass="PhoiMauItemCollectionViewCell" customModule="Kotopaint" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="188" height="205"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="188" height="205"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-8C-YEE" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="172" height="189"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xGA-8C-YEE" firstAttribute="top" secondItem="qYy-Mg-A9u" secondAttribute="top" constant="8" id="PoY-Zi-Fho"/>
+                <constraint firstAttribute="trailing" secondItem="xGA-8C-YEE" secondAttribute="trailing" constant="8" id="agV-sf-x1z"/>
+                <constraint firstItem="xGA-8C-YEE" firstAttribute="leading" secondItem="qYy-Mg-A9u" secondAttribute="leading" constant="8" id="hdE-Mz-fIk"/>
+                <constraint firstAttribute="bottom" secondItem="xGA-8C-YEE" secondAttribute="bottom" constant="8" id="xKl-nV-MGn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="6r6-cz-YBt"/>
+            <size key="customSize" width="188" height="205"/>
+            <connections>
+                <outlet property="imgvPhoto" destination="xGA-8C-YEE" id="BG4-Ho-xDd"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="50.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -19,8 +19,8 @@ class ProductRepository {
     
     // MARK: - Methods
     
-    func loadData(categoryId: Int, completion: @escaping ([Product])->()) {
-        let url = Globals.HOST + "products/\(categoryId)?token=" + Globals.TOKEN
+    func loadData(categoryID: Int, completion: @escaping ([Product])->()) {
+        let url = Globals.HOST + "products/\(categoryID)?token=" + Globals.TOKEN
         Alamofire.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
@@ -41,9 +41,9 @@ class ProductRepository {
         
         for id in categoryArray {
             group.enter()
-            loadData(categoryId: id) { (list) in
+            loadData(categoryID: id) { (list) in
                 for item in list {
-                    item.categoryId = id
+                    item.categoryID = id
                 }
                 
                 result.append(contentsOf: list)
@@ -54,6 +54,30 @@ class ProductRepository {
         
         group.notify(queue: .main) {
             completion(result)
+        }
+    }
+    
+    func getBy(productID: Int, completion: @escaping (String, Product?)->()) {
+        let url = Globals.HOST + "product/\(productID)?token=" + Globals.TOKEN
+        Alamofire.request(url).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let errorCode = json["error_code"].stringValue
+                let errorMessage = json["error_msg"].stringValue
+                
+                if errorCode != "0" {
+                    completion(errorMessage, nil)
+                }
+                else {
+                    let data = json["data"]
+                    
+                    completion("", Product(json: data))
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(error.localizedDescription, nil)
+            }
         }
     }
 }

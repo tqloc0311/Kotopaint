@@ -32,9 +32,13 @@ class PhongThuyDetailViewController: BackButtonViewController {
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(panGesture)
         
+        webView.delegate = self
         if let string = htmlString {
             webView.loadHTMLString(string, baseURL: nil)
-
+            
+        }
+        else {
+            showErrorAlert(title: "Lỗi", subtitle: "Không thể kết nối với máy chủ", buttonTitle: "Thử lại sau")
         }
     }
     
@@ -61,6 +65,18 @@ class PhongThuyDetailViewController: BackButtonViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: - Override BackButtonViewController methods
     override func didBack() {
         self.navigationController?.popViewController(animated: true)
@@ -74,3 +90,13 @@ extension PhongThuyDetailViewController: UIGestureRecognizerDelegate {
     }
 }
 
+// MARK: - UIWebViewDelegate
+extension PhongThuyDetailViewController: UIWebViewDelegate {
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        showWaiting()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        hideWaiting()
+    }
+}

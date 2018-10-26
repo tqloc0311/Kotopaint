@@ -28,7 +28,7 @@ class PaintCalculatorRepository {
             var tmp: JSON = [:]
             
             tmp["id"].int = item.id
-            tmp["categories"].int = item.categoryId
+            tmp["categories"].int = item.categoryID
             
             array.append(tmp)
         }

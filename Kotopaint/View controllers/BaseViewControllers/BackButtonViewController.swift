@@ -27,7 +27,8 @@ class BackButtonViewController: UIViewController {
             guard let self = self else { return }
             self.didBack()
         }
-        barButton.tintColor = .black
+        barButton.tintColor = UIColor(hexString: "0E73AE") ?? .black
         self.navigationItem.leftBarButtonItem = barButton
+
     }
 }
