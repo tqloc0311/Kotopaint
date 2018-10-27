@@ -95,7 +95,8 @@ class PhoiMauCategoryViewController: BackButtonViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
-            
+            let vc = PhoiMauItemViewController(nibName: nil, bundle: nil, phoimauCategory: selected)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

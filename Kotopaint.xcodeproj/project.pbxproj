@@ -190,6 +190,8 @@
 		4A0919862180A3E8006AAB9A /* ColorItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */; };
 		4A09198A2180B6EB006AAB9A /* ColorItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */; };
 		4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */; };
+		4A4BFFA82184601300C82913 /* PhoiMauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BFFA62184601300C82913 /* PhoiMauViewController.swift */; };
+		4A4BFFA92184601300C82913 /* PhoiMauViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4BFFA72184601300C82913 /* PhoiMauViewController.xib */; };
 		4AE3DA572181FF0700418B37 /* PaintCalculatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA552181FF0700418B37 /* PaintCalculatorDetailViewController.swift */; };
 		4AE3DA582181FF0700418B37 /* PaintCalculatorDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE3DA562181FF0700418B37 /* PaintCalculatorDetailViewController.xib */; };
 		4AE3DA5B2181FF8200418B37 /* ColorGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3DA5A2181FF8200418B37 /* ColorGallery.swift */; };
@@ -389,6 +391,8 @@
 		4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItemViewController.swift; sourceTree = "<group>"; };
 		4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemViewController.xib; sourceTree = "<group>"; };
+		4A4BFFA62184601300C82913 /* PhoiMauViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauViewController.swift; sourceTree = "<group>"; };
+		4A4BFFA72184601300C82913 /* PhoiMauViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoiMauViewController.xib; sourceTree = "<group>"; };
 		4AE3DA552181FF0700418B37 /* PaintCalculatorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorDetailViewController.swift; sourceTree = "<group>"; };
 		4AE3DA562181FF0700418B37 /* PaintCalculatorDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorDetailViewController.xib; sourceTree = "<group>"; };
 		4AE3DA5A2181FF8200418B37 /* ColorGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGallery.swift; sourceTree = "<group>"; };
@@ -840,6 +844,7 @@
 				389428C921802E23007DDDF3 /* ProductDetailViewController */,
 				38CBA702216DD3B5007C5824 /* PhoiMauCategoryViewController */,
 				38450F6F2182C879002FF712 /* PhoiMauItemViewController */,
+				4A4BFFAA2184601600C82913 /* PhoiMauViewController */,
 				38C053B1217F1F2400946DB6 /* NoiThatViewController */,
 				38C053B6217F1F3A00946DB6 /* NgoaiThatViewController */,
 				38CBA707216DD3D3007C5824 /* PaintCalculatorViewController */,
@@ -1086,6 +1091,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4A4BFFAA2184601600C82913 /* PhoiMauViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A4BFFA62184601300C82913 /* PhoiMauViewController.swift */,
+				4A4BFFA72184601300C82913 /* PhoiMauViewController.xib */,
+			);
+			path = PhoiMauViewController;
+			sourceTree = "<group>";
+		};
 		4AE3DA592181FF1200418B37 /* PaintCalculatorDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1204,6 +1218,7 @@
 				38CBA6E1216DBB5D007C5824 /* SideMenuTableViewController.xib in Resources */,
 				385A4E6A217ED7C0009F907C /* IdeaViewController.xib in Resources */,
 				38CBA76F216DFF28007C5824 /* ContactViewController.xib in Resources */,
+				4A4BFFA92184601300C82913 /* PhoiMauViewController.xib in Resources */,
 				38FB4032216F1E80008238F5 /* CategoryCell.xib in Resources */,
 				38CBA6E6216DC979007C5824 /* MenuCell.xib in Resources */,
 				38CBA6DD216DBAB6007C5824 /* CustomRevealViewController.storyboard in Resources */,
@@ -1412,6 +1427,7 @@
 				38AE401E216DAA66005F5ED3 /* SWRevealViewController.m in Sources */,
 				38AE401B216DAA66005F5ED3 /* SDStateTableView.swift in Sources */,
 				38CBA6A0216DAF00007C5824 /* ColorPalleteCell.swift in Sources */,
+				4A4BFFA82184601300C82913 /* PhoiMauViewController.swift in Sources */,
 				385A4E78217EDF67009F907C /* VideoPlayerViewController.swift in Sources */,
 				38CBA681216DAEB8007C5824 /* Common.swift in Sources */,
 				38CBA6CC216DB4DB007C5824 /* Date.swift in Sources */,

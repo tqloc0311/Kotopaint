@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoiMauItemViewController" customModule="Kotopaint" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="2Mz-ej-wRr" id="tPZ-e5-aYc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

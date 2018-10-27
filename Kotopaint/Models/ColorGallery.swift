@@ -22,21 +22,15 @@ class ColorGallery {
             let id = json["id"].int,
             let title = json["title"].string,
             let image = json["image"].string,
-            let url = URL(string: "https://kotopaint.vn/uploads/source/" + image),
-            let color = json["color"].string
+            let url = URL(string: image),
+            json["color"] != JSON.null
             else {
                 return nil
-        }
-        
-        let colorJSON = JSON.init(parseJSON: color.replacingOccurrences(of: "\\", with: ""))
-        
-        if colorJSON == JSON.null {
-            return nil
         }
         
         self.id = id
         self.title = title
         self.imageURL = url
-        self.colorItems = colorJSON.dictionaryValue.compactMap({ ColorItem(id: $0.key, json: $0.value) })
+        self.colorItems = json["color"].dictionaryValue.compactMap({ ColorItem(id: $0.key, json: $0.value) })
     }
 }

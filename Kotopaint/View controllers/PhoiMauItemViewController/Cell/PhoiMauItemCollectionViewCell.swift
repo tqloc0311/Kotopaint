@@ -34,12 +34,6 @@ class PhoiMauItemCollectionViewCell: UICollectionViewCell, ReusableView {
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(panGesture)
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        imgvPhoto.image = data.image
-    }
 }
 
 extension PhoiMauItemCollectionViewCell: UIGestureRecognizerDelegate {
