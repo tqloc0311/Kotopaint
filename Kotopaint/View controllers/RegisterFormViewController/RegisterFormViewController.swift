@@ -13,13 +13,14 @@ class RegisterFormViewController: BackButtonViewController {
     // MARK: - Properties
     
     // MARK: - Outlets
-    @IBOutlet weak var txtName: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtPhone: UITextField!
-    @IBOutlet weak var btnSend: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
     // MARK: - Actions
     @IBAction func send(_ sender: Any) {
+        send()
     }
     
     // MARK: - Methods
@@ -28,6 +29,32 @@ class RegisterFormViewController: BackButtonViewController {
         if let isRight = recognizer.isLeftToRight(view), isRight {
             didBack()
         }
+    }
+    
+    func send() {
+        if nameTextField.text == "" {
+            showErrorAlert(title: "Lỗi", subtitle: "Vui lòng nhập tên", buttonTitle: "Thử lại")
+        }
+        else if emailTextField.text == "" {
+            showErrorAlert(title: "Lỗi", subtitle: "Vui lòng nhập email", buttonTitle: "Thử lại")
+        }
+        else if !emailTextField.text!.isValidEmail() {
+            showErrorAlert(title: "Lỗi", subtitle: "Email không đúng!", buttonTitle: "Thử lại")
+        }
+        else if phoneTextField.text == "" {
+            showErrorAlert(title: "Lỗi", subtitle: "Vui lòng nhập số điện thoại", buttonTitle: "Thử lại")
+        }
+        else {
+            self.view.endEditing(true)
+            showErrorAlert(title: "Thành công", subtitle: "Đã gửi đăng ký!", buttonTitle: "OK")
+            clear()
+        }
+    }
+    
+    func clear() {
+        nameTextField.text = ""
+        emailTextField.text = ""
+        phoneTextField.text = ""
     }
     
     // MARK: - Navigation
@@ -41,7 +68,7 @@ class RegisterFormViewController: BackButtonViewController {
         
         self.navigationItem.title = "Liên hệ mở đại lý"
         
-        btnSend.layer.cornerRadius = 8
+        sendButton.layer.cornerRadius = 8
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panHandle(_:)))
         panGesture.delegate = self
         self.view.isUserInteractionEnabled = true
@@ -65,6 +92,25 @@ class RegisterFormViewController: BackButtonViewController {
 
 extension RegisterFormViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
+
+extension RegisterFormViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameTextField:
+            emailTextField.becomeFirstResponder()
+            break
+        case emailTextField:
+            phoneTextField.becomeFirstResponder()
+            break
+        case phoneTextField:
+            send()
+            break
+        default:
+            break
+        }
         return true
     }
 }

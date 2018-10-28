@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class PhoiMauItem {
     
-    struct Hotspot {
+    class Hotspot {
         var x: Double = 0
         var y: Double = 0
         
@@ -21,9 +21,10 @@ class PhoiMauItem {
         }
     }
     
-    struct Mask {
+    class Mask {
         var hotspot: Hotspot!
         var url: URL!
+        var image: UIImage?
         
         init?(json: JSON) {
             guard
@@ -39,6 +40,7 @@ class PhoiMauItem {
     var id = 0
     var title = ""
     var imageURL: URL?
+    var image: UIImage?
     var categoryID = 0
     var masks = [Mask]()
     
@@ -63,6 +65,42 @@ class PhoiMauItem {
         self.masks = json["mask"].arrayValue.compactMap({ Mask(json: $0) })
         if self.masks.count == 0 {
             return nil
+        }
+    }
+    
+    //
+    func download(completion: @escaping (Bool)->()) {
+        let group = DispatchGroup()
+        var error = false
+        group.enter()
+        Globals.downloadImage(url: self.imageURL?.absoluteString ?? "") { (downloaded) in
+            if let img = downloaded {
+                
+                self.image = img
+            }
+            else {
+                error = true
+            }
+            
+            group.leave()
+        }
+        
+        for mask in masks {
+            group.enter()
+            Globals.downloadImage(url: mask.url?.absoluteString ?? "") { (downloaded) in
+                if let img = downloaded {
+                    mask.image = img
+                }
+                else {
+                    error = true
+                }
+                
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            completion(!error)
         }
     }
 }

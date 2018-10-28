@@ -31,10 +31,10 @@ class PaintCalculatorResultTableViewCell: UITableViewCell, ReusableView {
         if data.type1 == 0 || data.type2 == 0 {
             dungtich2Label.isHidden = true
             if data.type1 == 0 {
-                dungtich1Label.text = "\(data.type2) (\(data.dungtich2) \(data.donvi))"
+                dungtich1Label.text = " \(data.type2) (\(data.dungtich2) \(data.donvi)) "
             }
             else {
-                dungtich1Label.text = "\(data.type1) (\(data.dungtich1) \(data.donvi))"
+                dungtich1Label.text = " \(data.type1) (\(data.dungtich1) \(data.donvi)) "
             }
         }
         else if data.type1 == 0 && data.type2 == 0 {
@@ -42,8 +42,8 @@ class PaintCalculatorResultTableViewCell: UITableViewCell, ReusableView {
             dungtich2Label.isHidden = true
         }
         else {
-            dungtich1Label.text = "\(data.type1) (\(data.dungtich1) \(data.donvi))"
-            dungtich2Label.text = "\(data.type2) (\(data.dungtich2) \(data.donvi))"
+            dungtich1Label.text = " \(data.type1) (\(data.dungtich1) \(data.donvi)) "
+            dungtich2Label.text = " \(data.type2) (\(data.dungtich2) \(data.donvi)) "
         }
     }
     

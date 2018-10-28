@@ -76,6 +76,9 @@ class CategoryCell: UITableViewCell, ReusableView {
         self.layer.shadowRadius = 4.0
         
         let panGesture = UIPanGestureRecognizer { (gesture) in
+            if gesture.state != .ended {
+                return
+            }
             if let panGesture = gesture as? UIPanGestureRecognizer, let f = self.panAction, let isRight = panGesture.isLeftToRight(self) {
                 f(isRight)
             }

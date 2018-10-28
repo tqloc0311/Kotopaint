@@ -45,7 +45,7 @@ class PhongThuyRepository {
                         completion(errorMessage, "")
                     }
                     else if let data = json["data"].string {
-                        print(self.css + data)
+//                        print(self.css + data)
                         completion("", (self.css + data))
                     }
                     else {

@@ -15,7 +15,7 @@ class CustomRevealViewController: SWRevealViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.rearViewRevealWidth = 300
+        self.rearViewRevealWidth = 280
         
         self.setRear(UIViewController.viewControllerFromNib(SideMenuTableViewController.self), animated: true)
 

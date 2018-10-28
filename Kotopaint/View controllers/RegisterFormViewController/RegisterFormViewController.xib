@@ -12,10 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterFormViewController" customModule="Kotopaint" customModuleProvider="target">
             <connections>
-                <outlet property="btnSend" destination="JzN-LV-YW8" id="xtn-UV-rYg"/>
-                <outlet property="txtEmail" destination="EAI-eD-e5N" id="AFT-TT-xvv"/>
-                <outlet property="txtName" destination="xEA-t7-lXK" id="NN1-b0-Enc"/>
-                <outlet property="txtPhone" destination="vB7-Gc-B6J" id="nN3-gF-dSv"/>
+                <outlet property="emailTextField" destination="EAI-eD-e5N" id="AFT-TT-xvv"/>
+                <outlet property="nameTextField" destination="xEA-t7-lXK" id="NN1-b0-Enc"/>
+                <outlet property="phoneTextField" destination="vB7-Gc-B6J" id="nN3-gF-dSv"/>
+                <outlet property="sendButton" destination="JzN-LV-YW8" id="xtn-UV-rYg"/>
                 <outlet property="view" destination="fCl-6m-Tzi" id="KK4-33-iRb"/>
             </connections>
         </placeholder>
@@ -76,7 +76,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzN-LV-YW8">
-                    <rect key="frame" x="101.66666666666667" y="494" width="171.66666666666663" height="40"/>
+                    <rect key="frame" x="102" y="494" width="171.5" height="40"/>
                     <color key="backgroundColor" red="0.20138111710000001" green="0.1882414818" blue="0.58585923910000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="vf6-Gs-Kym"/>
@@ -125,6 +125,6 @@
         </view>
     </objects>
     <resources>
-        <image name="openAgency" width="3456" height="2304"/>
+        <image name="openAgency" width="8294400" height="5529600"/>
     </resources>
 </document>

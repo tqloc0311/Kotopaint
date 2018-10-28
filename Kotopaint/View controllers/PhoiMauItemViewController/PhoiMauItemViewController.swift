@@ -14,7 +14,7 @@ class PhoiMauItemViewController: BackButtonViewController {
     
     //  MARK: - Properties
     private var dataSource = [PhoiMauItem]()
-    private var phoimauCategory: PhoiMauCategory?
+    private var phoimauCategory: PhoiMauCategory!
     
     //  MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -42,11 +42,38 @@ class PhoiMauItemViewController: BackButtonViewController {
     }
     
     func goNext(model: PhoiMauItem) {
-        
+        showWaiting()
+        model.download { [unowned self] (success) in
+            hideWaiting()
+            if success {
+                let vc = PhoiMauViewController(nibName: nil, bundle: nil, phoimauItem: model)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                self.showErrorAlert(title: "Lỗi", subtitle: "Không thể kết nối với máy chủ!", buttonTitle: "Thử lại")
+            }
+        }
     }
     
     func configure() {
         self.navigationItem.title = phoimauCategory?.name ?? ""
+        loadData()
+    }
+    
+    func loadData() {
+        showWaiting()
+        PhoiMauItemRepository.shared.loadData(categoryID: phoimauCategory.id) { [unowned self] (result) in
+            hideWaiting()
+            
+            if result.count == 0 {
+                self.showErrorAlert(title: "Không có dữ liệu", subtitle: "", buttonTitle: "OK")
+            }
+            else {
+                self.dataSource = result
+                self.collectionView.reloadData()
+            }
+            
+        }
     }
     
     //  MARK: - Navigation
@@ -108,8 +135,9 @@ extension PhoiMauItemViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(PhoiMauItemCollectionViewCell.self, indexPath: indexPath)
         
-        cell.data = dataSource[indexPath.item]
-        cell.imgvPhoto.touchUpInsideAction = { [weak self] in
+        let item = dataSource[indexPath.item]
+        cell.configure(item)
+        cell.selectAction = { [weak self] in
             guard let self = self else { return }
             self.goNext(model: cell.data)
         }

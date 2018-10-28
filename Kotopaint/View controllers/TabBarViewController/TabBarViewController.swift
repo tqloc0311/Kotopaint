@@ -14,7 +14,11 @@ class TabBarViewController: UITabBarController {
     
     // MARK: - Properties
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
-
+    override var selectedIndex: Int {
+        didSet {
+            tabBarController(self, didSelect: viewControllers![selectedIndex])
+        }
+    }
     
     // MARK: - Outlets
     
@@ -63,6 +67,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         configTabBarItems()
+        self.delegate = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -75,5 +80,13 @@ class TabBarViewController: UITabBarController {
         newFrame.origin.y = view.frame.size.height - newTabBarHeight
         
         tabBar.frame = newFrame
+    }
+}
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let nav = viewController as? UINavigationController {
+            nav.popToRootViewController(animated: false)
+        }
     }
 }

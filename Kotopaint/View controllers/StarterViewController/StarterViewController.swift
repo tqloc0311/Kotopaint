@@ -39,18 +39,7 @@ class StarterViewController: UIViewController {
             group.leave()
         }
         
-        group.enter()
-        executeOnBackground(task: {
-            ImageRepository.shared.loadData()
-        }, completion: {
-            group.leave()
-        }, delay: 0)
-        group.enter()
-        executeOnBackground(task: {
-            VideoRepository.shared.loadData()
-        }, completion: {
-            group.leave()
-        }, delay: 0)
+        VideoRepository.shared.loadData()
         
         group.notify(queue: .main) {
             self.presentModalViewControllerFromStoryBoard(destinationClass: CustomRevealViewController.self)

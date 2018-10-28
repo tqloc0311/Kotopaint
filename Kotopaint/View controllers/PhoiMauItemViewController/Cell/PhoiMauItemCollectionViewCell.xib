@@ -19,8 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="188" height="205"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-8C-YEE" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-8C-YEE" customClass="ImageButton" customModule="Kotopaint" customModuleProvider="target">
                         <rect key="frame" x="8" y="8" width="172" height="189"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
@@ -34,7 +35,7 @@
             <viewLayoutGuide key="safeArea" id="6r6-cz-YBt"/>
             <size key="customSize" width="188" height="205"/>
             <connections>
-                <outlet property="imgvPhoto" destination="xGA-8C-YEE" id="BG4-Ho-xDd"/>
+                <outlet property="imageView" destination="xGA-8C-YEE" id="AQv-Hk-E85"/>
             </connections>
             <point key="canvasLocation" x="28" y="50.5"/>
         </collectionViewCell>

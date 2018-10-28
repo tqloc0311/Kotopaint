@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "TabBarViewController.tabBar(_:didSelect:):TabBarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "controllers[selectedIndex] as? UIViewController">
+            </PersistentString>
+            <PersistentString
+               value = "controllers[selectedIndex].navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauItemRepository.dummy():PhoiMauItemRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauItem.init(json:):PhoiMauItem.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;id&quot;].int">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauViewController.selectGalleryAt(index:):PhoiMauViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedColors[selectedColorIndex]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ColorPaletteView.collectionView(_:didSelectItemAt:):ColorPaletteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ColorPaletteView.loadData(data:at:with:):ColorPaletteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauViewController.configure():PhoiMauViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imgv.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PhoiMauItemRepository.loadData(categoryID:completion:):PhoiMauItemRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ColorPaletteView.collectionView(_:cellForItemAt:):ColorPaletteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PhoiMauViewController.goHome(_:):PhoiMauViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.revealViewController()">
+            </PersistentString>
+            <PersistentString
+               value = "self.navigationController?.tabBarController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauResultRepository.save(item:):PhoiMauResultRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "LocalStorage.sharedInstance.content">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

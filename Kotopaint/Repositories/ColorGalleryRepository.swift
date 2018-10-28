@@ -15,10 +15,13 @@ class ColorGalleryRepository {
     // Static
     static let shared = ColorGalleryRepository()
     
+    // Properties
+    var storage = [ColorGallery]()
+    
     // Methods
     func loadData(completion: @escaping (String, [ColorGallery])->()) {
         let url = Globals.HOST + "colors?token=" + Globals.TOKEN
-        Alamofire.request(url).responseJSON { (response) in
+        Alamofire.request(url).responseJSON { [unowned self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -30,6 +33,8 @@ class ColorGalleryRepository {
                 else {
                     let data = json["data"]
                     let result = data.arrayValue.compactMap({ ColorGallery(json: $0) })
+                    
+                    self.storage = result
                     
                     completion("", result)
                 }

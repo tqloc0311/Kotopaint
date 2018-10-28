@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class PhoiMauItemRepository {
     
@@ -16,6 +18,22 @@ class PhoiMauItemRepository {
     // MARK: - Properties
     
     // MARK: - Methods
+    
+    func loadData(categoryID: Int, completion: @escaping ([PhoiMauItem])->()) {
+        let url = Globals.HOST + "phoimaus/\(categoryID)?token=" + Globals.TOKEN
+        Alamofire.request(url).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let data = json["data"]
+                let result = data.dictionaryValue.compactMap({ PhoiMauItem(json: $0.value) })
+                completion(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion([])
+            }
+        }
+    }
     
     // MARK: - Constructors
 }

@@ -135,6 +135,23 @@ class CategoryViewController: BackButtonViewController {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let _ = parentCategory {
+            self.tabBarController?.tabBar.isHidden = true
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let _ = parentCategory {
+            self.tabBarController?.tabBar.isHidden = false
+        }
+        
+    }
+    
     // MARK: - Override BackButtonViewController methods
     override func didBack() {
         if let _ = parentCategory {
