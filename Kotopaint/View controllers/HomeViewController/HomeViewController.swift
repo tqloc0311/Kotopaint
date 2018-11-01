@@ -58,13 +58,6 @@ class HomeViewController: UIViewController {
         carouselView.inset = 0
         carouselView.delegate = self
         carouselView.dataSource = self
-        carouselView.delaysContentTouches = false
-        for view in carouselView.subviews {
-            if view is UIScrollView {
-                (view as! UIScrollView).delaysContentTouches = false
-                break
-            }
-        }
     }
     
     //  MARK: - Navigation

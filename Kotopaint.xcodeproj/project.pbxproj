@@ -28,6 +28,8 @@
 		385A4E78217EDF67009F907C /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A4E76217EDF67009F907C /* VideoPlayerViewController.swift */; };
 		385A4E79217EDF67009F907C /* VideoPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385A4E77217EDF67009F907C /* VideoPlayerViewController.xib */; };
 		385A4E7C217F0517009F907C /* faqs.json in Resources */ = {isa = PBXBuildFile; fileRef = 385A4E7B217F0517009F907C /* faqs.json */; };
+		3892FCF6218A8F5700444A37 /* ColorItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892FCF4218A8F5700444A37 /* ColorItemDetailViewController.swift */; };
+		3892FCF7218A8F5700444A37 /* ColorItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3892FCF5218A8F5700444A37 /* ColorItemDetailViewController.xib */; };
 		389428C221802E07007DDDF3 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389428C021802E07007DDDF3 /* ProductViewController.swift */; };
 		389428C321802E07007DDDF3 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389428C121802E07007DDDF3 /* ProductViewController.xib */; };
 		389428C721802E20007DDDF3 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389428C521802E20007DDDF3 /* ProductDetailViewController.swift */; };
@@ -230,6 +232,8 @@
 		385A4E76217EDF67009F907C /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		385A4E77217EDF67009F907C /* VideoPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerViewController.xib; sourceTree = "<group>"; };
 		385A4E7B217F0517009F907C /* faqs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faqs.json; sourceTree = "<group>"; };
+		3892FCF4218A8F5700444A37 /* ColorItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItemDetailViewController.swift; sourceTree = "<group>"; };
+		3892FCF5218A8F5700444A37 /* ColorItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemDetailViewController.xib; sourceTree = "<group>"; };
 		389428C021802E07007DDDF3 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		389428C121802E07007DDDF3 /* ProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		389428C521802E20007DDDF3 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
@@ -520,6 +524,15 @@
 				385A4E77217EDF67009F907C /* VideoPlayerViewController.xib */,
 			);
 			path = VideoPlayerViewController;
+			sourceTree = "<group>";
+		};
+		3892FCF9218A8FA500444A37 /* ColorItemDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3892FCF4218A8F5700444A37 /* ColorItemDetailViewController.swift */,
+				3892FCF5218A8F5700444A37 /* ColorItemDetailViewController.xib */,
+			);
+			path = ColorItemDetailViewController;
 			sourceTree = "<group>";
 		};
 		389428C421802E0A007DDDF3 /* ProductViewController */ = {
@@ -823,6 +836,7 @@
 				38CBA6F8216DD369007C5824 /* HomeViewController */,
 				38CBA6FD216DD38B007C5824 /* ColorGalleryViewController */,
 				4A09198C2180B6EF006AAB9A /* ColorItemViewController */,
+				3892FCF9218A8FA500444A37 /* ColorItemDetailViewController */,
 				38CBA6F3216DD342007C5824 /* CategoryViewController */,
 				389428C421802E0A007DDDF3 /* ProductViewController */,
 				389428C921802E23007DDDF3 /* ProductDetailViewController */,
@@ -1228,6 +1242,7 @@
 				385A4E60217ED4FE009F907C /* PhongThuyViewController.xib in Resources */,
 				4AF2404A2186174E005072C9 /* ImageViewerViewController.xib in Resources */,
 				38CBA67C216DAE9C007C5824 /* MenuContentView.xib in Resources */,
+				3892FCF7218A8F5700444A37 /* ColorItemDetailViewController.xib in Resources */,
 				38C42EAC2181677100EDB3BC /* PhongThuyDetailViewController.xib in Resources */,
 				385A4E73217EDB88009F907C /* VideoCollectionCell.xib in Resources */,
 				385A4E79217EDF67009F907C /* VideoPlayerViewController.xib in Resources */,
@@ -1416,6 +1431,7 @@
 				38CBA6F1216DD33D007C5824 /* CategoryViewController.swift in Sources */,
 				4A0919852180A3E8006AAB9A /* ColorItemCollectionViewCell.swift in Sources */,
 				38B643A02182B55C00A53D07 /* PhoiMauCategoryRepository.swift in Sources */,
+				3892FCF6218A8F5700444A37 /* ColorItemDetailViewController.swift in Sources */,
 				4AE3DA5B2181FF8200418B37 /* ColorGallery.swift in Sources */,
 				4AE3DA5F218205E400418B37 /* PaintCalculatorResultItem.swift in Sources */,
 				38CBA6AC216DAF00007C5824 /* WaitingView.swift in Sources */,
