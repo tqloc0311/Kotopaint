@@ -132,11 +132,12 @@ class CategoryViewController: BackButtonViewController {
         
         setupView()
         configTableView()
-        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        loadData()
         
         if let _ = parentCategory {
             self.tabBarController?.tabBar.isHidden = true

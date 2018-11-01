@@ -14,6 +14,7 @@ class ImageViewerViewController: UIViewController {
     
     // Properties
     var photo: UIImage?
+    var imageViewHeroID = ""
     
     // Outlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -29,9 +30,10 @@ class ImageViewerViewController: UIViewController {
     // Navigation
     
     // View lifecycle
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, image: UIImage?) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, image: UIImage?, imageViewHeroID: String = "") {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.photo = image
+        self.imageViewHeroID = imageViewHeroID
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,6 +44,7 @@ class ImageViewerViewController: UIViewController {
         super.viewDidLoad()
         
         imageView.image = photo
+        imageView.hero.id = imageViewHeroID
         self.scrollView.minimumZoomScale = 1.0;
         self.scrollView.maximumZoomScale = 10.0;
         self.scrollView.delegate = self

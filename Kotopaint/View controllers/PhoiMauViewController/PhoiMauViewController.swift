@@ -45,10 +45,21 @@ class PhoiMauViewController: BackButtonViewController {
     
     @IBAction func save(_ sender: Any) {
         popTip.hide()
-        let image = imagesContainerView.asImage()
-        let resultItem = PhoiMauResult(image: image, selectedItems: selectedColors)
-        PhoiMauResultRepository.shared.save(item: resultItem)
-        savedImages.append(resultItem)
+        showWaiting()
+        DispatchQueue.global().async { [unowned self] in
+            guard let image = self.imagesContainerView.asImage() else {
+                self.showErrorAlert(title: "Lỗi", subtitle: "Không thể lưu hình này", buttonTitle: "Thử lại")
+                return
+            }
+            let resultItem = PhoiMauResult(image: image, selectedItems: self.selectedColors)
+            PhoiMauResultRepository.shared.save(item: resultItem)
+            
+            DispatchQueue.main.async {
+                self.savedImages.append(resultItem)
+                hideWaiting()
+            }
+        }
+        
     }
     
     @IBAction func reset(_ sender: Any) {

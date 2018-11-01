@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ScalingCarousel
 
 class HomeViewController: UIViewController {
     
@@ -17,26 +16,26 @@ class HomeViewController: UIViewController {
     var menuList = HomeMenuRepository.shared.storage
     
     //  MARK: - Outlets
-    @IBOutlet weak var carouselView: ScalingCarouselView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var goPreviousButton: UIButton!
     @IBOutlet weak var goNextButton: UIButton!
     
     //  MARK: - Actions
     @IBAction func left(_ sender: Any) {
-        guard let current = carouselView.centerCellIndexPath else {return}
+        guard let current = collectionView.centerCellIndexPath else {return}
         let nextItem = current.row - 1
         if nextItem >= 0 {
             let indexPath = IndexPath(row: nextItem, section: 0)
-            carouselView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
     
     @IBAction func right(_ sender: Any) {
-        guard let current = carouselView.centerCellIndexPath else {return}
+        guard let current = collectionView.centerCellIndexPath else {return}
         let nextItem = current.row + 1
         if nextItem <= menuList.count - 1 {
             let indexPath = IndexPath(row: nextItem, section: 0)
-            carouselView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
     
@@ -54,10 +53,9 @@ class HomeViewController: UIViewController {
     }
     
     func setupCollectionView() {
-        carouselView.register(nibName: MenuCollectionCell.self)
-        carouselView.inset = 0
-        carouselView.delegate = self
-        carouselView.dataSource = self
+        collectionView.register(nibName: MenuCollectionCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     //  MARK: - Navigation
@@ -130,12 +128,10 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        carouselView.didScroll()
-        
         goPreviousButton.isHidden = false
         goNextButton.isHidden = false
         
-        if let currentIndex = carouselView.centerCellIndexPath?.row {
+        if let currentIndex = collectionView.centerCellIndexPath?.row {
             if currentIndex == 0 {
                 goPreviousButton.isHidden = true
             }
@@ -143,5 +139,14 @@ extension HomeViewController: UICollectionViewDelegate {
                 goNextButton.isHidden = true
             }
         }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat =  0
+        let collectionViewSize = collectionView.frame.size.width - padding
+        let width = collectionViewSize / 3
+        return collectionView.bounds.size
     }
 }

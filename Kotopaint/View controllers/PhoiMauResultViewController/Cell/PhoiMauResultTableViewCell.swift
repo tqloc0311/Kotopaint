@@ -24,6 +24,7 @@ class PhoiMauResultTableViewCell: UITableViewCell, ReusableView {
     func configure(_ data: PhoiMauResult) {
         self.data = data
         editedImageView.image = data.image
+        editedImageView.hero.id = "phoimauResultDetail_\(data.id)"
         for (index, item) in data.selectedColorItem.enumerated() {
             if item.name == "" || item.id == "" {
                 continue

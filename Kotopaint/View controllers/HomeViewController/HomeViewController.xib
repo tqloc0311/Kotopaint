@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Kotopaint" customModuleProvider="target">
             <connections>
-                <outlet property="carouselView" destination="HZh-nx-HDC" id="7ZG-wg-xP3"/>
+                <outlet property="collectionView" destination="HZh-nx-HDC" id="7ZG-wg-xP3"/>
                 <outlet property="goNextButton" destination="CxZ-VH-yeC" id="I1d-Cx-eHW"/>
                 <outlet property="goPreviousButton" destination="ray-FJ-oQh" id="KS4-ZK-bBL"/>
                 <outlet property="view" destination="AAH-Gb-Ykx" id="BWO-Gj-QsB"/>
@@ -73,28 +73,19 @@
                         <constraint firstAttribute="width" secondItem="Odz-mV-U35" secondAttribute="height" multiplier="3.40741" id="YmN-7F-4dM"/>
                     </constraints>
                 </imageView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-nx-HDC" customClass="ScalingCarouselView" customModule="ScalingCarousel">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-nx-HDC">
                     <rect key="frame" x="54" y="140" width="267" height="403"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="HZh-nx-HDC" secondAttribute="height" multiplier="53:80" id="Uga-ci-2iH"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L9p-76-ZKQ">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="L9p-76-ZKQ">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
-                    <cells>
-                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oHh-bn-7jh">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </view>
-                        </collectionViewCell>
-                    </cells>
+                    <cells/>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,7 +112,7 @@
     </objects>
     <resources>
         <image name="left_round" width="25" height="25"/>
-        <image name="logo" width="552" height="262"/>
+        <image name="logo" width="384" height="128"/>
         <image name="menu" width="25" height="25"/>
         <image name="right_round" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
