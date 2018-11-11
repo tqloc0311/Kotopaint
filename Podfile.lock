@@ -25,7 +25,7 @@ PODS:
   - Realm/Headers (3.11.1)
   - RealmSwift (3.11.1):
     - Realm (= 3.11.1)
-  - ScalingCarousel (2.4.1)
+  - ScalingCarousel (2.3)
   - SwiftyJSON (4.2.0)
   - TRVideoView (0.1.4)
 
@@ -82,7 +82,7 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
   RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
-  ScalingCarousel: 2f8d7d7dc02a4aff33ad0ca4148f9b27b2c8f91c
+  ScalingCarousel: ee866c34c01b784b6edf9009f12ea73935517e3e
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TRVideoView: 00e2eaed3f19196956bb1ec61c875df6c0ea84dc
 
