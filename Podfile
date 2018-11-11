@@ -21,5 +21,6 @@ target 'Kotopaint' do
   pod 'LUExpandableTableView'
   pod 'TRVideoView'
   pod 'DropDown'
+  pod 'RealmSwift'
 end
 

@@ -21,23 +21,32 @@ class CategoryRepository {
     // MARK: - Methods
     
     func loadData(completion: @escaping ([Category])->()) {
-        let url = Globals.HOST + "categories?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "categories?token=" + APIHelper.TOKEN
         Alamofire.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                let data = json["data"]
-                let result = data.arrayValue.compactMap({ Category(json: $0) })
-                let topCategories = result.filter({ $0.parentID == 0 })
-                let subCategories = result.filter({ $0.parentID > 0 })
-                for top in topCategories {
-                    for sub in subCategories {
-                        if sub.parentID == top.id {
-                            top.child.append(sub)
+                let errorCode = json["error_code"].stringValue
+                if errorCode == "3000" || errorCode == "3002" {
+                    APIHelper.requestToken(completion: { (_) in
+                        self.loadData(completion: completion)
+                    })
+                }
+                else {
+                    let data = json["data"]
+                    let result = data.arrayValue.compactMap({ Category(json: $0) })
+                    let topCategories = result.filter({ $0.parentID == 0 })
+                    let subCategories = result.filter({ $0.parentID > 0 })
+                    for top in topCategories {
+                        for sub in subCategories {
+                            if sub.parentID == top.id {
+                                top.child.append(sub)
+                            }
                         }
                     }
+                    completion(topCategories)
                 }
-                completion(topCategories)
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 completion([])

@@ -28,7 +28,7 @@ class PhongThuyRepository {
     
     // Methods
     func loadData(birthday: Date, direction: PhongThuy.Direction, gender: PhongThuy.Gender, completion: @escaping (String, String)->()) {
-        let url = Globals.HOST + "phongthuy?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "phongthuy?token=" + APIHelper.TOKEN
         let parameters = [
             "day": birthday.day,
             "month": birthday.month,
@@ -41,11 +41,15 @@ class PhongThuyRepository {
                     let json = JSON(value)
                     let errorCode = json["error_code"].stringValue
                     let errorMessage = json["error_msg"].stringValue
-                    if errorCode != "0" {
+                    if errorCode == "3000" || errorCode == "3002" {
+                        APIHelper.requestToken(completion: { (_) in
+                            self.loadData(birthday: birthday, direction: direction, gender: gender, completion: completion)
+                        })
+                    }
+                    else if errorCode != "0" {
                         completion(errorMessage, "")
                     }
                     else if let data = json["data"].string {
-//                        print(self.css + data)
                         completion("", (self.css + data))
                     }
                     else {

@@ -38,7 +38,7 @@ class PaintCalculatorRepository {
     }
     
     func calculate(_ item: PaintCalculator, completion: @escaping (String, PaintCalculatorResult?)->()) {
-        let url = Globals.HOST + "calculatepaint?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "calculatepaint?token=" + APIHelper.TOKEN
         let parameters: Parameters = [
             "construct": item.construct.rawValue,
             "layout": item.layout,
@@ -58,7 +58,12 @@ class PaintCalculatorRepository {
                     let json = JSON(value)
                     let errorCode = json["error_code"].stringValue
                     let errorMessage = json["error_msg"].stringValue
-                    if errorCode != "0" {
+                    if errorCode == "3000" || errorCode == "3002" {
+                        APIHelper.requestToken(completion: { (_) in
+                            self.calculate(item, completion: completion)
+                        })
+                    }
+                    else if errorCode != "0" {
                         completion(errorMessage, nil)
                     }
                     else {

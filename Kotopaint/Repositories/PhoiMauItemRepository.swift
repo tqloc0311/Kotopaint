@@ -20,14 +20,23 @@ class PhoiMauItemRepository {
     // MARK: - Methods
     
     func loadData(categoryID: Int, completion: @escaping ([PhoiMauItem])->()) {
-        let url = Globals.HOST + "phoimaus/\(categoryID)?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "phoimaus/\(categoryID)?token=" + APIHelper.TOKEN
         Alamofire.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                let data = json["data"]
-                let result = data.dictionaryValue.compactMap({ PhoiMauItem(json: $0.value) })
-                completion(result)
+                let errorCode = json["error_code"].stringValue
+                if errorCode == "3000" || errorCode == "3002" {
+                    APIHelper.requestToken(completion: { (_) in
+                        self.loadData(categoryID: categoryID, completion: completion)
+                    })
+                }
+                else {
+                    let data = json["data"]
+                    let result = data.dictionaryValue.compactMap({ PhoiMauItem(json: $0.value) })
+                    completion(result)
+                }
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 completion([])

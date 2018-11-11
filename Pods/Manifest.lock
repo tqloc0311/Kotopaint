@@ -20,6 +20,11 @@ PODS:
   - NVActivityIndicatorView (4.4.0):
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
   - ScalingCarousel (2.4.1)
   - SwiftyJSON (4.2.0)
   - TRVideoView (0.1.4)
@@ -37,9 +42,30 @@ DEPENDENCIES:
   - Kingfisher
   - LUExpandableTableView
   - NVActivityIndicatorView
+  - RealmSwift
   - ScalingCarousel
   - SwiftyJSON
   - TRVideoView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActionKit
+    - Alamofire
+    - AlamofireImage
+    - AMPopTip
+    - DropDown
+    - Fakery
+    - GoogleMaps
+    - ImageSlideshow
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - LUExpandableTableView
+    - NVActivityIndicatorView
+    - Realm
+    - RealmSwift
+    - ScalingCarousel
+    - SwiftyJSON
+    - TRVideoView
 
 SPEC CHECKSUMS:
   ActionKit: 1e1b696b6e1a54e7999d8c0f1d7176b2fee2fa4d
@@ -54,10 +80,12 @@ SPEC CHECKSUMS:
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   LUExpandableTableView: 1227ffc82a40ce199176b51e3e34472efce53acc
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   ScalingCarousel: 2f8d7d7dc02a4aff33ad0ca4148f9b27b2c8f91c
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TRVideoView: 00e2eaed3f19196956bb1ec61c875df6c0ea84dc
 
-PODFILE CHECKSUM: c2aba6415c7234efe83815f173a5ab3df226b376
+PODFILE CHECKSUM: 0ac515aefeaa9dc0ba2cf123384755cc0339cc3e
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2

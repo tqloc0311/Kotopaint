@@ -20,14 +20,23 @@ class ProductRepository {
     // MARK: - Methods
     
     func loadData(categoryID: Int, completion: @escaping ([Product])->()) {
-        let url = Globals.HOST + "products/\(categoryID)?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "products/\(categoryID)?token=" + APIHelper.TOKEN
         Alamofire.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                let data = json["data"]
-                let result = data.arrayValue.compactMap({ Product(json: $0) })
-                completion(result.sorted(by: { $0.order < $1.order }))
+                let errorCode = json["error_code"].stringValue
+                if errorCode == "3000" || errorCode == "3002" {
+                    APIHelper.requestToken(completion: { (_) in
+                        self.loadData(categoryID: categoryID, completion: completion)
+                    })
+                }
+                else {
+                    let data = json["data"]
+                    let result = data.arrayValue.compactMap({ Product(json: $0) })
+                    completion(result.sorted(by: { $0.order < $1.order }))
+                }
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 completion([])
@@ -58,7 +67,7 @@ class ProductRepository {
     }
     
     func getBy(productID: Int, completion: @escaping (String, Product?)->()) {
-        let url = Globals.HOST + "product/\(productID)?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "product/\(productID)?token=" + APIHelper.TOKEN
         Alamofire.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
@@ -66,7 +75,12 @@ class ProductRepository {
                 let errorCode = json["error_code"].stringValue
                 let errorMessage = json["error_msg"].stringValue
                 
-                if errorCode != "0" {
+                if errorCode == "3000" || errorCode == "3002" {
+                    APIHelper.requestToken(completion: { (_) in
+                        self.getBy(productID: productID, completion: completion)
+                    })
+                }
+                else if errorCode != "0" {
                     completion(errorMessage, nil)
                 }
                 else {

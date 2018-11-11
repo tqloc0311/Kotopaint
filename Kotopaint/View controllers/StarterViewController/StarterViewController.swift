@@ -35,7 +35,7 @@ class StarterViewController: UIViewController {
         
         let group = DispatchGroup()
         group.enter()
-        UserRepository.shared.getToken { (_) in
+        APIHelper.requestToken { (_) in
             group.leave()
         }
         

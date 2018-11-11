@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import IQKeyboardManagerSwift
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -49,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(GOOGLE_MAPS_SDK_KEY)
         IQKeyboardManager.shared.enable = true
         reachabilitySetup()
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 300
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: TAB_BAR_TEXT_COLOR], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: TAB_BAR_SELECTED_TEXT_COLOR], for: .selected)

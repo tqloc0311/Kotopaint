@@ -20,14 +20,19 @@ class ColorGalleryRepository {
     
     // Methods
     func loadData(completion: @escaping (String, [ColorGallery])->()) {
-        let url = Globals.HOST + "colors?token=" + Globals.TOKEN
+        let url = APIHelper.HOST + "colors?token=" + APIHelper.TOKEN
         Alamofire.request(url).responseJSON { [unowned self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 let errorCode = json["error_code"].stringValue
                 let errorMessage = json["error_msg"].stringValue
-                if errorCode != "0" {
+                if errorCode == "3000" || errorCode == "3002" {
+                    APIHelper.requestToken(completion: { (_) in
+                        self.loadData(completion: completion)
+                    })
+                }
+                else if errorCode != "0" {
                     completion(errorMessage, [])
                 }
                 else {
