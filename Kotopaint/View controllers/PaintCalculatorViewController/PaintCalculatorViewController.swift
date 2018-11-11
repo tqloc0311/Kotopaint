@@ -248,12 +248,14 @@ class PaintCalculatorViewController: BackButtonViewController {
         setupView()
         configTableView()
         
-        loadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         super.viewWillAppear(animated)
+        
+        loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

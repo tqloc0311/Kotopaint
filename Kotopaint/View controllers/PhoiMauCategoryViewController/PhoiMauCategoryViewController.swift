@@ -134,6 +134,12 @@ class PhoiMauCategoryViewController: BackButtonViewController {
         
         setupView()
         configTableView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         loadData()
     }
     

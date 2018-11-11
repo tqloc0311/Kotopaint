@@ -41,8 +41,9 @@ class PhoiMauResultViewController: BackButtonViewController {
         tableView.tableFooterView = UIView()
     }
     
-    func selectImage(_ image: UIImage) {
-        let vc = ImageViewerViewController(nibName: nil, bundle: nil, image: image)
+    func selectImage(_ item: PhoiMauResult) {
+        let vc = ImageViewerViewController(nibName: nil, bundle: nil, image: item.image, imageViewHeroID: "phoimauResultDetail_\(item.id)")
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -78,12 +79,13 @@ class PhoiMauResultViewController: BackButtonViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.tabBarController?.tabBar.isHidden = false
+        
     }
     
     // MARK: - Override BackButtonViewController methods
     override func didBack() {
         navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
     }
 }
 
@@ -113,11 +115,11 @@ extension PhoiMauResultViewController: UITableViewDataSource {
                 self.didBack()
             }
             else {
-                self.selectImage(item.image ?? UIImage())
+                self.selectImage(item)
             }
         }
         cell.selectAction = { [unowned self] in
-            self.selectImage(item.image ?? UIImage())
+            self.selectImage(item)
         }
         
         return cell

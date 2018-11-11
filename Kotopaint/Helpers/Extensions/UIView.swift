@@ -48,10 +48,22 @@ extension UIView {
     
     // Using a function since `var image` might conflict with an existing variable
     // (like on `UIImageView`)
-    func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
+    func asImage() -> UIImage? {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)
+            }
+        } else {
+            guard let context = UIGraphicsGetCurrentContext() else {
+                return nil
+            }
+            UIGraphicsBeginImageContext(frame.size)
+            layer.render(in:context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
         }
+        
     }
 }

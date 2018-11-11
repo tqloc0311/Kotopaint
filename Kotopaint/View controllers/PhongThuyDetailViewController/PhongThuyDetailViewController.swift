@@ -67,7 +67,6 @@ class PhongThuyDetailViewController: BackButtonViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showWaiting()
         self.tabBarController?.tabBar.isHidden = true
     }
     
@@ -93,7 +92,7 @@ extension PhongThuyDetailViewController: UIGestureRecognizerDelegate {
 // MARK: - UIWebViewDelegate
 extension PhongThuyDetailViewController: UIWebViewDelegate {
     func webViewDidStartLoad(_ webView: UIWebView) {
-        
+        showWaiting()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

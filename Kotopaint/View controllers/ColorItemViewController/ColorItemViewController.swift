@@ -74,12 +74,13 @@ class ColorItemViewController: BackButtonViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.tabBarController?.tabBar.isHidden = false
+        
     }
     
     // MARK: - Override BackButtonViewController methods
     override func didBack() {
         self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
     }
 }
 
@@ -108,11 +109,18 @@ extension ColorItemViewController: UICollectionViewDelegate, UICollectionViewDat
         let padding: CGFloat =  0
         let collectionViewSize = collectionView.frame.size.width - padding
         let width = collectionViewSize / 3
-        let imageRatio: CGFloat = 4/5
         return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.layoutIfNeeded()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = data[indexPath.item]
+        
+        let vc = ColorItemDetailViewController(nibName: nil, bundle: nil, colorItem: item)
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
 }

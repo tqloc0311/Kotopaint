@@ -47,7 +47,7 @@ class PaintCalculatorRepository {
             "rad_acreage": item.step2Mode.rawValue,
             "long": item.long,
             "height": item.height,
-            "width": item.layout,
+            "width": item.width,
             "floor": item.floor,
             ]
         

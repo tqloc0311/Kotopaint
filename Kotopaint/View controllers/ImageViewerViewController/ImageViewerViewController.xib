@@ -11,6 +11,9 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewerViewController" customModule="Kotopaint" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="imageView" destination="n5j-Om-fsm" id="06T-ad-hhl"/>
                 <outlet property="scrollView" destination="ajc-Y9-Ory" id="44N-sF-h4K"/>
@@ -84,6 +87,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="50" height="50"/>
+        <image name="back" width="25" height="25"/>
     </resources>
 </document>

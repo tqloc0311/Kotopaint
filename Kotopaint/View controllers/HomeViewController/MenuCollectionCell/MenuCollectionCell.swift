@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import ScalingCarousel
 import Fakery
 
-class MenuCollectionCell: ScalingCarouselCell, ReusableView {
+class MenuCollectionCell: UICollectionViewCell, ReusableView {
     
     // MARK: - Properties
     var data = HomeMenuItem()
@@ -22,6 +21,7 @@ class MenuCollectionCell: ScalingCarouselCell, ReusableView {
     @IBOutlet weak var bottomTitleLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mainView: ViewButton!
     
     // MARK: - Methods
     func configure(_ data: HomeMenuItem) {
