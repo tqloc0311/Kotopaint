@@ -39,4 +39,19 @@ extension String {
             return NSAttributedString()
         }
     }
+    
+    func encodeToInt() -> Int {
+        return self.ascii.compactMap({ Int($0) }).reduce(0, +)
+    }
+}
+
+extension StringProtocol {
+    var ascii: [UInt32] {
+        return unicodeScalars.compactMap { $0.isASCII ? $0.value : nil }
+    }
+}
+extension Character {
+    var ascii: UInt32? {
+        return String(self).ascii.first
+    }
 }

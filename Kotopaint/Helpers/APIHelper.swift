@@ -18,6 +18,11 @@ class APIHelper {
     static let HOST = "http://api.kotopaint.vn/"
     static var TOKEN = ""
     
+    enum APICallingMode {
+        case online
+        case offline
+    }
+    
     // Methods
     static func requestToken(completion: @escaping (Bool)->()) {
         let url = APIHelper.HOST + "auth/login"

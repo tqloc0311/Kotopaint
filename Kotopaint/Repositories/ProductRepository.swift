@@ -19,26 +19,39 @@ class ProductRepository {
     
     // MARK: - Methods
     
-    func loadData(categoryID: Int, completion: @escaping ([Product])->()) {
-        let url = APIHelper.HOST + "products/\(categoryID)?token=" + APIHelper.TOKEN
-        Alamofire.request(url).responseJSON { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                let errorCode = json["error_code"].stringValue
-                if errorCode == "3000" || errorCode == "3002" {
-                    APIHelper.requestToken(completion: { (_) in
-                        self.loadData(categoryID: categoryID, completion: completion)
-                    })
+    func loadData(categoryID: Int, mode: APIHelper.APICallingMode = .online, completion: @escaping ([Product])->()) {
+        
+        if mode == .online {
+            let url = APIHelper.HOST + "products/\(categoryID)?token=" + APIHelper.TOKEN
+            Alamofire.request(url).responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    let errorCode = json["error_code"].stringValue
+                    if errorCode == "3000" || errorCode == "3002" {
+                        APIHelper.requestToken(completion: { (_) in
+                            self.loadData(categoryID: categoryID, completion: completion)
+                        })
+                    }
+                    else {
+                        let data = json["data"]
+                        APICacheManager.shared.set(key: "products/\(categoryID)", json: data)
+                        let result = data.arrayValue.compactMap({ Product(json: $0) })
+                        completion(result.sorted(by: { $0.order < $1.order }))
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    completion([])
                 }
-                else {
-                    let data = json["data"]
-                    let result = data.arrayValue.compactMap({ Product(json: $0) })
-                    completion(result.sorted(by: { $0.order < $1.order }))
-                }
-                
-            case .failure(let error):
-                print(error.localizedDescription)
+            }
+        }
+        else {
+            if let json = APICacheManager.shared.get(key: "products/\(categoryID)") {
+                let result = json.arrayValue.compactMap({ Product(json: $0) })
+                completion(result.sorted(by: { $0.order < $1.order }))
+            }
+            else {
                 completion([])
             }
         }
