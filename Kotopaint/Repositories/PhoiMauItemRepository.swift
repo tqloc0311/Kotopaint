@@ -33,7 +33,7 @@ class PhoiMauItemRepository {
                 }
                 else {
                     let data = json["data"]
-                    let result = data.dictionaryValue.compactMap({ PhoiMauItem(json: $0.value) })
+                    let result = data.arrayValue.compactMap({ PhoiMauItem(json: $0) })
                     completion(result)
                 }
                 

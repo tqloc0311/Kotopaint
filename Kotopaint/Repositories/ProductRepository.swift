@@ -35,7 +35,7 @@ class ProductRepository {
                     }
                     else {
                         let data = json["data"]
-                        APICacheManager.shared.set(key: "products/\(categoryID)", json: data)
+//                        APICacheManager.shared.set(key: "products/\(categoryID)", json: data)
                         let result = data.arrayValue.compactMap({ Product(json: $0) })
                         completion(result.sorted(by: { $0.order < $1.order }))
                     }

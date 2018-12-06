@@ -27,14 +27,14 @@ class ColorItem {
         self.color = color
     }
     
-    init?(id: String, json: JSON) {
+    init?(json: JSON) {
         guard
             let name = json["name"].string,
             let value = json["value"].string,
             let color = UIColor(hexString: value)
             else { return nil }
         
-        self.id = id
+        self.id = name
         self.name = name
         self.color = color
     }

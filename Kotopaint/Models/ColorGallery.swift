@@ -31,6 +31,6 @@ class ColorGallery {
         self.id = id
         self.title = title
         self.imageURL = url
-        self.colorItems = json["color"].dictionaryValue.compactMap({ ColorItem(id: $0.key, json: $0.value) })
+        self.colorItems = json["color"].arrayValue.compactMap({ ColorItem(json: $0) })
     }
 }

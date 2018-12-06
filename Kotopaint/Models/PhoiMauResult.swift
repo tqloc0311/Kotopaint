@@ -35,7 +35,7 @@ class PhoiMauResult {
         
         self.id = id
         self.image = image
-        self.selectedColorItem = json["color_items"].dictionaryValue.compactMap({ ColorItem(id: $0.key, json: $0.value) })
+        self.selectedColorItem = json["color_items"].arrayValue.compactMap({ ColorItem(json: $0) })
         if selectedColorItem.count == 0  {
             return nil
         }
