@@ -10,6 +10,11 @@ import Foundation
 import RealmSwift
 
 class APICache: Object {
+    
     @objc dynamic var key = ""
     @objc dynamic var jsonString = ""
+    
+    override class func primaryKey() -> String? {
+        return "key"
+    }
 }
