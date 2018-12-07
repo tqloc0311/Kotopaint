@@ -28,3 +28,4 @@ class VideoModel {
         self.thumbnail = image
     }
 }
+lỗi api
