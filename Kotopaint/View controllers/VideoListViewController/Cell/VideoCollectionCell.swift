@@ -37,16 +37,7 @@ class VideoCollectionCell: UICollectionViewCell, ReusableView {
     func configure(_ data: VideoModel) {
         self.data = data
         lblTitle.text = data.title
-        if let image = data.thumbnail {
-            imgvPhoto.image = image
-        }
-        else {
-            isLoading = true
-            getVideoThumbnail(data.url, completion: { (downloaded) in
-                self.isLoading = false
-                self.imgvPhoto.image = downloaded
-            })
-        }
+        imgvPhoto.kf.setImage(with: data.thumbnailURL)
         
         imgvPhoto.touchUpInsideAction = { [weak self] in
             guard let self = self else { return }

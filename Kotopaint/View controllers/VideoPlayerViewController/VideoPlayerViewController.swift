@@ -26,7 +26,8 @@ class VideoPlayerViewController: BackButtonViewController {
     
     //  MARK: - Methods
     func setupVideoPlayer() {
-        let playerView = TRVideoView(text: "\(model.title) \(model.url)")
+        guard let videoURL = model.videoURL else { return }
+        let playerView = TRVideoView(text: "\(model.title) \(videoURL)")
         
         playerView.frame = playerContainerView.bounds
         playerView.navigationDelegate = self

@@ -39,7 +39,10 @@ class StarterViewController: UIViewController {
             group.leave()
         }
         
-        VideoRepository.shared.loadData()
+        group.enter()
+        VideoRepository.shared.loadData { (_) in
+            group.leave()
+        }
         
         group.notify(queue: .main) {
             self.presentModalViewControllerFromStoryBoard(destinationClass: CustomRevealViewController.self)

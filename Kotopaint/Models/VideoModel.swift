@@ -6,27 +6,31 @@
 //  Copyright © 2018 FREELANCE. All rights reserved.
 //
 
-import Foundation
+import SwiftyJSON
 
 class VideoModel {
     
     // MARK: - Properties
     var id = 0
-    var url = ""
+    var videoURLString = ""
+    var videoURL: URL? {
+        return URL(string: videoURLString)
+    }
     var title = ""
-    var thumbnail: UIImage?
+    var thumbnailURLString = ""
+    var thumbnailURL: URL? {
+        return URL(string: thumbnailURLString)
+    }
     
     // Constructor
     init() {
         
     }
     
-    init(id: Int, url: String, title: String, image: UIImage? = nil) {
-        self.id = id
-        self.url = url
-        self.title = title
-        self.thumbnail = image
+    init(json: JSON) {
+        id = json["id"].intValue
+        title = json["title"].stringValue
+        videoURLString = json["video"].stringValue
+        thumbnailURLString = json["image"].stringValue
     }
 }
-
-lỗi api

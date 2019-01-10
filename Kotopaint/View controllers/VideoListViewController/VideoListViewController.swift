@@ -15,7 +15,7 @@ class VideoListViewController: BackButtonViewController {
     //  MARK: - Constants
     
     //  MARK: - Properties
-    var data = VideoRepository.shared.data
+    var videos = VideoRepository.shared.storage
     
     //  MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -90,13 +90,13 @@ extension VideoListViewController: UIGestureRecognizerDelegate {
 
 extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return videos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(VideoCollectionCell.self, indexPath: indexPath)
         
-        cell.configure(data[indexPath.item])
+        cell.configure(videos[indexPath.item])
         cell.selectAction = { [weak self] in
             guard let self = self else { return }
             self.openVideo(cell.data)
