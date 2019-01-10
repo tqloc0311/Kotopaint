@@ -51,6 +51,11 @@ class HomeMenuRepository {
         storage.append(item)
         //
         
+        // Tính sơn v2
+        item = HomeMenuItem(id: 8, title: "Tính sơn v2", titleHeroID: "paintCalcTitle", subTitle: "Phần mềm tính sơn", photo: #imageLiteral(resourceName: "paint_calc"))
+        storage.append(item)
+        //
+        
         // Phong thủy
         item = HomeMenuItem(id: 6, title: "Phong thủy", titleHeroID: "phongthuyTitle", subTitle: "Chọn màu phong thủy", photo: #imageLiteral(resourceName: "phongthuy"))
         storage.append(item)

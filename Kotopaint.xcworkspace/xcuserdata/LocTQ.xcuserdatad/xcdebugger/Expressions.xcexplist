@@ -3,20 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "TabBarViewController.tabBar(_:didSelect:):TabBarViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "controllers[selectedIndex] as? UIViewController">
-            </PersistentString>
-            <PersistentString
-               value = "controllers[selectedIndex].navigationController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PhoiMauItemRepository.dummy():PhoiMauItemRepository.swift">
-      </ContextState>
-      <ContextState
          contextName = "PhoiMauItem.init(json:):PhoiMauItem.swift">
          <PersistentStrings>
             <PersistentString
@@ -25,18 +11,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "PhoiMauViewController.selectGalleryAt(index:):PhoiMauViewController.swift">
+         contextName = "ColorPaletteView.collectionView(_:cellForItemAt:):ColorPaletteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PhoiMauItemRepository.loadData(categoryID:completion:):PhoiMauItemRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PaintCalculatorResultV2.init(json:):PaintCalculatorResultV2.swift">
          <PersistentStrings>
             <PersistentString
-               value = "selectedColors[selectedColorIndex]">
+               value = "json[&quot;data&quot;].arrayValue.compactMap({ PaintCalculatorResultItemV2(json: $0) })">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ColorPaletteView.collectionView(_:didSelectItemAt:):ColorPaletteView.swift">
+         contextName = "closure #1 in PaintCalculatorV2ViewController.calculate():PaintCalculatorV2ViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ColorPaletteView.loadData(data:at:with:):ColorPaletteView.swift">
+         contextName = "PaintCalculatorDetailV2ViewController.tableView(_:didSelectRowAt:):PaintCalculatorDetailV2ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "items[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "PhoiMauViewController.configure():PhoiMauViewController.swift">
@@ -47,10 +44,46 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in PhoiMauItemRepository.loadData(categoryID:completion:):PhoiMauItemRepository.swift">
+         contextName = "PaintCalculatorDetailV2ViewController.init(nibName:bundle:result:):PaintCalculatorDetailV2ViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ColorPaletteView.collectionView(_:cellForItemAt:):ColorPaletteView.swift">
+         contextName = "TabBarViewController.tabBar(_:didSelect:):TabBarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "controllers[selectedIndex].navigationController">
+            </PersistentString>
+            <PersistentString
+               value = "controllers[selectedIndex] as? UIViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauItemRepository.dummy():PhoiMauItemRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PaintCalculatorResultV2TableViewCell.configure(data:):PaintCalculatorResultV2TableViewCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ColorPaletteView.loadData(data:at:with:):ColorPaletteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PaintCalculatorRepository.calculateV2(long:width:height:numOfFloors:colorSurfaces:waterproofingSurfaces:products:completion:):PaintCalculatorRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "productsToJSONV2(products).description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhoiMauResultRepository.save(item:):PhoiMauResultRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "LocalStorage.sharedInstance.content">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ColorPaletteView.collectionView(_:didSelectItemAt:):ColorPaletteView.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in PhoiMauViewController.goHome(_:):PhoiMauViewController.swift">
@@ -64,10 +97,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "PhoiMauResultRepository.save(item:):PhoiMauResultRepository.swift">
+         contextName = "PhoiMauViewController.selectGalleryAt(index:):PhoiMauViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "LocalStorage.sharedInstance.content">
+               value = "selectedColors[selectedColorIndex]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

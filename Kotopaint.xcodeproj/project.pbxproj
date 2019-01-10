@@ -184,6 +184,18 @@
 		4A0919862180A3E8006AAB9A /* ColorItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */; };
 		4A09198A2180B6EB006AAB9A /* ColorItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */; };
 		4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */; };
+		4A106CAA21E78354009B40A0 /* PaintCalculatorProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CA921E78354009B40A0 /* PaintCalculatorProduct.swift */; };
+		4A106CAC21E78407009B40A0 /* PaintCalculatorCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CAB21E78407009B40A0 /* PaintCalculatorCategory.swift */; };
+		4A106CB121E7891C009B40A0 /* PaintCalculatorV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CAF21E7891C009B40A0 /* PaintCalculatorV2ViewController.swift */; };
+		4A106CB221E7891C009B40A0 /* PaintCalculatorV2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A106CB021E7891C009B40A0 /* PaintCalculatorV2ViewController.xib */; };
+		4A106CB521E793BB009B40A0 /* PaintCalculatorResultV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CB421E793BB009B40A0 /* PaintCalculatorResultV2.swift */; };
+		4A106CB721E793C4009B40A0 /* PaintCalculatorResultItemV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CB621E793C4009B40A0 /* PaintCalculatorResultItemV2.swift */; };
+		4A106CBB21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CB921E796C7009B40A0 /* PaintCalculatorV2TableViewCell.swift */; };
+		4A106CBC21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A106CBA21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.xib */; };
+		4A106CBF21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CBD21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.swift */; };
+		4A106CC021E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A106CBE21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.xib */; };
+		4A106CC521E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A106CC321E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.swift */; };
+		4A106CC621E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A106CC421E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.xib */; };
 		4A4BFFA82184601300C82913 /* PhoiMauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BFFA62184601300C82913 /* PhoiMauViewController.swift */; };
 		4A4BFFA92184601300C82913 /* PhoiMauViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4BFFA72184601300C82913 /* PhoiMauViewController.xib */; };
 		4A7780CA219850570037E5FE /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7780C9219850570037E5FE /* APIHelper.swift */; };
@@ -394,6 +406,18 @@
 		4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A0919882180B6EB006AAB9A /* ColorItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorItemViewController.swift; sourceTree = "<group>"; };
 		4A0919892180B6EB006AAB9A /* ColorItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorItemViewController.xib; sourceTree = "<group>"; };
+		4A106CA921E78354009B40A0 /* PaintCalculatorProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorProduct.swift; sourceTree = "<group>"; };
+		4A106CAB21E78407009B40A0 /* PaintCalculatorCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorCategory.swift; sourceTree = "<group>"; };
+		4A106CAF21E7891C009B40A0 /* PaintCalculatorV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorV2ViewController.swift; sourceTree = "<group>"; };
+		4A106CB021E7891C009B40A0 /* PaintCalculatorV2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorV2ViewController.xib; sourceTree = "<group>"; };
+		4A106CB421E793BB009B40A0 /* PaintCalculatorResultV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorResultV2.swift; sourceTree = "<group>"; };
+		4A106CB621E793C4009B40A0 /* PaintCalculatorResultItemV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorResultItemV2.swift; sourceTree = "<group>"; };
+		4A106CB921E796C7009B40A0 /* PaintCalculatorV2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorV2TableViewCell.swift; sourceTree = "<group>"; };
+		4A106CBA21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorV2TableViewCell.xib; sourceTree = "<group>"; };
+		4A106CBD21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorDetailV2ViewController.swift; sourceTree = "<group>"; };
+		4A106CBE21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorDetailV2ViewController.xib; sourceTree = "<group>"; };
+		4A106CC321E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCalculatorResultV2TableViewCell.swift; sourceTree = "<group>"; };
+		4A106CC421E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaintCalculatorResultV2TableViewCell.xib; sourceTree = "<group>"; };
 		4A4BFFA62184601300C82913 /* PhoiMauViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoiMauViewController.swift; sourceTree = "<group>"; };
 		4A4BFFA72184601300C82913 /* PhoiMauViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoiMauViewController.xib; sourceTree = "<group>"; };
 		4A7780C9219850570037E5FE /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
@@ -850,7 +874,9 @@
 				4AF2403F2186090C005072C9 /* PhoiMauResultViewController */,
 				4AF2404B21861752005072C9 /* ImageViewerViewController */,
 				38CBA707216DD3D3007C5824 /* PaintCalculatorViewController */,
+				4A106CB321E78923009B40A0 /* PaintCalculatorV2ViewController */,
 				4AE3DA592181FF1200418B37 /* PaintCalculatorDetailViewController */,
+				4A106CC121E7B263009B40A0 /* PaintCalculatorDetailV2ViewController */,
 				38CBA76B216DFA88007C5824 /* RegisterFormViewController */,
 				38CBA770216DFF2C007C5824 /* ContactViewController */,
 				385A4E61217ED501009F907C /* PhongThuyViewController */,
@@ -1001,12 +1027,8 @@
 				38CBA753216DEED6007C5824 /* Product.swift */,
 				38CBA754216DEED6007C5824 /* HomeMenuItem.swift */,
 				38C42EA52181550900EDB3BC /* PhongThuy.swift */,
-				38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */,
-				4AE3DA5C218205D400418B37 /* PaintCalculatorResult.swift */,
-				4AE3DA5E218205E400418B37 /* PaintCalculatorResultItem.swift */,
-				38B6439D2182B4A200A53D07 /* PhoiMauCategory.swift */,
-				38450F702182CA00002FF712 /* PhoiMauItem.swift */,
-				4AF240452186098A005072C9 /* PhoiMauResult.swift */,
+				4A106CAD21E78448009B40A0 /* PaintCalculator */,
+				4A106CAE21E7875D009B40A0 /* PhoiMau */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1090,6 +1112,68 @@
 			children = (
 				4A0919832180A3E8006AAB9A /* ColorItemCollectionViewCell.swift */,
 				4A0919842180A3E8006AAB9A /* ColorItemCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4A106CAD21E78448009B40A0 /* PaintCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				38C42EBA2181B11000EDB3BC /* PaintCalculator.swift */,
+				4AE3DA5C218205D400418B37 /* PaintCalculatorResult.swift */,
+				4A106CB421E793BB009B40A0 /* PaintCalculatorResultV2.swift */,
+				4AE3DA5E218205E400418B37 /* PaintCalculatorResultItem.swift */,
+				4A106CB621E793C4009B40A0 /* PaintCalculatorResultItemV2.swift */,
+				4A106CA921E78354009B40A0 /* PaintCalculatorProduct.swift */,
+				4A106CAB21E78407009B40A0 /* PaintCalculatorCategory.swift */,
+			);
+			path = PaintCalculator;
+			sourceTree = "<group>";
+		};
+		4A106CAE21E7875D009B40A0 /* PhoiMau */ = {
+			isa = PBXGroup;
+			children = (
+				38B6439D2182B4A200A53D07 /* PhoiMauCategory.swift */,
+				38450F702182CA00002FF712 /* PhoiMauItem.swift */,
+				4AF240452186098A005072C9 /* PhoiMauResult.swift */,
+			);
+			path = PhoiMau;
+			sourceTree = "<group>";
+		};
+		4A106CB321E78923009B40A0 /* PaintCalculatorV2ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A106CB821E7969F009B40A0 /* Cells */,
+				4A106CAF21E7891C009B40A0 /* PaintCalculatorV2ViewController.swift */,
+				4A106CB021E7891C009B40A0 /* PaintCalculatorV2ViewController.xib */,
+			);
+			path = PaintCalculatorV2ViewController;
+			sourceTree = "<group>";
+		};
+		4A106CB821E7969F009B40A0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A106CB921E796C7009B40A0 /* PaintCalculatorV2TableViewCell.swift */,
+				4A106CBA21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4A106CC121E7B263009B40A0 /* PaintCalculatorDetailV2ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A106CC221E7B40C009B40A0 /* Cells */,
+				4A106CBD21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.swift */,
+				4A106CBE21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.xib */,
+			);
+			path = PaintCalculatorDetailV2ViewController;
+			sourceTree = "<group>";
+		};
+		4A106CC221E7B40C009B40A0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A106CC321E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.swift */,
+				4A106CC421E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1251,6 +1335,7 @@
 				389428C821802E20007DDDF3 /* ProductDetailViewController.xib in Resources */,
 				38C053AB217F11B600946DB6 /* AnswerTableViewCell.xib in Resources */,
 				385A4E60217ED4FE009F907C /* PhongThuyViewController.xib in Resources */,
+				4A106CB221E7891C009B40A0 /* PaintCalculatorV2ViewController.xib in Resources */,
 				4AF2404A2186174E005072C9 /* ImageViewerViewController.xib in Resources */,
 				38CBA67C216DAE9C007C5824 /* MenuContentView.xib in Resources */,
 				3892FCF7218A8F5700444A37 /* ColorItemDetailViewController.xib in Resources */,
@@ -1264,15 +1349,18 @@
 				38CBA76A216DFA84007C5824 /* RegisterFormViewController.xib in Resources */,
 				38AE3FA1216DA33C005F5ED3 /* LaunchScreen.storyboard in Resources */,
 				4A09198B2180B6EB006AAB9A /* ColorItemViewController.xib in Resources */,
+				4A106CBC21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.xib in Resources */,
 				38450F692182BB20002FF712 /* PhoiMauCategoryTableViewCell.xib in Resources */,
 				38CBA706216DD3CF007C5824 /* PaintCalculatorViewController.xib in Resources */,
 				38CBA6AB216DAF00007C5824 /* WaitingView.xib in Resources */,
 				38CBA6D0216DB835007C5824 /* StarterViewController.xib in Resources */,
 				38450F6E2182C876002FF712 /* PhoiMauItemViewController.xib in Resources */,
 				38CBA6F2216DD33D007C5824 /* CategoryViewController.xib in Resources */,
+				4A106CC021E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.xib in Resources */,
 				385A4E65217ED535009F907C /* FAQViewController.xib in Resources */,
 				385A4E6F217ED7E6009F907C /* VideoListViewController.xib in Resources */,
 				4AE3DA582181FF0700418B37 /* PaintCalculatorDetailViewController.xib in Resources */,
+				4A106CC621E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.xib in Resources */,
 				38C053A7217F11A900946DB6 /* QuestionTableViewCell.xib in Resources */,
 				38CBA6FC216DD388007C5824 /* ColorGalleryViewController.xib in Resources */,
 				38CBA6E1216DBB5D007C5824 /* SideMenuTableViewController.xib in Resources */,
@@ -1415,9 +1503,11 @@
 				38AE40A6216DABA1005F5ED3 /* HeroProgressRunner.swift in Sources */,
 				38AE40B5216DABA1005F5ED3 /* HeroDefaultAnimator.swift in Sources */,
 				38CBA6B4216DB0A7007C5824 /* Reusable.swift in Sources */,
+				4A106CB521E793BB009B40A0 /* PaintCalculatorResultV2.swift in Sources */,
 				38AE40AC216DABA1005F5ED3 /* HeroTransition+UITabBarControllerDelegate.swift in Sources */,
 				38AE401C216DAA66005F5ED3 /* UILayout.swift in Sources */,
 				38AE40C1216DABA1005F5ED3 /* UIKit+Hero.swift in Sources */,
+				4A106CC521E7B427009B40A0 /* PaintCalculatorResultV2TableViewCell.swift in Sources */,
 				38CBA759216DEED6007C5824 /* FaqItem.swift in Sources */,
 				38AE40B0216DABA1005F5ED3 /* HeroContext.swift in Sources */,
 				38CBA75C216DEED6007C5824 /* Category.swift in Sources */,
@@ -1432,6 +1522,7 @@
 				38AE40A2216DABA1005F5ED3 /* ConditionalPreprocessor.swift in Sources */,
 				38CBA758216DEED6007C5824 /* VideoModel.swift in Sources */,
 				38CBA6D7216DB925007C5824 /* BackButtonViewController.swift in Sources */,
+				4A106CBB21E796C7009B40A0 /* PaintCalculatorV2TableViewCell.swift in Sources */,
 				38450F6D2182C876002FF712 /* PhoiMauItemViewController.swift in Sources */,
 				38AE40A1216DABA1005F5ED3 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */,
 				38AE40C2216DABA1005F5ED3 /* UIViewController+Hero.swift in Sources */,
@@ -1459,6 +1550,7 @@
 				38AE40B2216DABA1005F5ED3 /* HeroModifier+HeroStringConvertible.swift in Sources */,
 				4A7780CC2198560B0037E5FE /* APICache.swift in Sources */,
 				4AF2404D2186268F005072C9 /* PhoiMauResultRepository.swift in Sources */,
+				4A106CB721E793C4009B40A0 /* PaintCalculatorResultItemV2.swift in Sources */,
 				38AE40C4216DABA1005F5ED3 /* HeroTargetState.swift in Sources */,
 				389428CC21802E3E007DDDF3 /* ProductCell.swift in Sources */,
 				389428C721802E20007DDDF3 /* ProductDetailViewController.swift in Sources */,
@@ -1485,11 +1577,13 @@
 				38AE40A3216DABA1005F5ED3 /* DefaultAnimationPreprocessor.swift in Sources */,
 				38CBA700216DD3B2007C5824 /* PhoiMauCategoryViewController.swift in Sources */,
 				38CBA75A216DEED6007C5824 /* ImageModel.swift in Sources */,
+				4A106CAC21E78407009B40A0 /* PaintCalculatorCategory.swift in Sources */,
 				38CBA6CF216DB835007C5824 /* StarterViewController.swift in Sources */,
 				38AE40C7216DABA1005F5ED3 /* HeroModifier.swift in Sources */,
 				38AE40C0216DABA1005F5ED3 /* UIView+Hero.swift in Sources */,
 				38C053A6217F11A900946DB6 /* QuestionTableViewCell.swift in Sources */,
 				38B6439E2182B4A200A53D07 /* PhoiMauCategory.swift in Sources */,
+				4A106CBF21E7B261009B40A0 /* PaintCalculatorDetailV2ViewController.swift in Sources */,
 				38AE40B1216DABA1005F5ED3 /* HeroViewControllerDelegate.swift in Sources */,
 				389428C221802E07007DDDF3 /* ProductViewController.swift in Sources */,
 				38AE401E216DAA66005F5ED3 /* SWRevealViewController.m in Sources */,
@@ -1508,6 +1602,7 @@
 				4A0919812180A3D9006AAB9A /* ColorGalleryCollectionViewCell.swift in Sources */,
 				38CBA769216DFA84007C5824 /* RegisterFormViewController.swift in Sources */,
 				38CBA6B6216DB0C4007C5824 /* Int.swift in Sources */,
+				4A106CB121E7891C009B40A0 /* PaintCalculatorV2ViewController.swift in Sources */,
 				38AE409D216DABA1005F5ED3 /* HeroTypes.swift in Sources */,
 				38CBA6E5216DC979007C5824 /* MenuCell.swift in Sources */,
 				38AE405F216DAA66005F5ED3 /* ImageButton.swift in Sources */,
@@ -1538,6 +1633,7 @@
 				38CBA6C2216DB3F7007C5824 /* UINavigationController.swift in Sources */,
 				38AE40AE216DABA1005F5ED3 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */,
 				38AE40AF216DABA1005F5ED3 /* HeroTransition+UIViewControllerTransitioningDelegate.swift in Sources */,
+				4A106CAA21E78354009B40A0 /* PaintCalculatorProduct.swift in Sources */,
 				38C42EB92181B0DB00EDB3BC /* PaintCalculatorRepository.swift in Sources */,
 				38C42EA4218154D300EDB3BC /* PhongThuyRepository.swift in Sources */,
 				38AE40C5216DABA1005F5ED3 /* HeroCompatible.swift in Sources */,

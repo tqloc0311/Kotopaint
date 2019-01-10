@@ -43,6 +43,10 @@ class StarterViewController: UIViewController {
         VideoRepository.shared.loadData { (_) in
             group.leave()
         }
+        group.enter()
+        PaintCalculatorRepository.shared.getAllProducts { (_) in
+            group.leave()
+        }
         
         group.notify(queue: .main) {
             self.presentModalViewControllerFromStoryBoard(destinationClass: CustomRevealViewController.self)

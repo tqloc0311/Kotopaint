@@ -86,7 +86,7 @@ extension HomeViewController: UICollectionViewDataSource {
         
         let item = menuList[indexPath.row]
         cell.configure(item)
-        (cell.mainView as! ViewButton).touchUpInsideAction = {
+        cell.mainView.touchUpInsideAction = {
             switch item.id {
             case 0:
                 self.tabBarController?.selectedIndex = 1
@@ -106,7 +106,9 @@ extension HomeViewController: UICollectionViewDataSource {
                 self.tabBarController?.selectedIndex = 3
                 break
             case 5:
-                self.tabBarController?.selectedIndex = 4
+                let vc = UIViewController.viewControllerFromNibWithNav(PaintCalculatorViewController.self)
+                self.presentModalViewController(destination: vc)
+//                self.tabBarController?.selectedIndex = 4
                 break
             case 6:
                 let vc = UIViewController.viewControllerFromNibWithNav(PhongThuyViewController.self)
@@ -115,6 +117,9 @@ extension HomeViewController: UICollectionViewDataSource {
             case 7:
                 let vc = UIViewController.viewControllerFromNibWithNav(ContactViewController.self)
                 self.presentModalViewController(destination: vc)
+                break
+            case 8:
+                self.tabBarController?.selectedIndex = 4
                 break
             default:
                 break
