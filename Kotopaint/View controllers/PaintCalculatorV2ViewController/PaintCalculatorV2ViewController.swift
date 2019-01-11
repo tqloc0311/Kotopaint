@@ -165,6 +165,7 @@ class PaintCalculatorV2ViewController: BackButtonViewController {
     }
     
     func calculate() {
+        view.endEditing(true)
         if validate() {
             guard
                 let long = Int(longTextField.text ?? ""),

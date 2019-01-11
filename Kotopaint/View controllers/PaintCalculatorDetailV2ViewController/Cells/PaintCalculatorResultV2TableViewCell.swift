@@ -40,6 +40,11 @@ class PaintCalculatorResultV2TableViewCell: UITableViewCell, ReusableView {
         layerLabel.text = "\(data.solop)"
         amountLabel.text = "\(data.sum) \(data.donvi)"
         
+        amountCaption1Label.isHidden = false
+        amountDetail1Label.isHidden = false
+        amountCaption2Label.isHidden = false
+        amountDetail2Label.isHidden = false
+        
         if data.type1 > 0 && data.type2 > 0 {
             amountCaption1Label.text = "Số \(data.tinhtoan) sơn: "
             amountDetail1Label.text = "\(data.type1) \(data.tinhtoan) \(data.dungtich2) \(data.donvi)"
