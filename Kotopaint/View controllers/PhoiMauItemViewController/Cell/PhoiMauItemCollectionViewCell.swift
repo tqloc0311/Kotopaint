@@ -8,21 +8,25 @@
 
 import UIKit
 
+protocol PhoiMauItemCollectionViewCellDelegate: class {
+    func phoiMauItemCollectionViewCellDidSelect(_ cell: PhoiMauItemCollectionViewCell, data: PhoiMauItem)
+    func phoiMauItemCollectionViewCellDidPan(_ cell: PhoiMauItemCollectionViewCell, data: PhoiMauItem, isRight: Bool)
+}
+
 class PhoiMauItemCollectionViewCell: UICollectionViewCell, ReusableView {
     
-    var panAction: ((Bool)->())?
-    var selectAction: (()->())?
+    private var data: PhoiMauItem!
     
-    var data: PhoiMauItem!
+    weak var delegate: PhoiMauItemCollectionViewCellDelegate?
     
-    @IBOutlet weak var imageView: ImageButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     @objc func panHandle(_ recognizer:UIPanGestureRecognizer) {
         if recognizer.state != .ended {
             return
         }
-        if let f = panAction, let isRight = recognizer.isLeftToRight(self) {
-            f(isRight)
+        if let isRight = recognizer.isLeftToRight(self) {
+            delegate?.phoiMauItemCollectionViewCellDidPan(self, data: data, isRight: isRight)
         }
     }
     
@@ -30,12 +34,10 @@ class PhoiMauItemCollectionViewCell: UICollectionViewCell, ReusableView {
         self.data = data
         imageView.kf.setImage(with: data.imageURL, placeholder: #imageLiteral(resourceName: "no-image"), options: [.transition(.fade(0.2))])
         
-        imageView.touchUpInsideAction = { [weak self] in
-            guard let self = self else { return }
-            if let f = self.selectAction {
-                f()
-            }
-        }
+//        imageView.touchUpInsideAction = { [weak self] in
+//            guard let self = self else { return }
+//            self.delegate?.phoiMauItemCollectionViewCellDidSelect(self, data: self.data)
+//        }
     }
     
     override func awakeFromNib() {

@@ -51,7 +51,8 @@ class PhongThuyViewController: BackButtonViewController {
             let date = Date(string: birthdayTextField.text!) ?? Date()
             
             showWaiting()
-            PhongThuyRepository.shared.loadData(birthday: date, direction: direction, gender: gender) { [unowned self] (errorMsg, result) in
+            PhongThuyRepository.shared.loadData(birthday: date, direction: direction, gender: gender) { [weak self] (errorMsg, result) in
+                guard let self = self else { return }
                 hideWaiting()
                 
                 let vc = PhongThuyDetailViewController(nibName: nil, bundle: nil, htmlString: result)
@@ -64,7 +65,8 @@ class PhongThuyViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -118,14 +120,16 @@ class PhongThuyViewController: BackButtonViewController {
     }
     
     func selectGender() {
-        showDropDown(anchorView: genderButton, dataSource: genderDataSource) { [unowned self] (index, text) in
+        showDropDown(anchorView: genderButton, dataSource: genderDataSource) { [weak self] (index, text) in
+            guard let self = self else { return }
             self.genderLabel.text = text
             self.genderLabel.tag = index
         }
     }
     
     func selectDirection() {
-        showDropDown(anchorView: directionButton, dataSource: directionDataSource) { [unowned self] (index, text) in
+        showDropDown(anchorView: directionButton, dataSource: directionDataSource) { [weak self] (index, text) in
+            guard let self = self else { return }
             self.directionLabel.text = text
             self.directionLabel.tag = index
         }
@@ -172,8 +176,9 @@ extension PhongThuyViewController: UIGestureRecognizerDelegate {
 extension PhongThuyViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == birthdayTextField {
-            DatePickerDialog(locale: Locale(identifier: "vi_VN")).show("Ngày sinh", doneButtonTitle: "Chọn", cancelButtonTitle: "Quay lại", datePickerMode: .date) { [unowned self]
+            DatePickerDialog(locale: Locale(identifier: "vi_VN")).show("Ngày sinh", doneButtonTitle: "Chọn", cancelButtonTitle: "Quay lại", datePickerMode: .date) { [weak self]
                 (date) -> Void in
+                guard let self = self else { return }
                 if let dt = date {
                     self.birthdayTextField.text = dt.toString()
                 }

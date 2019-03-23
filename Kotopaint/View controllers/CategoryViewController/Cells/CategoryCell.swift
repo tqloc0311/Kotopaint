@@ -75,7 +75,8 @@ class CategoryCell: UITableViewCell, ReusableView {
         self.layer.shadowOpacity = 0.7
         self.layer.shadowRadius = 4.0
         
-        let panGesture = UIPanGestureRecognizer { (gesture) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (gesture) in
+            guard let self = self else { return }
             if gesture.state != .ended {
                 return
             }

@@ -31,7 +31,8 @@ class FAQViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -53,7 +54,8 @@ class FAQViewController: BackButtonViewController {
     
     func loadData(completion: (()->())? = nil) {
         showWaiting()
-        FaqRepository.shared.loadData { (result) in
+        FaqRepository.shared.loadData { [weak self] (result) in
+            guard let self = self else { return }
             hideWaiting()
             self.dataSource = result
             self.expandableTableView.reloadData()

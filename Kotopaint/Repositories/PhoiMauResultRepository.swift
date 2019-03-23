@@ -39,10 +39,10 @@ class PhoiMauResultRepository {
                     "id": item.id,
                     "image": path,
                 ])
-            json["color_items"] = [:]
-            for (index, tmp) in item.selectedColorItem.enumerated() {
-                json["color_items"]["\(index)"] = tmp.toJSON()
-            }
+            json["color_items"].arrayObject = item.selectedColorItem.compactMap({ $0.toJSON() })
+//            for (index, tmp) in item.selectedColorItem.enumerated() {
+//                json["color_items"].array?.append(tmp.toJSON())
+//            }
             if LocalStorage.sharedInstance.content["saved_phoi_mau"] == JSON.null {
                 LocalStorage.sharedInstance.content["saved_phoi_mau"] = [:]
             }

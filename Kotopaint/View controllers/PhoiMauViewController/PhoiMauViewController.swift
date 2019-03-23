@@ -46,7 +46,8 @@ class PhoiMauViewController: BackButtonViewController {
     @IBAction func save(_ sender: Any) {
         popTip.hide()
         showWaiting()
-        DispatchQueue.global().async { [unowned self] in
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
             guard let image = self.imagesContainerView.asImage() else {
                 self.showErrorAlert(title: "Lỗi", subtitle: "Không thể lưu hình này", buttonTitle: "Thử lại")
                 return
@@ -54,7 +55,8 @@ class PhoiMauViewController: BackButtonViewController {
             let resultItem = PhoiMauResult(image: image, selectedItems: self.selectedColors)
             PhoiMauResultRepository.shared.save(item: resultItem)
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.savedImages.append(resultItem)
                 hideWaiting()
             }
@@ -71,7 +73,8 @@ class PhoiMauViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
 //                self.didBack()
             }
@@ -86,7 +89,8 @@ class PhoiMauViewController: BackButtonViewController {
         for button in colorSelectingButtons {
             button.setBorder(color: .lightGray, width: 1, corner: 0)
             button.backgroundColor = .white
-            button.touchUpInsideAction = { [unowned self] in
+            button.touchUpInsideAction = { [weak self] in
+                guard let self = self else { return }
                 self.didTapSelectColorButton(index: button.tag)
             }
         }
@@ -197,7 +201,8 @@ class PhoiMauViewController: BackButtonViewController {
     
     func loadColorGallery() {
         showWaiting()
-        ColorGalleryRepository.shared.loadData { [unowned self] (error, result) in
+        ColorGalleryRepository.shared.loadData { [weak self] (error, result) in
+            guard let self = self else { return }
             hideWaiting()
             if error != "" {
                 self.showErrorAlert(title: "Lỗi", subtitle: error, buttonTitle: "Thử lại")

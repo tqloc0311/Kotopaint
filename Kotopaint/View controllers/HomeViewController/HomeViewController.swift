@@ -86,7 +86,8 @@ extension HomeViewController: UICollectionViewDataSource {
         
         let item = menuList[indexPath.row]
         cell.configure(item)
-        cell.mainView.touchUpInsideAction = {
+        cell.mainView.touchUpInsideAction = { [weak self] in
+            guard let self = self else { return }
             switch item.id {
             case 0:
                 self.tabBarController?.selectedIndex = 1

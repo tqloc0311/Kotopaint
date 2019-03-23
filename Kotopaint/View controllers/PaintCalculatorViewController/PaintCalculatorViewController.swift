@@ -94,7 +94,8 @@ class PaintCalculatorViewController: BackButtonViewController {
         
         self.navigationItem.rightBarButtonItem = rightButton
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -180,7 +181,8 @@ class PaintCalculatorViewController: BackButtonViewController {
             item.products = selectedProducts.compactMap({ $0.value })
             
             showWaiting()
-            PaintCalculatorRepository.shared.calculate(item) { [unowned self] (errorMsg, result) in
+            PaintCalculatorRepository.shared.calculate(item) { [weak self] (errorMsg, result) in
+                guard let self = self else { return }
                 hideWaiting()
                 
                 if errorMsg != "" {
@@ -204,10 +206,11 @@ class PaintCalculatorViewController: BackButtonViewController {
         }
         
         isLoading = true
-        CategoryRepository.shared.getChildCategoryOf(categoryID: categoryID) { [unowned self] (categories) in
+        CategoryRepository.shared.getChildCategoryOf(categoryID: categoryID) { [weak self] (categories) in
+            guard let self = self else { return }
             self.categories = categories
-            ProductRepository.shared.loadData(categoryArray: categories.map({ $0.id }), completion: { [unowned self] (result) in
-                
+            ProductRepository.shared.loadData(categoryArray: categories.map({ $0.id }), completion: { [weak self] (result) in
+                guard let self = self else { return }
                 self.dataSource.removeAll()
                 self.selectedProducts.removeAll()
                 for item in categories {

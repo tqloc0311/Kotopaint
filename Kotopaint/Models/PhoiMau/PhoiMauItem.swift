@@ -73,7 +73,8 @@ class PhoiMauItem {
         let group = DispatchGroup()
         var error = false
         group.enter()
-        Globals.downloadImage(url: self.imageURL?.absoluteString ?? "") { (downloaded) in
+        Globals.downloadImage(url: self.imageURL?.absoluteString ?? "") { [weak self] (downloaded) in
+            guard let self = self else { return }
             if let img = downloaded {
                 
                 self.image = img

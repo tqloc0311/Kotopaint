@@ -42,7 +42,8 @@ class CheckProductTableViewCell: UITableViewCell, ReusableView {
             thumbnailImageView.image = #imageLiteral(resourceName: "no-image")
         }
         
-        checkBox.touchUpInsideAction = { [unowned self] in
+        checkBox.touchUpInsideAction = { [weak self] in
+            guard let self = self else { return }
             self.delegate?.selectProduct(product: data)
         }
     }

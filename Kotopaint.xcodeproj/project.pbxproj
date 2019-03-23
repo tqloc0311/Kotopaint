@@ -1780,14 +1780,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LWGNF97J5S;
+				DEVELOPMENT_TEAM = TW943TUPL6;
 				INFOPLIST_FILE = Kotopaint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.stagegroup.Kotopaint;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.kotopaint.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Kotopaint/BridgingHeader.h;
 				SWIFT_VERSION = 4.2;
@@ -1801,14 +1801,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LWGNF97J5S;
+				DEVELOPMENT_TEAM = TW943TUPL6;
 				INFOPLIST_FILE = Kotopaint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.stagegroup.Kotopaint;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.kotopaint.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Kotopaint/BridgingHeader.h;
 				SWIFT_VERSION = 4.2;

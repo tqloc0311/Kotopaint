@@ -56,6 +56,10 @@ class ImageButton: UIImageView {
         self.clipsToBounds = true
     }
     
+    deinit {
+        touchUpInsideAction = nil
+    }
+    
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.alpha = 0.3
     }

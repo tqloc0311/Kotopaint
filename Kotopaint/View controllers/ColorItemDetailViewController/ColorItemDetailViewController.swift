@@ -22,7 +22,8 @@ class ColorItemDetailViewController: UIViewController {
     
     //  MARK: - Methods
     func setupView() {
-        let tap = UITapGestureRecognizer { [unowned self] in
+        let tap = UITapGestureRecognizer { [weak self] in
+            guard let self = self else { return }
             self.dismiss(animated: true, completion: nil)
         }
         

@@ -28,7 +28,8 @@ class PaintCalculatorDetailViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -144,7 +145,8 @@ extension PaintCalculatorDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.section]
         showWaiting()
-        ProductRepository.shared.getBy(productID: item.id) { [unowned self] (errorMsg, product) in
+        ProductRepository.shared.getBy(productID: item.id) { [weak self] (errorMsg, product) in
+            guard let self = self else { return }
             hideWaiting()
             if errorMsg != "" {
                 self.showErrorAlert(title: "Lỗi", subtitle: errorMsg, buttonTitle: "Thử lại")

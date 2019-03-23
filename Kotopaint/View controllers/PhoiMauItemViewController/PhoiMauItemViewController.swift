@@ -24,7 +24,8 @@ class PhoiMauItemViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -43,7 +44,8 @@ class PhoiMauItemViewController: BackButtonViewController {
     
     func goNext(model: PhoiMauItem) {
         showWaiting()
-        model.download { [unowned self] (success) in
+        model.download { [weak self] (success) in
+            guard let self = self else { return }
             hideWaiting()
             if success {
                 let vc = PhoiMauViewController(nibName: nil, bundle: nil, phoimauItem: model)
@@ -62,7 +64,8 @@ class PhoiMauItemViewController: BackButtonViewController {
     
     func loadData() {
         showWaiting()
-        PhoiMauItemRepository.shared.loadData(categoryID: phoimauCategory.id) { [unowned self] (result) in
+        PhoiMauItemRepository.shared.loadData(categoryID: phoimauCategory.id) { [weak self] (result) in
+            guard let self = self else { return }
             hideWaiting()
             
             if result.count == 0 {
@@ -137,19 +140,7 @@ extension PhoiMauItemViewController: UICollectionViewDelegate, UICollectionViewD
         
         let item = dataSource[indexPath.item]
         cell.configure(item)
-        cell.selectAction = { [weak self] in
-            guard let self = self else { return }
-            self.goNext(model: cell.data)
-        }
-        cell.panAction = { [weak self] isRight in
-            guard let self = self else { return }
-            if isRight {
-                self.didBack()
-            }
-            else {
-                self.goNext(model: cell.data)
-            }
-        }
+        cell.delegate = self
         return cell
     }
     
@@ -160,4 +151,27 @@ extension PhoiMauItemViewController: UICollectionViewDelegate, UICollectionViewD
         let imageRatio: CGFloat = 3/4
         return CGSize(width: width, height: width * imageRatio)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = dataSource[indexPath.item]
+        goNext(model: item)
+    }
+}
+
+// MARK: - PhoiMauItemCollectionViewCellDelegate
+extension PhoiMauItemViewController: PhoiMauItemCollectionViewCellDelegate {
+    func phoiMauItemCollectionViewCellDidSelect(_ cell: PhoiMauItemCollectionViewCell, data: PhoiMauItem) {
+        goNext(model: data)
+    }
+    
+    func phoiMauItemCollectionViewCellDidPan(_ cell: PhoiMauItemCollectionViewCell, data: PhoiMauItem, isRight: Bool) {
+        if isRight {
+            didBack()
+        }
+        else {
+            goNext(model: data)
+        }
+    }
+    
+    
 }

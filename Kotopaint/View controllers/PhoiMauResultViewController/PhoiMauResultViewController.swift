@@ -23,7 +23,8 @@ class PhoiMauResultViewController: BackButtonViewController {
     //  MARK: - Methods
     func setupView() {
         
-        let panGesture = UIPanGestureRecognizer { (recognizer) in
+        let panGesture = UIPanGestureRecognizer { [weak self] (recognizer) in
+            guard let self = self else { return }
             if let panGesture = recognizer as? UIPanGestureRecognizer, let isRight = panGesture.isLeftToRight(self.view), isRight {
                 self.didBack()
             }
@@ -118,7 +119,8 @@ extension PhoiMauResultViewController: UITableViewDataSource {
                 self.selectImage(item)
             }
         }
-        cell.selectAction = { [unowned self] in
+        cell.selectAction = { [weak self] in
+            guard let self = self else { return }
             self.selectImage(item)
         }
         
